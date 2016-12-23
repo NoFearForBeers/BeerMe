@@ -4,7 +4,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { pages } from '../pages/index';
 
 const appRoutes: Routes = [
-    { path: '', pathMatch: 'full', redirectTo: 'home' },
     { path: 'superheroes', component: pages.superheroes }
 ];
 

@@ -17,4 +17,4 @@ app.get('/api/superheroes', (req, res) => {
         });
 });
 
-app.listen(3000, () => console.log('App listening on :3000'));
+app.listen(config.port, () => console.log(`App listening on :${config.port}`));

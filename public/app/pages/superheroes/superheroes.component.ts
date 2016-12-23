@@ -16,7 +16,6 @@ export class SuperheroesListPage implements PageComponent {
         this.superheroesData.getAll()
             .then(superheroes => {
                 this.superheroes = superheroes;
-                console.log(this.superheroes);
             });
     }
 }

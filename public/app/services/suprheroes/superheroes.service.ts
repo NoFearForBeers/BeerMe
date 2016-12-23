@@ -18,18 +18,14 @@ export class SuperheroesService {
             .toPromise()
             .then(response => {
                 let data = response.json() as ResponseResult<Superhero[]>;
-                console.log(data.result);
                 return data.result;
             });
-
     }
 
-    //  TODO: make this with Observable
-
+    //  TODO: make getAll() with Observable
     //  getAll(): Observable<Superhero[]> {
     //     return this.http
     //         .get(this.allSuperheroesUrl)
     //         .map((response: Response) => <any>response.json())
-
     // }
 }

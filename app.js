@@ -9,7 +9,7 @@ app.get('/api/superheroes', function (req, res) {
     data.getSuperheroes()
         .then(function (result) {
         //console.log(result)
-        //return res.send({result:result});
+        //return res.send(result);
         return res.send({ result: result });
     });
 });

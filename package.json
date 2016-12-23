@@ -1,11 +1,11 @@
 {
-    "name": "test",
+    "name": "BeerMe",
     "version": "1.0.0",
-    "description": "star wars application",
+    "description": "someinteresting things for bg beers",
     "scripts": {
         "start": "tsc && node app.js",
         "development": "tsc && concurrently \"tsc -w\" \"nodemon app.js .\" ",
-		"postinstall": "./node_modules/.bin/bower install"
+        "postinstall": "./node_modules/.bin/bower install"
     },
     "keywords": [],
     "author": "zmei dev",
