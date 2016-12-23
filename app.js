@@ -13,5 +13,5 @@ app.get('/api/superheroes', function (req, res) {
         return res.send({ result: result });
     });
 });
-app.listen(3000, function () { return console.log('App listening on :3000'); });
+app.listen(config.port, function () { return console.log("App listening on :" + config.port); });
 //# sourceMappingURL=app.js.map
