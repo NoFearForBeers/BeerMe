@@ -27,8 +27,10 @@
                 <li><a routerLink="#">Събития</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a routerLink="#">Вход</a></li>
-                <li><a routerLink="#">Регистрация</a></li>
+                <!--*ngIf="!service.authenticated()"-->
+                <li><a routerLink="/login" *ngIf="!service.authenticated()">Вход</a></li>
+                <li><a routerLink="/register" *ngIf="!service.authenticated()">Регистрация</a></li>
+                <li><a routerLink="/" (click)="service.logout()" *ngIf="service.authenticated()">Изход</a></li>
             </ul>
         </div>
     </div>

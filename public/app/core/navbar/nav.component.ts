@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Auth } from '../../services/auth/auth.service';
 
 @Component({
     moduleId: module.id,
@@ -6,6 +7,13 @@ import { Component } from '@angular/core';
     templateUrl: 'nav.component.html',
     styleUrls: ['nav.component.css']
 })
-export class NavComponent {
-    public isCollapsed: boolean = true;
+export class NavComponent implements OnInit {
+  public profile: any;
+
+  constructor(private service: Auth) {
+  }
+
+  ngOnInit() {
+    this.profile = JSON.parse(localStorage.getItem('profile'));
+  }
 }

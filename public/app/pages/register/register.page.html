@@ -1,0 +1,42 @@
+<form class="form-horizontal">
+    <fieldset>
+        <legend>Регистрационна форма</legend>
+        <div class="form-group">
+            <label for="text" class="col-lg-2 control-label">Име</label>
+            <div class="col-lg-10">
+                <input type="text" class="form-control" id="inputFirstName" #firstName placeholder="Име">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="text" class="col-lg-2 control-label">Фамилия</label>
+            <div class="col-lg-10">
+                <input type="text" class="form-control" id="inputLastName" #lastName placeholder="Фамилия">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="text" class="col-lg-2 control-label">Профилна снимка</label>
+            <div class="col-lg-10">
+                <input type="text" class="form-control" id="inputProfileImage" #profileImgURL placeholder="Профилна снимка">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputEmail" class="col-lg-2 control-label">Email адрес</label>
+            <div class="col-lg-10">
+                <input type="email" class="form-control" id="inputEmail" #email placeholder="Email адрес">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="inputPassword" class="col-lg-2 control-label">Парола</label>
+            <div class="col-lg-10">
+                <input type="password" class="form-control" id="inputPassword" #password placeholder="Password">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-2">
+                <button type="reset" class="btn btn-default">Изход</button>
+                <button type="submit" class="btn btn-primary" (click)="auth.signUp(email.value, password.value, firstName.value, lastName.value,  profileImgURL.value, email.value)">Регистрирай</button>
+            </div>
+        </div>
+    </fieldset>
+</form>

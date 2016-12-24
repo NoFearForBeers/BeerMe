@@ -8,17 +8,22 @@ app.get('/', (req, res) => {
 });
 
 // Users and authentication
-app.get('/api/users', (req, res) => {
-    data.createUser(req.body.id, req.body.username, req.body.firstName,  req.body.lastName, req.body.picture, req.body.email, req.body.recipes, req.body.forumPoints)
+app.post('/api/users', (req, res) => {
+    data.createUser(req.body.id, req.body.username, req.body.firstName,  req.body.lastName, req.body.profileImgURL, req.body.email, req.body.recipes, req.body.forumPoints)
     .then(() => {
-        res.json("User successfully created!");
+        res.json({ result:"User successfully created!" });
+    })
+    .catch(err => {
+        res.json(err);
     });
 });
+
 
 app.get('/api/users/:id', (req, res) => {
     data.getUserById(req.params.id)
     .then((user) => {
-        res.json({ result: user });
+        console.log(user);
+        res.json({result: user});
     })
     .catch(err => {
         res.json(err);
@@ -31,7 +36,7 @@ app.get('/api/superheroes', (req, res) => {
     .then((result: any) => {
         //console.log(result)
         //return res.send(result);
-        return res.send( { result: result } );
+        return res.send({ result: result} );
         });
 });
 

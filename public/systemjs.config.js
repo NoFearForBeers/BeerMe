@@ -2,7 +2,7 @@
  * System configuration for Angular samples
  * Adjust as necessary for your application needs.
  */
-(function (global) {
+(function(global) {
     System.config({
         paths: {
             // paths serve as alias
@@ -27,7 +27,7 @@
             'rxjs': 'npm:rxjs',
             'angular-in-memory-web-api': 'npm:angular-in-memory-web-api/bundles/in-memory-web-api.umd.js',
             'moment': 'npm:moment/moment.js',
-            'ng2-bootstrap/ng2-bootstrap': 'npm:ng2-bootstrap/bundles/ng2-bootstrap.umd.js',
+            'angular2-jwt': 'npm:angular2-jwt/angular2-jwt.js'
         },
         // packages tells the System loader how to load when no filename and/or no extension
         packages: {
@@ -36,6 +36,9 @@
                 defaultExtension: 'js'
             },
             rxjs: {
+                defaultExtension: 'js'
+            },
+            'angular2-jwt': {
                 defaultExtension: 'js'
             }
         }

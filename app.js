@@ -7,14 +7,18 @@ app.get('/', function (req, res) {
 });
 // Users and authentication
 app.get('/api/users', function (req, res) {
-    data.createUser(req.body.id, req.body.username, req.body.firstName, req.body.lastName, req.body.picture, req.body.email, req.body.recipes, req.body.forumPoints)
+    data.createUser(req.body.id, req.body.username, req.body.firstName, req.body.lastName, req.body.profileImgURL, req.body.email, req.body.recipes, req.body.forumPoints)
         .then(function () {
-        res.json("User successfully created!");
+        res.json({ result: "User successfully created!" });
+    })
+        .catch(function (err) {
+        res.json(err);
     });
 });
 app.get('/api/users/:id', function (req, res) {
     data.getUserById(req.params.id)
         .then(function (user) {
+        console.log(user);
         res.json({ result: user });
     })
         .catch(function (err) {

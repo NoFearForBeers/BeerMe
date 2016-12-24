@@ -5,7 +5,6 @@ module.exports = function(models) {
 
     return {
         createUser(id,
-            username,
             firtsName,
             lastName,
             picture,
@@ -13,12 +12,10 @@ module.exports = function(models) {
             recipes,
             forumPoints) {
             return new Promise((resolve, reject) => {
-                console.log(username);
 
                 let user = new User({
                     User,
                     id,
-                    username,
                     firtsName,
                     lastName,
                     picture,
