@@ -9,9 +9,12 @@ mongoose.Promise = global.Promise;
 
 module.exports = function({ config }) {
     mongoose.connect(config.connectionString);
-    let Superhero = require("../models/superhero-model");
 
-    let models = { Superhero };
+    // register all models
+    let Superhero = require("../models/superhero-model");
+    let User = require("../models/user-model");
+
+    let models = { Superhero, User };
 
     let data = {};
     fs.readdirSync(__dirname)

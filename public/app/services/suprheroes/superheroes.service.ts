@@ -13,19 +13,12 @@ export class SuperheroesService {
     constructor(private http: Http) {
 
     }
-    getAll(): Promise<Superhero[]> {
-        return this.http.get(this.allSuperheroesUrl)
-            .toPromise()
-            .then(response => {
-                let data = response.json() as ResponseResult<Superhero[]>;
-                return data.result;
-            });
-    }
 
-    //  TODO: make getAll() with Observable
-    //  getAll(): Observable<Superhero[]> {
-    //     return this.http
-    //         .get(this.allSuperheroesUrl)
-    //         .map((response: Response) => <any>response.json())
-    // }
+getAll(): Observable<Superhero[]> {
+    return this.http.get(this.allSuperheroesUrl)
+                .map(response => {
+                    let data = response.json() as ResponseResult<Superhero[]>;
+                    return data.result;
+                })
+    }
 }

@@ -14,7 +14,7 @@ export class SuperheroesListPage implements PageComponent {
 
     ngOnInit() {
         this.superheroesData.getAll()
-            .then(superheroes => {
+            .subscribe(superheroes => {
                 this.superheroes = superheroes;
             });
     }
