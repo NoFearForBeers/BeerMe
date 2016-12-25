@@ -7,8 +7,7 @@ const appRoutes: Routes = [
     { path: 'login', component: pages.login },
     { path: 'login-callback', redirectTo: '/', pathMatch: 'full' },
     { path: 'register', component: pages.register },
-    { path: 'superheroes', component: pages.superheroes },
-    { path: '', component: pages.superheroes }
+    { path: '', component: pages.login }
 ];
 
 @NgModule({

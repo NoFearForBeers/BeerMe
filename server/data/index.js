@@ -11,10 +11,9 @@ module.exports = function(connectionString) {
     mongoose.connect(connectionString);
 
     // register all models
-    let Superhero = require("../models/superhero-model");
     let User = require("../models/user-model");
 
-    let models = { Superhero, User };
+    let models = { User };
 
     let data = {};
     fs.readdirSync(__dirname)
