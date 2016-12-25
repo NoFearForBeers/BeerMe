@@ -1,10 +1,10 @@
 {
     "name": "BeerMe",
     "version": "1.0.0",
-    "description": "someinteresting things for bg beers",
+    "description": "some interesting things for bg beers",
     "scripts": {
-        "start": "tsc && node app.js",
-        "development": "tsc && concurrently \"tsc -w\" \"nodemon app.js .\" ",
+        "start": "tsc && node ./server/app.js",
+        "development": "tsc && concurrently \"tsc -w\" \"nodemon ./server/app.js .\" ",
         "postinstall": "./node_modules/.bin/bower install"
     },
     "keywords": [],
