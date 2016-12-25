@@ -7,7 +7,7 @@ import { UserService } from '../../users/services/user.service';
 declare var Auth0: any;
 
 @Injectable()
-export class Auth {
+export class AuthService {
   auth0 = new Auth0({
     domain: 'beer-me.eu.auth0.com',
     clientID: 'S7Vh9sVtrvHE7cfRoJrVqJD4w18Inv7q',

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Auth } from './authentication/services/auth.service';
+import { AuthService } from './authentication/services/auth.service';
 
 @Component({
   moduleId: module.id,
@@ -12,7 +12,7 @@ import { Auth } from './authentication/services/auth.service';
 export class AppComponent implements OnInit {
   public profile: any;
 
-  constructor(private service: Auth) {
+  constructor(private service: AuthService) {
   }
 
   ngOnInit() {

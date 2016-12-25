@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { pages } from '../shared/index';
+import { pages } from './pages';
 
 const appRoutes: Routes = [
     { path: 'login', component: pages.login },
