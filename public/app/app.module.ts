@@ -8,7 +8,7 @@ import { AppComponent } from './app.component';
 
 import { AppRoutingModule } from './routing/app-routing.module';
 import { AUTH_PROVIDERS } from 'angular2-jwt';
-import { CoreModule } from './core/core.module';
+import { CoreModule } from './shared/core.module';
 
 
 //  Pages
