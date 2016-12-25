@@ -41,3 +41,4 @@ public/app/**/*.js
 public/app/**/*.map
 public/dist/*
 system-config.js*
+mongodb-data/
