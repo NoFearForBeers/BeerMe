@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
 import { tokenNotExpired } from 'angular2-jwt';
 import { Router } from '@angular/router';
-import { UserService } from '../user/user.service';
+
+import { UserService } from '../../users/services/user.service';
 
 declare var Auth0: any;
 

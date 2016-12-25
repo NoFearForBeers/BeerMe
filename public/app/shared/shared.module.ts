@@ -13,5 +13,5 @@ import { FooterComponent } from './footer/footer.component';
     providers: []
 })
 
-export class CoreModule {
+export class SharedModule {
 }

@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
-import { Auth } from '../../services/auth/auth.service';
+import { Auth } from '../services/auth.service';
 
 @Component({
     moduleId: module.id,
-    templateUrl: './register.page.html'
+    templateUrl: './login.page.html'
 })
-export class RegisterPage {
+export class LoginPage {
     constructor(private auth: Auth) {
     }
 };
