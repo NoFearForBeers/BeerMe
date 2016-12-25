@@ -7,8 +7,8 @@ const path = require('path');
 
 mongoose.Promise = global.Promise;
 
-module.exports = function({ config }) {
-    mongoose.connect(config.connectionString);
+module.exports = function(connectionString) {
+    mongoose.connect(connectionString);
 
     // register all models
     let Superhero = require("../models/superhero-model");
