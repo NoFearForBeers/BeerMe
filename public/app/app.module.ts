@@ -9,8 +9,9 @@ import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './routing/app-routing.module';
 
-//  Authentication
+//  Moduls
 import { AuthenticationModule } from './authentication/authentication.module';
+import { TopBeersModule } from './top-beers/top-beers.module';
 
 //  Users
 import { UserService } from './users/services/user.service';
@@ -23,6 +24,7 @@ import { UserService } from './users/services/user.service';
     HttpModule,
     SharedModule,
     AuthenticationModule,
+    TopBeersModule,
     AppRoutingModule
   ],
   declarations: [

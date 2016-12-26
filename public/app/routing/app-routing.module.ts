@@ -7,6 +7,7 @@ const appRoutes: Routes = [
     { path: 'login', component: pages.login },
     { path: 'login-callback', redirectTo: '/', pathMatch: 'full' },
     { path: 'register', component: pages.register },
+    { path: 'top-beers', component: pages.topBeers},
     { path: '', component: pages.login }
 ];
 

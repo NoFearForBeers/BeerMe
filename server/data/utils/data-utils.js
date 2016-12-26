@@ -24,18 +24,25 @@ module.exports = {
             });
         });
     },
-    findOneById(model, id) {
+    getAll(model) {
         return new Promise((resolve, reject) => {
-                model.findOne({ id }, (err, user) => {
+                model.find({}, (err, records) => {
                     if (err) {
                         return reject(err);
                     }
 
-                    if (user) {
-                        return resolve(user);
+                    return resolve(records);
+                });
+            });
+    },
+    getOneById(model, id) {
+        return new Promise((resolve, reject) => {
+                model.findOne({ id }, (err, singleRecord) => {
+                    if (err) {
+                        return reject(err);
                     }
 
-                    return reject("There is not a record with this id!");
+                    return resolve(singleRecord);
                 });
             });
     }

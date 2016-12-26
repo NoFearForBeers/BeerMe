@@ -8,8 +8,9 @@ module.exports = function({ app, controllers }) {
 
     router
         .get("/api/users/:id", controllers.getUserById)
-        .get("/*", controllers.home)
-        .post("/users", controllers.createUser);
+        .post("/users", controllers.createUser)
+        .get("/api/top-beers", controllers.getAllBeers)
+        .get("/*", controllers.home);
 
     app.use("/", router);
 
