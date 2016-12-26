@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { AuthService } from '../../authentication/services/auth.service';
 
 @Component({
@@ -7,13 +7,9 @@ import { AuthService } from '../../authentication/services/auth.service';
     templateUrl: 'nav.component.html',
     styleUrls: ['nav.component.css']
 })
-export class NavComponent implements OnInit {
+export class NavComponent {
   public profile: any;
 
-  constructor(private service: AuthService) {
-  }
-
-  ngOnInit() {
-    this.profile = JSON.parse(localStorage.getItem('profile'));
+  constructor(private _authService: AuthService) {
   }
 }

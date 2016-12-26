@@ -4,38 +4,28 @@ module.exports = function(models) {
     let { User } = models;
 
     return {
-        createUser(id,
-            firtsName,
-            lastName,
-            picture,
-            email,
-            recipes,
-            forumPoints) {
+        createUser(user) {
             return new Promise((resolve, reject) => {
+                    let newUser = new User({
+                        username: user.username,
+                        firstname: user.firtsName,
+                        lastName: user.lastName,
+                        profileImgURL: user.profileImgURL,
+                        email: user.email,
+                        passhash: user.password,
+                        recipes: user.recipes,
+                        forumPoints: user.forumPoints
+                    });
 
-                let user = new User({
-                    User,
-                    id,
-                    firtsName,
-                    lastName,
-                    picture,
-                    email,
-                    recipes,
-                    forumPoints
-                });
-
-                user.save(err => {
-                    if (err) {
-                        return reject(err);
-                    }
-
-                    return resolve(user);
-                });
-            });
+                    resolve(newUser);
+                })
+                .then((newUser) => {
+                    return dataUtils.save(newUser);
+                })
         },
-        getUserById(id) {
+        findUserById(id) {
             return new Promise((resolve, reject) => {
-                User.findOne({ id }, (err, user) => {
+                User.findOne({ _id }, (err, user) => {
                     if (err) {
                         return reject(err);
                     }
@@ -45,6 +35,16 @@ module.exports = function(models) {
                     }
 
                     return reject("no such user");
+                });
+            });
+        },
+        findUserByCredentials(username, passhash) {
+            return new Promise((resolve, reject) => {
+                User.findOne({ username, passhash }, (err, user) => {
+                    if (err) {
+                        return reject(err);
+                    }
+                    return resolve(user);
                 });
             });
         }

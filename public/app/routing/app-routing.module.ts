@@ -1,14 +1,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-
+import { AuthGuard } from '../authentication/services/auth-guard.service';
 import { pages } from './pages';
 
 const appRoutes: Routes = [
+    { path: '', pathMatch: 'full', redirectTo: 'home' },
     { path: 'login', component: pages.login },
-    { path: 'login-callback', redirectTo: '/', pathMatch: 'full' },
     { path: 'register', component: pages.register },
-    { path: 'top-beers', component: pages.topBeers},
-    { path: '', component: pages.login }
+    { path: 'home', component: pages.home },
+    { path: 'user', component: pages.home, canActivate: [AuthGuard] },
+    { path: 'top-beers', component: pages.topBeers}
 ];
 
 @NgModule({

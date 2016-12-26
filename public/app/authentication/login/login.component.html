@@ -1,11 +1,6 @@
 <form class="form-horizontal">
     <fieldset>
         <legend>Вход</legend>
-        <div id='alert' class="alert alert-dismissible alert-danger hidden">
-            <button type="button" class="close" data-dismiss="alert">&times;</button>
-            <strong>Oh snap!</strong> <a href="#" class="alert-link">Change a few things up</a> and try submitting again.
-        </div>
-
         <div class="form-group">
             <label for="text" class="col-lg-2 control-label">Email</label>
             <div class="col-lg-10">
@@ -22,7 +17,7 @@
         <div class="form-group">
             <div class="col-lg-10 col-lg-offset-2">
                 <button type="reset" class="btn btn-default">Изход</button>
-                <button type="submit" class="btn btn-primary" (click)="auth.login(email.value, password.value)">Вход</button>
+                <button type="submit" class="btn btn-primary">Вход</button>
             </div>
         </div>
     </fieldset>

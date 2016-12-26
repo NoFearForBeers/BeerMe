@@ -5,7 +5,7 @@ import { FormsModule } from '@angular/forms';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { AuthService } from './services/auth.service';
-import { AuthGuardService } from './services/auth-guard.service';
+import { AuthGuard} from '../authentication/services/auth-guard.service';
 
 import { AUTH_PROVIDERS } from 'angular2-jwt';
 
@@ -13,7 +13,7 @@ import { AUTH_PROVIDERS } from 'angular2-jwt';
     imports: [ CommonModule, FormsModule ],
     exports: [LoginComponent, RegisterComponent],
     declarations: [LoginComponent, RegisterComponent],
-    providers: [ AuthService, AuthGuardService, AUTH_PROVIDERS]
+    providers: [ AuthService, AuthGuard, AUTH_PROVIDERS]
 })
 export class AuthenticationModule {
 }
