@@ -1,27 +1,71 @@
 /* globals module */
 
-module.exports = function(params) {
-    let { data } = params;
+let jwt = require('jwt-simple');
+let secret = "Secret unicorns";
+const passport = require('passport'),
+    DEFAULT_IMAGE = 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTqhN3-lNH2F8f_eCb0wBD650zauwEIBNsIyzgVHa1kJh72dGGjRw';
 
+module.exports = function({ data, encryption, validator }) {
     return {
-        createUser(req, res) {
-            data.createUser(req.body.id, req.body.username, req.body.firstName, req.body.lastName, req.body.profileImgURL, req.body.email, req.body.recipes, req.body.forumPoints)
-                .then(() => {
-                    res.json({ result: "User successfully created!" });
+        login(req, res) {
+            let username = req.body.username;
+            let password = req.body.password;
+            data.findUserByCredentials(username, encryption(password))
+                .then((user) => {
+                    if (user) {
+                        let token = jwt.encode(user, secret);
+                        return res.status(200).json({ success: true, token: token });
+                    }
+
+                    return res.status(400).json({ success: false, msg: 'Authenticaton failed, wrong password.' });
                 })
-                .catch(err => {
-                    res.json(err);
+                .catch(error => {
+                    return res.send(error);
                 });
         },
-        getUserById(req, res) {
-            data.getUserById(req.params.id)
-                .then((user) => {
-                    console.log(user);
-                    res.json({ result: user });
+        register(req, res) {
+            let newUser = {};
+            let propoerties = ['username', 'firstname', 'lastname', 'profileImgURL', 'email'];
+
+            console.log('**********');
+            console.log(req.body);
+
+            propoerties.forEach(property => {
+                if (!property || property.length < 0) {
+                    res.status(411).json(`Missing ${property}`);
+                }
+
+                newUser[property] = req.body[property];
+            });
+
+            newUser.password = encryption(req.body.password);
+            newUser.profileImgURL = req.body.password || DEFAULT_IMAGE;
+            console.log(newUser);
+
+            data.createUser(newUser)
+                .then((data) => {
+                    res.status(200).send({ success: true, data })
                 })
                 .catch(err => {
-                    res.json(err);
+                    return res.status(400).send({ success: false, msg: 'User was not created' });
                 });
+        },
+        getLoggedUser(req, res) {
+            const token = req.headers.authorization;
+
+            if (token) {
+                let userInfo = jwt.decode(token.split(' ')[1], secret);
+                let user = {
+                    username: userInfo.username
+                };
+
+                res.status(200).json(user);
+            } else {
+                res.status(401).json({
+                    success: false,
+                    message: 'Please provide token'
+                });
+            }
         }
     };
 };

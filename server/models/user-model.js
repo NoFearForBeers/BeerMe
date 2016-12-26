@@ -19,6 +19,12 @@ module.exports = modelRegistrator.register('User', {
     email: {
         type: String
     },
+    password: {
+        type: String
+    },
+    passhash: {
+        type: String
+    },
     recipes: [],
     forumPoints: {
         type: Number,

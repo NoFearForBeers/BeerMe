@@ -7,39 +7,43 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
             </button>
-            <span class="navbar-brand brand-header"><a routerLink="/superheroes"><i class="fa fa-home icons-spacing"></i>BeerMe</a>
+            <span class="navbar-brand brand-header"><a routerLink="/"><i class="fa fa-home icons-spacing"></i>BeerMe</a>
             </span>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">За пивото<span class="caret"></span></a>
+                    <a href="#" class="dropdown-toggle uppercasing" data-toggle="dropdown" role="button" aria-expanded="false">За пивото<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="#">История на пивопроизводството в България</a></li>
                         <li><a href="#">Използвани суровини</a></li>
                         <li><a href="#">Дегустация на пиво</a></li>
                         <li><a href="#">Марки пиво</a></li>
+                        <li><a href="#">Видове пиво</a></li>
                     </ul>
                 </li>
-                <li><a routerLink="#">Видове пиво</a></li>
-                <li><a routerLink="top-beers">Топ бири</a></li>
+                <li><a routerLink="/top-beers" class="uppercasing">Топ БГ бири</a></li>
 
-                <li class="dropdown" *ngIf="service.authenticated()">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Домашни рецепти<span class="caret"></span></a>
+                <!--If user is Logged-in the menu is shown-->
+                <li class="dropdown" *ngIf=_authService.isLoggedin>
+                    <a href="#" class="dropdown-toggle uppercasing" data-toggle="dropdown" role="button" aria-expanded="false">Домашни рецепти<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">Добави рецепта</a></li>
+                        <li><a href="#" class="uppercasing">Добави рецепта</a></li>
                     </ul>
                 </li>
-                <li><a href="#" *ngIf="!service.authenticated()">Добави рецепта</a></li>
 
-                <li><a routerLink="#">Новини</a></li>
-                <li><a routerLink="#">Събития</a></li>
+                <li><a routerLink="#" class="uppercasing">Новини</a></li>
+
+                <!--If user is Logged-in the menu is shown-->
+                <li><a routerLink="#" class="uppercasing" *ngIf=_authService.isLoggedin>Събития</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <!--*ngIf="!service.authenticated()"-->
-                <li><a routerLink="/login" *ngIf="!service.authenticated()">Вход</a></li>
-                <li><a routerLink="/register" *ngIf="!service.authenticated()">Регистрация</a></li>
-                <li><a routerLink="/" (click)="service.logout()" *ngIf="service.authenticated()">Изход</a></li>
+                <li><a routerLink="/login" class="uppercasing" *ngIf=!_authService.isLoggedin>Вход</a></li>
+                <li><a routerLink="/register" class="uppercasing" *ngIf=!_authService.isLoggedin>Регистрация</a></li>
+                <li>
+                    <a id="navbar-name" *ngIf="_authService.isLoggedin"></a>
+                </li>
+                <li><a routerLink=" / " (click)="_authService.logout() " class="uppercasing " *ngIf="_authService.isLoggedin">Изход</a></li>
             </ul>
         </div>
     </div>
