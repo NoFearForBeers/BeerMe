@@ -5,8 +5,8 @@ const modelRegistrator = require('./utils/model-registrator');
 module.exports = modelRegistrator.register('BulgarianBeer', {
     name: {
         type: String,
-        unique: true;
-    }
+        unique: true
+    },
     brand: {
         type: String
     },
