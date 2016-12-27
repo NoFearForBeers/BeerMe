@@ -1,6 +1,7 @@
 /* globals module */
 
 let jwt = require('jwt-simple');
+let qs = require('querystring');
 let secret = "Secret unicorns";
 const passport = require('passport'),
     DEFAULT_IMAGE = 'https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTqhN3-lNH2F8f_eCb0wBD650zauwEIBNsIyzgVHa1kJh72dGGjRw';
@@ -25,17 +26,20 @@ module.exports = function({ data, encryption, validator }) {
         },
         register(req, res) {
             let newUser = {};
-            let propoerties = ['username', 'firstname', 'lastname', 'profileImgURL', 'email'];
+            let propoerties = ['username', 'firstName', 'lastName', 'profileImgURL', 'email'];
 
             console.log('**********');
             console.log(req.body);
 
+            let data = req.body['body'];
+            let dataObj = JSON.parse(data);
+            
             propoerties.forEach(property => {
                 if (!property || property.length < 0) {
                     res.status(411).json(`Missing ${property}`);
                 }
 
-                newUser[property] = req.body[property];
+                newUser[property] = dataObj[property];
             });
 
             newUser.password = encryption(req.body.password);

@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Headers } from '@angular/http';
+import { Http, Response, Headers } from '@angular/http';
 import { RequesterService } from '../../shared/services/requester.service';
 
 import 'rxjs/add/observable/throw';
@@ -8,7 +8,7 @@ import 'rxjs/add/observable/throw';
 export class AuthService {
     isLoggedin: boolean = false;
 
-    constructor(private _requester: RequesterService) {
+    constructor(private http: Http, private _requester: RequesterService) {
     }
 
     login(userCreds: any) {
@@ -32,18 +32,21 @@ export class AuthService {
 
     register(userInfo: any) {
         let url = '/api/register';
-        let headers = new Headers();
+        let headers = new Headers({'Content-Type': 'application/json'});
+        let body = { body: JSON.stringify(userInfo) };
 
-        let userInfoAsString = `username=${userInfo.username}&
-        firstname=${userInfo.firstName}&
-        lastname=${userInfo.lastName}&
-        profileImgURL=${userInfo.profileImgURL}&
-        email=${userInfo.email}&
-        password=${userInfo.password}`;
+        // let userInfoAsString = `username=${userInfo.username}&
+        // firstname=${userInfo.firstName}&
+        // lastname=${userInfo.lastName}&
+        // profileImgURL=${userInfo.profileImgURL}&
+        // email=${userInfo.email}&
+        // password=${userInfo.password}`;
 
-        headers.append('Content-Type', 'application/X-www-form-urlencoded');
-        return this._requester
-            .post(url, userInfoAsString, headers);
+
+
+        //headers.append('Content-Type', 'application/X-www-form-urlencoded');
+        return this.http
+            .post(url, body, headers);
             // .do(data => console.log(data));
     }
 }
