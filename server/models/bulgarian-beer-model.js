@@ -7,6 +7,9 @@ module.exports = modelRegistrator.register('BulgarianBeer', {
         type: String,
         unique: true
     },
+    imageUrl: {
+        type: String
+    },
     brand: {
         type: String
     },

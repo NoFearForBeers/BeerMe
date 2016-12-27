@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-
-import 'rxjs/add/operator/catch';
+import { Observable } from 'rxjs/Observable';
 
 import { PageComponent } from '../shared/page.component';
 import { TopBeer } from './top-beers.model';
@@ -14,18 +13,13 @@ import { TopBeersService } from './top-beers.service';
 })
 
 export class TopBeersComponent implements PageComponent {
-  public beerList: TopBeer[];
+  beerList: TopBeer[] = [];
 
-  constructor(private topBeerService: TopBeersService) {
+  constructor(private topBeersService: TopBeersService) {
   }
 
   ngOnInit() {
-    this.topBeerService.getAllBeers()
-                       .subscribe(data => this.beerList = data,
-                                  err => console.log(err),
-                                  () => console.log('!know')
-                                 );
-
-    console.log(this.beerList);
+    this.topBeersService.getAllBeers()
+                       .subscribe(beers => this.beerList = beers);
   }
 }

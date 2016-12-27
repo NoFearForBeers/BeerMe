@@ -7,7 +7,7 @@ module.exports = function(params) {
         getAllBeers(req, res) {
             data.getAllBeers()
                 .then(allBeers => {
-                    console.log(allBeers);
+                    //console.log(allBeers);
                     res.json({ data: allBeers})
                 })
                 .catch(err => {

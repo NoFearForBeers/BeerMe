@@ -1,6 +1,12 @@
 <h1>Top Beers</h1>
 <ul class="top-beers">
   <li *ngFor="let beer of beerList">
-    <h3>{{beer.name}}</h3>
+    <!--TODO: use routerLink-->
+    <a href="/top-beers/{{beer._id}}">
+        <h3>{{beer.name}}</h3>
+    </a>
+    <img src="{{beer.imageUrl}}" alt="beer.name" style="width: 100px">
+    <p>Произведена в {{beer.brewedAt}}</p>
+    <p>Средна оценка: <strong>{{beer.averageRating}}</strong></p>
   </li>
 </ul>

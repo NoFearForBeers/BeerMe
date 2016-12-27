@@ -1,9 +1,11 @@
 export interface TopBeer {
+    _id: string;
     name: string;
+    imageUrl: string;
     brand: string;
     brewedAt: string;
     style: string;
     ratings: number;
-    averageRating: string;
+    averageRating: number;
     comments: any[];
 };
