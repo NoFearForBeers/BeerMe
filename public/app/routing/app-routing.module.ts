@@ -9,6 +9,7 @@ const appRoutes: Routes = [
     { path: 'register', component: pages.register },
     { path: 'home', component: pages.home },
     { path: 'user', component: pages.home, canActivate: [AuthGuard] },
+    { path: 'top-beers/:id', component: pages.topBeersDetails },
     { path: 'top-beers', component: pages.topBeers}
 ];
 

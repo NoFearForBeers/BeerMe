@@ -1,8 +1,7 @@
 <h1>Top Beers</h1>
 <ul class="top-beers">
   <li *ngFor="let beer of beerList">
-    <!--TODO: use routerLink-->
-    <a href="/top-beers/{{beer._id}}">
+    <a routerLink="/top-beers/{{beer._id}}">
         <h3>{{beer.name}}</h3>
     </a>
     <img src="{{beer.imageUrl}}" alt="beer.name" style="width: 100px">

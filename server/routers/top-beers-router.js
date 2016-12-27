@@ -7,9 +7,10 @@ module.exports = function({ app, controllers }) {
     let router = new Router();
 
     router
-        .get("/api/top-beers", controllers.getAllBeers);
+        .get("/top-beers/:id", controllers.getBeerById)
+        .get("/top-beers", controllers.getAllBeers);
 
-    app.use("/", router);
+    app.use("/api", router);
 
     return router;
 };

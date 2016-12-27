@@ -7,8 +7,8 @@ module.exports = function({ app, controllers }) {
     let router = new Router();
 
     router
-        .get("/api/top-beers", controllers.getAllBeers)
-        .get("/*", controllers.home);
+        .get("/home", controllers.home)
+        .get("/", controllers.home);
 
     app.use("/", router);
 

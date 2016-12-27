@@ -18,13 +18,10 @@ export class TopBeersService {
                         .map((r: Response) => r.json().data as TopBeer[]);                        
     }
 
-    getUserById(id: string): Observable<any> {
+    getBeerById(id: string): Observable<TopBeer> {
         let url = `${this.topBeersUrl}/${id}`;
         
         return this.http.get(url)
-            .map(response => {
-                let data = response.json() as ResponseResult<TopBeer[]>;
-                return data.result;
-            });
+                        .map((r: Response) => r.json().data as TopBeer);
     }
 };

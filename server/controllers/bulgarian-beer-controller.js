@@ -17,7 +17,7 @@ module.exports = function(params) {
         getBeerById(req, res) {
             data.getBeerById(req.params.id)
                 .then((beer) => {
-                    console.log(beer);
+                    //console.log(beer);
                     res.json({ data: beer });
                 })
                 .catch(err => {

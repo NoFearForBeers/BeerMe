@@ -37,7 +37,7 @@ module.exports = {
     },
     getOneById(model, id) {
         return new Promise((resolve, reject) => {
-                model.findOne({ id }, (err, singleRecord) => {
+                model.findOne({ _id: id }, (err, singleRecord) => {
                     if (err) {
                         return reject(err);
                     }
