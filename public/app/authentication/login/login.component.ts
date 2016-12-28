@@ -25,9 +25,9 @@ export class LoginComponent {
                 this._toastService.activate(`Welcome back ${data.username}!`);
                 this._router.navigate(['home']);
 
-                // let userElement = document.getElementById('navbar-name');
-                // userElement.setAttribute('href', `/${data.username}`);
-                // userElement.innerHTML = data.username;
+                let userElement = document.getElementById('navbar-name');
+                userElement.setAttribute('href', `/${data.username}`);
+                userElement.innerHTML = data.username;
             });
 
     }

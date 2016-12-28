@@ -9,7 +9,6 @@ module.exports = {
         return crypto.randomBytes(RANDOM_BYTES_NUMBER).toString("base64");
     },
     generateHashedPassword(salt, pwd) {
-        console.log(pwd);
         let hmac = crypto.createHmac("sha1", salt);
         return hmac.update(pwd).digest("hex");
     }

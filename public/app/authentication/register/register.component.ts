@@ -32,8 +32,8 @@ export class RegisterComponent {
             .subscribe(data => {
                 // this.authService.login({ username: this.newUser.username, password: this.newUser.password })
                 //     .subscribe(data => {
-                        console.log(data);
-                        this.router.navigate(['home']);
+                        // console.log(data);
+                        this.router.navigate(['login']);
                         this.toastService.activate(`${data.username} successfuly registered!`);
 
                         //Temporary

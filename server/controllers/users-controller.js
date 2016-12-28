@@ -14,14 +14,23 @@ module.exports = function({ data, validator }) {
             let password = req.body.password;
             let username = req.body.username;
             let hashPass = encrypt.generateHashedPassword(encrypt.generateSalt(), password);
+            console.log(hashPass);
+            console.log(data.findUserByCredentials(username, hashPass));
 
             data.findUserByCredentials(username, hashPass)
                 .then((user) => {
                     if (user) {
                         let token = jwt.encode(user, secret);
-                        console.log(user);
-                        console.log(token);
-                        return res.status(200).json({ success: true, token: token });
+                        // console.log("**here**");
+                        // console.log(user);
+                        // console.log(token);
+                        return res.status(200).json({
+                            success: true,
+                            body: {
+                                token: token,
+                                username: user.username
+                            }
+                        });
                     }
 
                     return res.status(400).json({ success: false, msg: 'Authenticaton failed, wrong password.' });

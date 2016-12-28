@@ -15,12 +15,12 @@ export class TopBeersService {
 
     getAllBeers(): Observable<TopBeer[]> {
         return this.http.get(this.topBeersUrl)
-                        .map((r: Response) => r.json().data as TopBeer[]);                        
+                        .map((r: Response) => r.json().data as TopBeer[]);
     }
 
     getBeerById(id: string): Observable<TopBeer> {
         let url = `${this.topBeersUrl}/${id}`;
-        
+
         return this.http.get(url)
                         .map((r: Response) => r.json().data as TopBeer);
     }

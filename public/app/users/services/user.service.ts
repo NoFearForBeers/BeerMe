@@ -15,7 +15,7 @@ export class UserService {
     saveUser(body: User): Observable<any> {
         return this.http.post(this.usersUrl, body).map(response => {
             let data = response.json() as ResponseResult<User[]>;
-            console.log(data.result);
+            //console.log(data.result);
             return data.result;
         });
     }

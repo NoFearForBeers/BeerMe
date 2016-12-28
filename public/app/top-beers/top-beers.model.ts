@@ -8,4 +8,4 @@ export interface TopBeer {
     ratings: number;
     averageRating: number;
     comments: any[];
-};
+}
