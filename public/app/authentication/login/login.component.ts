@@ -7,7 +7,6 @@ import { ToastService } from '../../shared/services/toast.service';
     moduleId: module.id,
     templateUrl: './login.component.html'
 })
-
 export class LoginComponent {
     localUser = {
         username: '',
@@ -20,14 +19,15 @@ export class LoginComponent {
         private _toastService: ToastService) { }
 
     onSubmit() {
+        console.log("submit");
         this._authservice.login(this.localUser)
             .subscribe(data => {
                 this._toastService.activate(`Welcome back ${data.username}!`);
                 this._router.navigate(['home']);
 
-                let userElement = document.getElementById('navbar-name');
-                userElement.setAttribute('href', `/${data.username}`);
-                userElement.innerHTML = data.username;
+                // let userElement = document.getElementById('navbar-name');
+                // userElement.setAttribute('href', `/${data.username}`);
+                // userElement.innerHTML = data.username;
             });
 
     }
