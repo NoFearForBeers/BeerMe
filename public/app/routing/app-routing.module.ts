@@ -12,7 +12,8 @@ const appRoutes: Routes = [
     { path: 'top-beers/:id', component: pages.topBeersDetails },
     { path: 'top-beers', component: pages.topBeers},
     { path: 'beer-history', component: pages.beerHistory},
-    { path: 'news', component: pages.news}
+    { path: 'news', component: pages.news},
+    { path: 'beer-ingredients', component: pages.beerIngredients}
 ];
 
 @NgModule({

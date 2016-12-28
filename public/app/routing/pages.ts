@@ -5,6 +5,7 @@ import { TopBeersComponent } from '../top-beers/top-beers-list/top-beers.compone
 import { TopBeersDetailsComponent } from '../top-beers/top-beers-details/top-beers-details.component';
 import { BeerHistoryComponent } from '../beer-facts/beer-history/beer-history.component';
 import { NewsComponent } from '../news/news-list/news.component';
+import { BeerIngredientsComponent } from '../beer-facts/beer-ingredients/beer-ingredients.component';
 
 export const pages = {
     login: LoginComponent,
@@ -13,5 +14,6 @@ export const pages = {
     topBeers: TopBeersComponent,
     topBeersDetails: TopBeersDetailsComponent,
     beerHistory: BeerHistoryComponent,
-    news: NewsComponent
+    news: NewsComponent,
+    beerIngredients: BeerIngredientsComponent
 };
