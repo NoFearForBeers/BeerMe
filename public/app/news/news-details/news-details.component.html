@@ -1,0 +1,12 @@
+<div class="container" *ngIf="news">
+    <h1>{{news.title}}</h1>
+    <div class="image-container">
+        <img src="{{news.imageUrl}}" alt="{{news.title}}" style="width: 100px">
+    </div>
+    <div>
+        <p>Публикувано на: {{news.postDate}}</p>
+    </div>
+    <div>
+        {{news.content}}
+    </div>
+</div>

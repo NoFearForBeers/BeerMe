@@ -17,10 +17,10 @@ export class NewsService {
                         .map((r: Response) => r.json().data as News[]);
     }
 
-    // getBeerById(id: string): Observable<TopBeer> {
-    //     let url = `${this.topBeersUrl}/${id}`;
+    getNewsById(id: string): Observable<News> {
+        let url = `${this.topNewsUrl}/${id}`;
 
-    //     return this.http.get(url)
-    //                     .map((r: Response) => r.json().data as TopBeer);
-    // }
+        return this.http.get(url)
+                        .map((r: Response) => r.json().data as News);
+    }
 }

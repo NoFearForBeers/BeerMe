@@ -5,11 +5,12 @@ import { RouterModule } from '@angular/router';
 
 import { NewsComponent } from './news-list/news.component';
 import { NewsService } from './services/news-services';
+import { NewsDetailsComponent } from './news-details/news-details.component';
 
 @NgModule({
     imports: [ CommonModule, FormsModule, RouterModule ],
-    exports: [ NewsComponent ],
-    declarations: [ NewsComponent ],
+    exports: [ NewsComponent, NewsDetailsComponent ],
+    declarations: [ NewsComponent, NewsDetailsComponent ],
     providers: [ NewsService ]
 })
 

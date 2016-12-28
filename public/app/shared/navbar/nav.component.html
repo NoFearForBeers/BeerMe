@@ -24,8 +24,8 @@
                 </li>
                 <li><a routerLink="/top-beers" class="uppercasing">Топ БГ бири</a></li>
 
-                <!--If user is Logged-in the menu is shown-->
-                <li class="dropdown" *ngIf=_authService.isLoggedin>
+                <!--If user is Logged-in the menu is shown ==>add ==> *ngIf=_authService.isLoggedin-->
+                <li class="dropdown">
                     <a href="#" class="dropdown-toggle uppercasing" data-toggle="dropdown" role="button" aria-expanded="false">Домашни рецепти<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="#" class="uppercasing">Добави рецепта</a></li>
@@ -34,8 +34,8 @@
 
                 <li><a routerLink="/news" class="uppercasing">Новини</a></li>
 
-                <!--If user is Logged-in the menu is shown-->
-                <li><a routerLink="#" class="uppercasing" *ngIf=_authService.isLoggedin>Събития</a></li>
+                <!--If user is Logged-in the menu is shown ==>add ==> *ngIf=_authService.isLoggedin-->
+                <li><a routerLink="#" class="uppercasing">Събития</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a routerLink="/login" class="uppercasing" *ngIf=!_authService.isLoggedin>Вход</a></li>

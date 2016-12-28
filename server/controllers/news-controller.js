@@ -7,7 +7,7 @@ module.exports = function(params) {
         getAllNews(req, res) {
             data.getAllNews()
                 .then(allNews => {
-                    console.log(allNews);
+                    //console.log(allNews);
                     res.json({ data: allNews })
                 })
                 .catch(err => {
