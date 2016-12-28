@@ -4,8 +4,8 @@ import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs';
 import 'rxjs/add/operator/map';
 
-import { ResponseResult } from '../shared/responseResult';
-import { TopBeer } from './top-beers.model';
+import { ResponseResult } from '../../shared/responseResult';
+import { TopBeer } from '../top-beers.model';
 
 @Injectable()
 export class TopBeersService {

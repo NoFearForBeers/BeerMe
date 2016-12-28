@@ -5,7 +5,7 @@ import 'rxjs/add/operator/switchMap';
 
 import { PageComponent } from '../../shared/page.component';
 import { TopBeer } from '../top-beers.model';
-import { TopBeersService } from '../top-beers.service';
+import { TopBeersService } from '../services/top-beers.service';
 
 @Component({
     moduleId: module.id,

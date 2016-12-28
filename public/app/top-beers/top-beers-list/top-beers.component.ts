@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
-import { PageComponent } from '../shared/page.component';
-import { TopBeer } from './top-beers.model';
-import { TopBeersService } from './top-beers.service';
+import { PageComponent } from '../../shared/page.component';
+import { TopBeer } from '../top-beers.model';
+import { TopBeersService } from '../services/top-beers.service';
 
 @Component({
   moduleId: module.id,
