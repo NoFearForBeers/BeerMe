@@ -10,12 +10,17 @@ const passport = require('passport'),
 module.exports = function({ data, validator }) {
     return {
         login(req, res) {
-            let username = req.body.username;
+            // console.log(req.body);
             let password = req.body.password;
-            data.findUserByCredentials(username, encryption(password))
+            let username = req.body.username;
+            let hashPass = encrypt.generateHashedPassword(encrypt.generateSalt(), password);
+
+            data.findUserByCredentials(username, hashPass)
                 .then((user) => {
                     if (user) {
                         let token = jwt.encode(user, secret);
+                        console.log(user);
+                        console.log(token);
                         return res.status(200).json({ success: true, token: token });
                     }
 
