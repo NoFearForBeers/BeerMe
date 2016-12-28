@@ -7,9 +7,8 @@ module.exports = modelRegistrator.register('User', {
         type: String,
         unique: true
     },
-    password: {
-        type: String
-    },
+    salt: String,
+    hashPass: String,
     firstName: {
         type: String
     },

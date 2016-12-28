@@ -13,7 +13,7 @@ module.exports = function(models) {
                         lastName: user.lastName,
                         profileImgURL: user.profileImgURL,
                         email: user.email,
-                        passhash: user.password,
+                        hashPass: user.hashPass,
                         recipes: user.recipes,
                         forumPoints: user.forumPoints,
                         isAdmin: user.isAdmin

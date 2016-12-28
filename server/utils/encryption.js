@@ -1,8 +1,16 @@
 /* globals require, module, process */
+
+const RANDOM_BYTES_NUMBER = 128;
+
 const crypto = require("crypto");
 
-module.exports = function(password) {
-    return crypto.createHmac('sha256', "salt")
-        .update(password)
-        .digest('hex');
+module.exports = {
+    generateSalt() {
+        return crypto.randomBytes(RANDOM_BYTES_NUMBER).toString("base64");
+    },
+    generateHashedPassword(salt, pwd) {
+        console.log(pwd);
+        let hmac = crypto.createHmac("sha1", salt);
+        return hmac.update(pwd).digest("hex");
+    }
 };
