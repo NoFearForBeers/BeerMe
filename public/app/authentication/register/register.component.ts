@@ -7,6 +7,7 @@ import { User } from '../user.model';
 @Component({
     moduleId: module.id,
     templateUrl: './register.component.html',
+    styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
     newUser: User = {
@@ -18,8 +19,8 @@ export class RegisterComponent {
         email: '',
         recipes: [],
         forumPoints: 0,
-        isAdmin: false  
-    }
+        isAdmin: false
+    };
 
     highlightInput: boolean;
 
@@ -36,13 +37,13 @@ export class RegisterComponent {
                         this.router.navigate(['login']);
                         this.toastService.activate(`${data.username} successfuly registered!`);
 
-                        //Temporary
+                        // Temporary
                         alert(`${data.username} successfuly registered!`);
 
                         // let userElement = document.getElementById('navbar-name');
                         // userElement.setAttribute('href', `/${data.username}`);
                         // userElement.innerHTML = data.username;
-                    //});
+                    // });
             });
     }
 }

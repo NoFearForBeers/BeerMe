@@ -1,47 +1,62 @@
+<!--<div [hidden]="submitted" class="allert-message alert alert-success">
+    <strong>{{newUser.username}} Successfully registered!</strong>
+</div>-->
+
 <form class="form-horizontal" #registerForm="ngForm" (ngSubmit)="onSubmit()">
     <fieldset>
         <legend>Регистрационна форма</legend>
+
         <div class="form-group">
-            <label for="text" class="col-lg-2 control-label">Потребителско име</label>
+            <label for="text" class="col-lg-2 control-label">Потребителско име:*</label>
             <div class="col-lg-10">
-                <input type="text" class="form-control" id="username" name="username" placeholder="Потребителско име" [(ngModel)]="newUser.username" #username="ngModel">
+                <input type="text" class="form-control" id="username" name="username" placeholder="Потребителско име" required [(ngModel)]="newUser.username" #username="ngModel">
             </div>
         </div>
         <div class="form-group">
-            <label for="text" class="col-lg-2 control-label">Име</label>
+            <label for="text" class="col-lg-2 control-label">Име:*</label>
             <div class="col-lg-10">
-                <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Име" [(ngModel)]="newUser.firstName" #firstName="ngModel">
+                <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Име" required [(ngModel)]="newUser.firstName" #firstName="ngModel">
             </div>
         </div>
         <div class="form-group">
-            <label for="text" class="col-lg-2 control-label">Фамилия</label>
+            <label for="text" class="col-lg-2 control-label">Фамилия:*</label>
             <div class="col-lg-10">
-                <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Фамилия" [(ngModel)]="newUser.lastName" #lastName="ngModel">
+                <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Фамилия" required [(ngModel)]="newUser.lastName" #lastName="ngModel">
             </div>
         </div>
         <div class="form-group">
-            <label for="text" class="col-lg-2 control-label">Профилна снимка</label>
+            <label for="text" class="col-lg-2 control-label">Профилна снимка:</label>
             <div class="col-lg-10">
                 <input type="text" class="form-control" id="profileImgURL" name="profileImgURL" placeholder="Профилна снимка" [(ngModel)]="newUser.profileImgURL" #profileImgURL="ngModel">
             </div>
         </div>
         <div class="form-group">
-            <label for="inputEmail" class="col-lg-2 control-label">Email адрес</label>
+            <label for="inputEmail" class="col-lg-2 control-label">Email адрес:*</label>
             <div class="col-lg-10">
-                <input type="email" class="form-control" id="email" name="email" placeholder="Email адрес" [(ngModel)]="newUser.email" #email="ngModel">
+                <input type="email" class="form-control" id="email" name="email" placeholder="Email адрес" required [(ngModel)]="newUser.email" #email="ngModel">
             </div>
         </div>
         <div class="form-group">
-            <label for="inputPassword" class="col-lg-2 control-label">Парола</label>
+            <label for="inputPassword" class="col-lg-2 control-label">Парола:*</label>
             <div class="col-lg-10">
-                <input type="password" class="form-control" id="password" name="password" placeholder="Password" [(ngModel)]="newUser.password" #password="ngModel">
+                <input type="password" class="form-control" id="password" name="password" placeholder="Парола" required [(ngModel)]="newUser.password" #password="ngModel">
             </div>
         </div>
+
+        <!--<div class="form-group">
+            <label for="inputPassword" class="col-lg-2 control-label">Потвърди парола:*</label>
+            <strong [hidden]="passwordRepeat.valid" class="alert alert-danger">
+                    Password should be equal!
+            </strong>
+            <div class="col-lg-10">
+                <input type="password" class="form-control" id="repeatPpassword" name="repeatPassword" placeholder="Промени парола" required #passwordRepeat *ngIf="">
+            </div>
+        </div>-->
 
         <div class="form-group">
             <div class="col-lg-10 col-lg-offset-2">
                 <button type="reset" class="btn btn-default">Изход</button>
-                <button type="submit" class="btn btn-primary">Регистрирай</button>
+                <button type="submit" class="btn btn-primary" [disabled]="!registerForm.form.valid">Регистрирай</button>
             </div>
         </div>
     </fieldset>
