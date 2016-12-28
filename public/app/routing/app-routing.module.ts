@@ -10,7 +10,8 @@ const appRoutes: Routes = [
     { path: 'home', component: pages.home },
     { path: 'user', component: pages.home, canActivate: [AuthGuard] },
     { path: 'top-beers/:id', component: pages.topBeersDetails },
-    { path: 'top-beers', component: pages.topBeers}
+    { path: 'top-beers', component: pages.topBeers},
+    { path: 'beer-history', component: pages.beerHistory}
 ];
 
 @NgModule({

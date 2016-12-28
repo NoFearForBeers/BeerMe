@@ -8,6 +8,7 @@ import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './routing/app-routing.module';
 import { AuthenticationModule } from './authentication/authentication.module';
 import { TopBeersModule } from './top-beers/top-beers.module';
+import { BeerFactsModule } from './beer-facts/beer-facts.module';
 
 // Components
 import { AppComponent } from './app.component';
@@ -27,6 +28,7 @@ import { ToastService } from './shared/services/toast.service';
     SharedModule,
     AuthenticationModule,
     TopBeersModule,
+    BeerFactsModule,
     AppRoutingModule
   ],
   declarations: [
