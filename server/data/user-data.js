@@ -1,4 +1,5 @@
 /* globals module */
+let dataUtils = require('./utils/data-utils');
 
 module.exports = function(models) {
     let { User } = models;
@@ -14,7 +15,8 @@ module.exports = function(models) {
                         email: user.email,
                         passhash: user.password,
                         recipes: user.recipes,
-                        forumPoints: user.forumPoints
+                        forumPoints: user.forumPoints,
+                        isAdmin: user.isAdmin
                     });
 
                     resolve(newUser);

@@ -7,6 +7,9 @@ module.exports = modelRegistrator.register('User', {
         type: String,
         unique: true
     },
+    password: {
+        type: String
+    },
     firstName: {
         type: String
     },
@@ -17,12 +20,6 @@ module.exports = modelRegistrator.register('User', {
         type: String
     },
     email: {
-        type: String
-    },
-    password: {
-        type: String
-    },
-    passhash: {
         type: String
     },
     recipes: [],

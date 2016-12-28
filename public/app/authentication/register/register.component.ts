@@ -2,39 +2,47 @@ import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { ToastService } from '../../shared/services/toast.service';
+import { User } from '../user.model';
 
 @Component({
     moduleId: module.id,
     templateUrl: './register.component.html',
 })
 export class RegisterComponent {
-    newUser = {
+    newUser: User = {
         username: '',
+        password: '',
         firstName: '',
         lastName: '',
         profileImgURL: '',
         email: '',
-        password: '',
-    };
+        recipes: [],
+        forumPoints: 0,
+        isAdmin: false  
+    }
 
     highlightInput: boolean;
 
-    constructor(private _authservice: AuthService,
-        private _router: Router,
-        private _toasService: ToastService) { }
+    constructor(private authService: AuthService,
+        private router: Router,
+        private toastService: ToastService) { }
 
     onSubmit() {
-        this._authservice.register(this.newUser)
-            .subscribe(() => {
-                this._authservice.login({ username: this.newUser.username, password: this.newUser.password })
-                    .subscribe(data => {
-                        this._toasService.activate(`${data.username} successfuly registered!`);
-                        this._router.navigate(['home']);
+        this.authService.register(this.newUser)
+            .subscribe(data => {
+                // this.authService.login({ username: this.newUser.username, password: this.newUser.password })
+                //     .subscribe(data => {
+                        console.log(data);
+                        this.router.navigate(['home']);
+                        this.toastService.activate(`${data.username} successfuly registered!`);
 
-                        let userElement = document.getElementById('navbar-name');
-                        userElement.setAttribute('href', `/${data.username}`);
-                        userElement.innerHTML = data.username;
-                    });
+                        //Temporary
+                        alert(`${data.username} successfuly registered!`);
+
+                        // let userElement = document.getElementById('navbar-name');
+                        // userElement.setAttribute('href', `/${data.username}`);
+                        // userElement.innerHTML = data.username;
+                    //});
             });
     }
 }

@@ -26,25 +26,28 @@ module.exports = function({ data, encryption, validator }) {
         },
         register(req, res) {
             let newUser = {};
-            let propoerties = ['username', 'firstName', 'lastName', 'profileImgURL', 'email'];
+            let propoerties = ['username', 'password', 'firstName', 'lastName', 'profileImgURL', 'email', 'recipes', 'forumPoints'];
 
             console.log('**********');
             console.log(req.body);
 
-            let data = req.body['body'];
-            let dataObj = JSON.parse(data);
+            let postData = req.body['body'];
+            let postDataObj = JSON.parse(postData);
             
             propoerties.forEach(property => {
                 if (!property || property.length < 0) {
                     res.status(411).json(`Missing ${property}`);
                 }
 
-                newUser[property] = dataObj[property];
+                newUser[property] = postDataObj[property];
             });
 
-            newUser.password = encryption(req.body.password);
-            newUser.profileImgURL = req.body.password || DEFAULT_IMAGE;
-            console.log(newUser);
+            //for safety
+            newUser.isAdmin = false;
+
+            // newUser.password = encryption(req.body.password);
+            // newUser.profileImgURL = req.body.password || DEFAULT_IMAGE;
+            //console.log(newUser);
 
             data.createUser(newUser)
                 .then((data) => {

@@ -1,7 +1,10 @@
 import { Injectable } from '@angular/core';
 import { Http, Response, Headers } from '@angular/http';
 import { RequesterService } from '../../shared/services/requester.service';
+import { User } from '../user.model';
 
+import { Observable } from 'rxjs';
+import 'rxjs/add/operator/map';
 import 'rxjs/add/observable/throw';
 
 @Injectable()
@@ -30,23 +33,13 @@ export class AuthService {
         window.localStorage.removeItem('auth_key');
     }
 
-    register(userInfo: any) {
+    register(userInfo: any): Observable<User> {
         let url = '/api/register';
         let headers = new Headers({'Content-Type': 'application/json'});
         let body = { body: JSON.stringify(userInfo) };
 
-        // let userInfoAsString = `username=${userInfo.username}&
-        // firstname=${userInfo.firstName}&
-        // lastname=${userInfo.lastName}&
-        // profileImgURL=${userInfo.profileImgURL}&
-        // email=${userInfo.email}&
-        // password=${userInfo.password}`;
-
-
-
-        //headers.append('Content-Type', 'application/X-www-form-urlencoded');
-        return this.http
-            .post(url, body, headers);
+        return this.http.post(url, body, headers)
+                        .map((r: Response) => r.json().data as User);
             // .do(data => console.log(data));
     }
 }
