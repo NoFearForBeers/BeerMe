@@ -3,10 +3,10 @@
   "version": "1.0.0",
   "description": "some interesting things for bg beers",
   "scripts": {
-    "start": "tsc && node ./server/app.js",
-    "development": "tsc && concurrently \"tsc -w\" \"nodemon ./server/app.js .\" ",
+    "start": "./node_modules/.bin/tsc && node ./server/app.js",
+    "development": "./node_modules/.bin/tsc && concurrently \"tsc -w\" \"nodemon ./server/app.js .\" ",
     "postinstall": "./node_modules/.bin/bower install"
-  },
+},
   "keywords": [],
   "author": "No Feer For Beers",
   "license": "MIT",
