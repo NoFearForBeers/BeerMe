@@ -14,6 +14,7 @@ module.exports = function(models) {
                         profileImgURL: user.profileImgURL,
                         email: user.email,
                         hashPass: user.hashPass,
+                        salt: user.salt,
                         recipes: user.recipes,
                         forumPoints: user.forumPoints,
                         isAdmin: user.isAdmin
@@ -40,15 +41,26 @@ module.exports = function(models) {
                 });
             });
         },
-        findUserByCredentials(username, passhash) {
+        findUserByCredentials(username, hashPass) {
             return new Promise((resolve, reject) => {
-                User.findOne({ username, passhash }, (err, user) => {
+                User.findOne({ username, hashPass }, (err, user) => {
                     if (err) {
                         return reject(err);
                     }
                     return resolve(user);
                 });
             });
-        }
+        },
+        getUserByUsername(username) {
+            return new Promise((resolve, reject) => {
+                User.findOne({ username }, (err, user) => {
+                    if (err) {
+                        return reject(err);
+                    }
+
+                    return resolve(user);
+                });
+            });
+        },
     };
 };

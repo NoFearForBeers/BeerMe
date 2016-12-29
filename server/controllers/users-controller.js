@@ -13,17 +13,13 @@ module.exports = function({ data, validator }) {
             // console.log(req.body);
             let password = req.body.password;
             let username = req.body.username;
-            let hashPass = encrypt.generateHashedPassword(encrypt.generateSalt(), password);
-            console.log(hashPass);
-            console.log(data.findUserByCredentials(username, hashPass));
 
-            data.findUserByCredentials(username, hashPass)
+            data.getUserByUsername(username)
                 .then((user) => {
-                    if (user) {
+                    let hashPass = encrypt.generateHashedPassword(user.salt, password);
+                    if (hashPass === user.hashPass) {
                         let token = jwt.encode(user, secret);
-                        // console.log("**here**");
-                        // console.log(user);
-                        // console.log(token);
+
                         return res.status(200).json({
                             success: true,
                             body: {
@@ -32,12 +28,37 @@ module.exports = function({ data, validator }) {
                             }
                         });
                     }
-
                     return res.status(400).json({ success: false, msg: 'Authenticaton failed, wrong password.' });
                 })
                 .catch(error => {
                     return res.send(error);
                 });
+            //console.log(salt);
+            //let hashPass = encrypt.generateHashedPassword(salt, password);
+            //console.log(hashPass);
+            //console.log(data.findUserByCredentials(username, hashPass));
+
+            // data.findUserByCredentials(username, hashPass)
+            //     .then((user) => {
+            //         if (user) {
+            //             let token = jwt.encode(user, secret);
+            //             // console.log("**here**");
+            //             // console.log(user);
+            //             // console.log(token);
+            //             return res.status(200).json({
+            //                 success: true,
+            //                 body: {
+            //                     token: token,
+            //                     username: user.username
+            //                 }
+            //             });
+            //         }
+
+            //         return res.status(400).json({ success: false, msg: 'Authenticaton failed, wrong password.' });
+            //     })
+            //     .catch(error => {
+            //         return res.send(error);
+            //     });
         },
         register(req, res) {
             let newUser = {};
@@ -61,7 +82,9 @@ module.exports = function({ data, validator }) {
             let body = JSON.parse(req.body.body);
             let pass = body.password;
             let avatar = body.profileImgURL;
-            let hashPass = encrypt.generateHashedPassword(encrypt.generateSalt(), pass);
+            let salt = encrypt.generateSalt();
+            newUser.salt = salt;
+            let hashPass = encrypt.generateHashedPassword(salt, pass);
             newUser.hashPass = hashPass;
             newUser.profileImgURL = avatar || DEFAULT_IMAGE;
             // console.log(newUser);

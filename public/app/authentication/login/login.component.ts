@@ -19,15 +19,17 @@ export class LoginComponent {
         private _toastService: ToastService) { }
 
     onSubmit() {
-        console.log("submit");
         this._authservice.login(this.localUser)
             .subscribe(data => {
-                this._toastService.activate(`Welcome back ${data.username}!`);
+                this.localUser.username = data.body.username;
+                localStorage.setItem('username', this.localUser.username);
+                // console.log(data);
+                // this._toastService.activate(`Welcome back ${data.body.username}!`);
                 this._router.navigate(['home']);
 
-                let userElement = document.getElementById('navbar-name');
-                userElement.setAttribute('href', `/${data.username}`);
-                userElement.innerHTML = data.username;
+                // let userElement = document.getElementById('navbar-name');
+                // userElement.setAttribute('href', `/${data.body.username}`);
+                // userElement.innerHTML = data.body.username;
             });
 
     }

@@ -41,9 +41,9 @@
                 <li><a routerLink="/login" class="uppercasing" *ngIf=!_authService.isLoggedin>Вход</a></li>
                 <li><a routerLink="/register" class="uppercasing" *ngIf=!_authService.isLoggedin>Регистрация</a></li>
                 <li>
-                    <a id="navbar-name" *ngIf="_authService.isLoggedin"></a>
+                    <a id="navbar-name" *ngIf="_authService.isLoggedin">{{username}}</a>
                 </li>
-                <li><a routerLink=" / " (click)="_authService.logout() " class="uppercasing " *ngIf="_authService.isLoggedin">Изход</a></li>
+                <li><a (click)="_authService.logout() " class="uppercasing " *ngIf="_authService.isLoggedin">Изход</a></li>
             </ul>
         </div>
     </div>
