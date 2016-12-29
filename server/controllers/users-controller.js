@@ -1,7 +1,6 @@
 /* globals module */
 
 let jwt = require('jwt-simple');
-let qs = require('querystring');
 const encrypt = require("../utils/encryption");
 let secret = "Secret unicorns";
 const passport = require('passport'),
@@ -24,7 +23,8 @@ module.exports = function({ data, validator }) {
                             success: true,
                             body: {
                                 token: token,
-                                username: user.username
+                                username: user.username,
+                                isAdmin: user.isAdmin
                             }
                         });
                     }
@@ -62,7 +62,7 @@ module.exports = function({ data, validator }) {
         },
         register(req, res) {
             let newUser = {};
-            let propoerties = ['username', 'password', 'firstName', 'lastName', 'profileImgURL', 'email', 'recipes', 'forumPoints'];
+            let propoerties = ['username', 'password', 'firstName', 'lastName', 'email', 'recipes', 'forumPoints'];
 
             let postData = req.body['body'];
             let postDataObj = JSON.parse(postData);
@@ -79,13 +79,14 @@ module.exports = function({ data, validator }) {
 
             //for safety
             newUser.isAdmin = false;
-            let body = JSON.parse(req.body.body);
-            let pass = body.password;
-            let avatar = body.profileImgURL;
+
+            let pass = postDataObj.password;
             let salt = encrypt.generateSalt();
             newUser.salt = salt;
             let hashPass = encrypt.generateHashedPassword(salt, pass);
             newUser.hashPass = hashPass;
+
+            let avatar = postDataObj.profileImgURL;
             newUser.profileImgURL = avatar || DEFAULT_IMAGE;
             // console.log(newUser);
 

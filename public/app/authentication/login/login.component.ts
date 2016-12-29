@@ -22,7 +22,9 @@ export class LoginComponent {
         this._authservice.login(this.localUser)
             .subscribe(data => {
                 this.localUser.username = data.body.username;
+                let isAdmin = data.body.isAdmin;
                 localStorage.setItem('username', this.localUser.username);
+                localStorage.setItem('isAdmin', isAdmin)
                 // console.log(data);
                 // this._toastService.activate(`Welcome back ${data.body.username}!`);
                 this._router.navigate(['home']);
