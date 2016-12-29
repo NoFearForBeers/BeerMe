@@ -1,3 +1,18 @@
 body {
-    color: dimgray;
+    /*background: #e4dbcb;*/
+    color: #373a3b;
+    padding: 0;
+    margin: 0;
+    font-family: "Gotham Narrow SSm A", "Gotham Narrow SSm B", Helvetica, Arial, sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    line-height: 24px;
+    position: relative;
+    cursor: auto;
+}
+
+html,
+body {
+    font-size: 16px;
+    height: 100%;
 }
