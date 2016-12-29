@@ -7,8 +7,8 @@ import { NewsService } from '../services/news-services';
 @Component({
   moduleId: module.id,
   selector: 'news',
-  templateUrl: './news.component.html'
-//   styleUrls: ['./app.component.css']
+  templateUrl: './news.component.html',
+   styleUrls: ['./news.component.css']
 })
 
 export class NewsComponent implements PageComponent {

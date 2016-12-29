@@ -1,0 +1,31 @@
+{
+	{
+	  "company" : "„БОЛЯРКА ВТ” АД",
+	  "brands" : ["Болярка", "Балканско", "Диана", "Хелиос", "Швейк", "Kaltenberg", "Warsteiner", "Болярка Weiss", "King's" ]
+	}
+	
+	{
+	  "company" : "„БРИТОС” ЕООД",
+	  "brands" : ["Britos"]
+	}
+	
+	{
+	  "company" : "„ЗАГОРКА”АД",
+	  "brands" : ["Zagorka", "Zagorka Maxx 0,0%", "Загорка Ретро", "Ариана", "Ариана Радлер", "Ариана Радлер Грейпфрут", "Ариана Тъмно", "Heineken", "Amstel Premium Pilsener", "Stolichno Bock", "Stolichno Weiss", "Stolichno Pale Bock", "Starobrno", "Kaiser", "Desperados"  ]
+	}
+	
+	{
+	  "company" : "„КАМЕНИЦА” АД",
+	  "brands" : ["Astika", "Astika Тъмно", "Бургаско пиво", "Нефилтрирано от Каменица", "Славена", "Beck’s", "Beck’s Non alc.", "Blue Moon", "Corona", "Hoegaarden", "Kamenitza 1881", "Hoegaarden", "Kamenitza Безалкохолна", "Kamenitza Тъмно", "Kamenitza Fresh Бъз и Лимон", "Kamenitza Fresh Грейпфрут", "Leffe Brune", "Leffe Blond", "Staropramen", "Staropramen Granat", "Stella Artois" ]
+	}
+	
+	{
+	  "company" : "„КАРЛСБЕРГ БЪЛГАРИЯ” АД",
+	  "brands" : ["Шуменско", "Шуменско Тъмно", "Пиринско", "Пиринско Радлер", "Tuborg", "Budweiser Budvar", "Erdinger", "Carlsberg", "Grimbergen" ]
+	}
+	
+	{
+	  "company" : "„ЛОМСКО ПИВО” АД",
+	  "brands" : ["Almus", "Мизия", "Dunavsko", "Gredberg", "Robeer", "Lomsko Lux"]
+	}
+}
