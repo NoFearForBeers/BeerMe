@@ -5,12 +5,15 @@ import { FormsModule } from '@angular/forms';
 import { BeerHistoryComponent } from './beer-history/beer-history.component';
 import { BeerIngredientsComponent } from './beer-ingredients/beer-ingredients.component';
 import { BeerTastingComponent } from './beer-tasting/beer-tasting.component';
+import { BeerTypesComponent } from './beer-types/beer-types.component';
+import { BeerTypesService } from './beer-types/beer-types.service';
+
 
 @NgModule({
     imports: [ CommonModule, FormsModule ],
-    exports: [ BeerHistoryComponent, BeerIngredientsComponent, BeerTastingComponent ],
-    declarations: [ BeerHistoryComponent, BeerIngredientsComponent,BeerTastingComponent ],
-    providers: []
+    exports: [ BeerHistoryComponent, BeerIngredientsComponent, BeerTastingComponent, BeerTypesComponent ],
+    declarations: [ BeerHistoryComponent, BeerIngredientsComponent, BeerTastingComponent, BeerTypesComponent ],
+    providers: [BeerTypesService]
 })
 export class BeerFactsModule {
 }

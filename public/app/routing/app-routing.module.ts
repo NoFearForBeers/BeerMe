@@ -14,6 +14,7 @@ const appRoutes: Routes = [
     { path: 'beer-history', component: pages.beerHistory},
     { path: 'beer-ingredients', component: pages.beerIngredients},
     { path: 'beer-tasting', component: pages.beerTasting},
+    { path: 'beer-types', component: pages.beerTypes},
     { path: 'news', component: pages.news},
     { path: 'news/:id', component: pages.newsDetails},
 ];
