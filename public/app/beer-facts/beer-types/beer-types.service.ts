@@ -17,4 +17,4 @@ export class BeerTypesService {
         return this.http.get(this.beerTypesUrl)
                         .map((r: Response) => r.json().data as BeerTypes[]);
     }
-};
+}

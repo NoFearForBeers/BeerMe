@@ -8,7 +8,6 @@ import { AuthService } from '../../authentication/services/auth.service';
   styleUrls: ['nav.component.css']
 })
 export class NavComponent implements OnInit {
-  public profile: any;
   username: string;
 
   constructor(private _authService: AuthService) {
