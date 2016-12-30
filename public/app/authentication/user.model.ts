@@ -8,4 +8,4 @@ export interface User {
     recipes: any[];
     forumPoints: number;
     isAdmin: boolean;
-};
+}

@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
-import { ToastService } from '../../shared/services/toast.service';
 import { User } from '../user.model';
+import { ToastrService } from 'toastr-ng2';
 
 @Component({
     moduleId: module.id,
@@ -26,24 +26,25 @@ export class RegisterComponent {
 
     constructor(private authService: AuthService,
         private router: Router,
-        private toastService: ToastService) { }
+        private _toastrService: ToastrService) { }
 
     onSubmit() {
         this.authService.register(this.newUser)
-            .subscribe(data => {
-                // this.authService.login({ username: this.newUser.username, password: this.newUser.password })
-                //     .subscribe(data => {
-                        // console.log(data);
-                        this.router.navigate(['login']);
-                        this.toastService.activate(`${data.username} successfuly registered!`);
-
-                        // Temporary
-                        alert(`${data.username} successfuly registered!`);
-
-                        // let userElement = document.getElementById('navbar-name');
-                        // userElement.setAttribute('href', `/${data.username}`);
-                        // userElement.innerHTML = data.username;
-                    // });
+            .subscribe(
+                data => {
+                    this.router.navigate(['login']);
+                    this.showSuccess(`${data.username} successfuly registered!`);
+            },
+            error => {
+                    this.showError(error);
             });
+    }
+
+    showSuccess(message: string) {
+        this._toastrService.success(message, 'Successs!');
+    }
+
+    showError(message: string) {
+        this._toastrService.error(message, 'Error!');
     }
 }

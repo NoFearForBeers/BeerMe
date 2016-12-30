@@ -19,11 +19,12 @@ import { HomeComponent } from './home/home.component';
 import { UserService } from './users/services/user.service';
 import { RequesterService } from './shared/services/requester.service';
 import { ExceptionService } from './shared/services/exception.service';
-import { ToastService } from './shared/services/toast.service';
+import { ToastrModule } from 'toastr-ng2';
 
 
 @NgModule({
   imports: [
+    ToastrModule.forRoot(),
     BrowserModule,
     HttpModule,
     SharedModule,
@@ -31,18 +32,17 @@ import { ToastService } from './shared/services/toast.service';
     TopBeersModule,
     BeerFactsModule,
     NewsModule,
-    AppRoutingModule 
+    AppRoutingModule
   ],
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
   ],
   bootstrap: [AppComponent],
   providers: [
     UserService,
     RequesterService,
-    ExceptionService,
-    ToastService
+    ExceptionService
   ]
 })
 export class AppModule { }

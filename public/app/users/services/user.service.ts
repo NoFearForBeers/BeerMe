@@ -15,18 +15,18 @@ export class UserService {
     saveUser(body: User): Observable<any> {
         return this.http.post(this.usersUrl, body).map(response => {
             let data = response.json() as ResponseResult<User[]>;
-            //console.log(data.result);
+            // console.log(data.result);
             return data.result;
         });
     }
 
     getUserById(id: string): Observable<any> {
         let url = `${this.usersUrl}/${id}`;
-        
+
         return this.http.get(url)
             .map(response => {
                 let data = response.json() as ResponseResult<User[]>;
                 return data.result;
             });
     }
-};
+}
