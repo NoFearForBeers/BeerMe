@@ -16,13 +16,13 @@ export class LoginComponent {
 
     highlightInput: boolean;
 
-    constructor(private _authservice: AuthService,
+    constructor(private _authService: AuthService,
         private _router: Router,
         private _toastrService: ToastrService) {
     }
 
     onSubmit() {
-        this._authservice.login(this.localUser)
+        this._authService.login(this.localUser)
             .subscribe(data => {
                 this.localUser.username = data.body.username;
                 let isAdmin = data.body.isAdmin;
