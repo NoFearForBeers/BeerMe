@@ -7,6 +7,7 @@ import { BeerHistoryComponent } from '../beer-facts/beer-history/beer-history.co
 import { BeerIngredientsComponent } from '../beer-facts/beer-ingredients/beer-ingredients.component';
 import { BeerTastingComponent } from '../beer-facts/beer-tasting/beer-tasting.component';
 import { BeerTypesComponent } from '../beer-facts/beer-types/beer-types.component';
+import { BeerBrandsComponent } from '../beer-facts/beer-brands/beer-brands.component';
 import { NewsComponent } from '../news/news-list/news.component';
 import { NewsDetailsComponent } from '../news/news-details/news-details.component';
 
@@ -20,6 +21,7 @@ export const pages = {
     beerIngredients: BeerIngredientsComponent,
     beerTasting: BeerTastingComponent,
     beerTypes: BeerTypesComponent,
+    beerBrands: BeerBrandsComponent,
     news: NewsComponent,
     newsDetails: NewsDetailsComponent,
 };

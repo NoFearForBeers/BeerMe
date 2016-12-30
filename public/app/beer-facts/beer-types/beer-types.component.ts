@@ -20,6 +20,6 @@ export class BeerTypesComponent implements PageComponent {
 
   ngOnInit() {
     this.beerTypesService.getAllBeerTypes()
-                       .subscribe(beers => this.beerTypesList = beers);
+                       .subscribe(beer => this.beerTypesList = beer);
   }
 }

@@ -1,31 +1,43 @@
 {
 	{
 	  "company" : "„БОЛЯРКА ВТ” АД",
-	  "brands" : ["Болярка", "Балканско", "Диана", "Хелиос", "Швейк", "Kaltenberg", "Warsteiner", "Болярка Weiss", "King's" ]
+		"imgUrl" : "http://www.boliarka.com/site/images/logo.png",
+	  "brands" : ["Болярка", "Балканско", "Диана", "Хелиос", "Швейк", "Kaltenberg", "Warsteiner", "Болярка Weiss", "King's" ],
+		"webpage" : "http://www.boliarka.com/site/main.html"
 	}
 	
 	{
 	  "company" : "„БРИТОС” ЕООД",
-	  "brands" : ["Britos"]
+		"imgUrl" : "http://bulgaria-online.bg/clients/210/images/catalog/products/6dece62b6e045aae_britos%20logo.png",
+	  "brands" : ["Britos"],
+		"webpage" : "http://www.britos.bg/"
 	}
 	
 	{
 	  "company" : "„ЗАГОРКА”АД",
-	  "brands" : ["Zagorka", "Zagorka Maxx 0,0%", "Загорка Ретро", "Ариана", "Ариана Радлер", "Ариана Радлер Грейпфрут", "Ариана Тъмно", "Heineken", "Amstel Premium Pilsener", "Stolichno Bock", "Stolichno Weiss", "Stolichno Pale Bock", "Starobrno", "Kaiser", "Desperados"  ]
+		"imgUrl" : "http://zagorkacompany.bg/uploads/pages/zagorka_green-BG.jpg",
+	  "brands" : ["Zagorka", "Zagorka Maxx 0,0%", "Загорка Ретро", "Ариана", "Ариана Радлер", "Ариана Радлер Грейпфрут", "Ариана Тъмно", "Heineken", "Amstel Premium Pilsener", "Stolichno Bock", "Stolichno Weiss", "Stolichno Pale Bock", "Starobrno", "Kaiser", "Desperados"  ],
+		"webpage" : "http://zagorkacompany.bg/"
 	}
 	
 	{
 	  "company" : "„КАМЕНИЦА” АД",
-	  "brands" : ["Astika", "Astika Тъмно", "Бургаско пиво", "Нефилтрирано от Каменица", "Славена", "Beck’s", "Beck’s Non alc.", "Blue Moon", "Corona", "Hoegaarden", "Kamenitza 1881", "Hoegaarden", "Kamenitza Безалкохолна", "Kamenitza Тъмно", "Kamenitza Fresh Бъз и Лимон", "Kamenitza Fresh Грейпфрут", "Leffe Brune", "Leffe Blond", "Staropramen", "Staropramen Granat", "Stella Artois" ]
+		"imgUrl" : "http://www.kamenitza.bg/assets/images/site/kamenitza_logo_black.png",
+	  "brands" : ["Astika", "Astika Тъмно", "Бургаско пиво", "Нефилтрирано от Каменица", "Славена", "Beck’s", "Beck’s Non alc.", "Blue Moon", "Corona", "Hoegaarden", "Kamenitza 1881", "Hoegaarden", "Kamenitza Безалкохолна", "Kamenitza Тъмно", "Kamenitza Fresh Бъз и Лимон", "Kamenitza Fresh Грейпфрут", "Leffe Brune", "Leffe Blond", "Staropramen", "Staropramen Granat", "Stella Artois" ],
+		"webpage" : "http://www.kamenitza.bg/"
 	}
 	
 	{
 	  "company" : "„КАРЛСБЕРГ БЪЛГАРИЯ” АД",
-	  "brands" : ["Шуменско", "Шуменско Тъмно", "Пиринско", "Пиринско Радлер", "Tuborg", "Budweiser Budvar", "Erdinger", "Carlsberg", "Grimbergen" ]
+		"imgUrl" : "http://www.carlsbergbulgaria.bg/Style%20Library/Carlsberg/images/logo.gif",
+	  "brands" : ["Шуменско", "Шуменско Тъмно", "Пиринско", "Пиринско Радлер", "Tuborg", "Budweiser Budvar", "Erdinger", "Carlsberg", "Grimbergen" ],
+		"webpage" : "http://www.carlsbergbulgaria.bg/"
 	}
 	
 	{
 	  "company" : "„ЛОМСКО ПИВО” АД",
-	  "brands" : ["Almus", "Мизия", "Dunavsko", "Gredberg", "Robeer", "Lomsko Lux"]
+		"imgUrl" : "http://www.lomskopivo.com/templates/all/images/logo_BG.png",
+	  "brands" : ["Almus", "Мизия", "Dunavsko", "Gredberg", "Robeer", "Lomsko Lux"],
+		"webpage" : "http://www.lomskopivo.com/intro.php" 
 	}
 }

@@ -7,13 +7,15 @@ import { BeerIngredientsComponent } from './beer-ingredients/beer-ingredients.co
 import { BeerTastingComponent } from './beer-tasting/beer-tasting.component';
 import { BeerTypesComponent } from './beer-types/beer-types.component';
 import { BeerTypesService } from './beer-types/beer-types.service';
+import { BeerBrandsComponent } from './beer-brands/beer-brands.component';
+import { BeerBrandsService } from './beer-brands/beer-brands.service';
 
 
 @NgModule({
     imports: [ CommonModule, FormsModule ],
-    exports: [ BeerHistoryComponent, BeerIngredientsComponent, BeerTastingComponent, BeerTypesComponent ],
-    declarations: [ BeerHistoryComponent, BeerIngredientsComponent, BeerTastingComponent, BeerTypesComponent ],
-    providers: [BeerTypesService]
+    exports: [ BeerHistoryComponent, BeerIngredientsComponent, BeerTastingComponent, BeerTypesComponent, BeerBrandsComponent ],
+    declarations: [ BeerHistoryComponent, BeerIngredientsComponent, BeerTastingComponent, BeerTypesComponent, BeerBrandsComponent ],
+    providers: [BeerTypesService, BeerBrandsService]
 })
 export class BeerFactsModule {
 }
