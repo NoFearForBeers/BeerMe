@@ -33,32 +33,6 @@ module.exports = function({ data, validator }) {
                 .catch(error => {
                     return res.send(error);
                 });
-            //console.log(salt);
-            //let hashPass = encrypt.generateHashedPassword(salt, password);
-            //console.log(hashPass);
-            //console.log(data.findUserByCredentials(username, hashPass));
-
-            // data.findUserByCredentials(username, hashPass)
-            //     .then((user) => {
-            //         if (user) {
-            //             let token = jwt.encode(user, secret);
-            //             // console.log("**here**");
-            //             // console.log(user);
-            //             // console.log(token);
-            //             return res.status(200).json({
-            //                 success: true,
-            //                 body: {
-            //                     token: token,
-            //                     username: user.username
-            //                 }
-            //             });
-            //         }
-
-            //         return res.status(400).json({ success: false, msg: 'Authenticaton failed, wrong password.' });
-            //     })
-            //     .catch(error => {
-            //         return res.send(error);
-            //     });
         },
         register(req, res) {
             let newUser = {};

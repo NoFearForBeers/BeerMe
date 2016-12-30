@@ -31,10 +31,17 @@ export class LoginComponent {
 
                 this.showSuccess(`Welcome back ${data.body.username}!`);
                 this._router.navigate(['home']);
+            },
+            error => {
+                    this.showError(error);
             });
     }
 
     showSuccess(message: string) {
-    this._toastrService.success(message, 'Successs!');
-  }
+        this._toastrService.success(message, 'Successs!');
+    }
+
+    showError(message: string) {
+        this._toastrService.error(message, 'Error!');
+    }
 }
