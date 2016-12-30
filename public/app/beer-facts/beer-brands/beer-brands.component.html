@@ -3,10 +3,13 @@
     <li *ngFor="let beer of beerBrandsList">
         <h2>{{beer.company}}</h2>
             <div class="brands-image-container">
-                <img src="{{beer.imageUrl}}">
+                <img src="{{beer.imgUrl}}">
             </div>
             <div class="beer-brands-container">
-                <p>Марки произвеждано пиво {{beer.brands}}</p>
+                <p>Марки произвеждано пиво:</p>
+                <ul>
+                    <li>{{beer.brands}}</li>
+                </ul>
                 <p>За повече информация: {{beer.webpage}}</p>
            </div>
     </li>
