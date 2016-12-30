@@ -24,7 +24,7 @@
                 </li>
                 <li><a routerLink="/top-beers" class="uppercasing">Топ БГ бири</a></li>
 
-                <li class="dropdown" *ngIf="_authService.isLoggedIn">
+                <li class="dropdown" *ngIf="_authService.isLoggedIn()">
                     <a href="#" class="dropdown-toggle uppercasing" data-toggle="dropdown" role="button" aria-expanded="false">Домашни рецепти<span class="caret"></span></a>
                     <ul class="dropdown-menu" role="menu">
                         <li><a href="#" class="uppercasing">Добави рецепта</a></li>
@@ -33,15 +33,15 @@
 
                 <li><a routerLink="/news" class="uppercasing">Новини</a></li>
 
-                <li><a routerLink="#" class="uppercasing" *ngIf="_authService.isLoggedIn">Събития</a></li>
+                <li><a routerLink="#" class="uppercasing" *ngIf="_authService.isLoggedIn()">Събития</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a routerLink="/login" class="uppercasing" *ngIf=!_authService.isLoggedIn>Вход</a></li>
-                <li><a routerLink="/register" class="uppercasing" *ngIf=!_authService.isLoggedIn>Регистрация</a></li>
+                <li><a routerLink="/login" class="uppercasing" *ngIf=!_authService.isLoggedIn()>Вход</a></li>
+                <li><a routerLink="/register" class="uppercasing" *ngIf=!_authService.isLoggedIn()>Регистрация</a></li>
                 <li>
-                    <a id="navbar-name" *ngIf="_authService.isLoggedIn">{{username}}</a>
+                    <a id="navbar-name" *ngIf="_authService.isLoggedIn()">{{username}}</a>
                 </li>
-                <li><a (click)="_authService.logout() " class="uppercasing " *ngIf="_authService.isLoggedIn">Изход</a></li>
+                <li><a (click)="_authService.logout() " class="uppercasing " *ngIf="_authService.isLoggedIn()">Изход</a></li>
             </ul>
         </div>
     </div>
