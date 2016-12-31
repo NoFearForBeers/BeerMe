@@ -1,0 +1,18 @@
+.news-section {
+    padding-bottom: 20px;
+}
+
+.home-img-container {
+    width: 200px;
+    height: 250px;
+}
+
+.post-date {
+    font-style: italic;
+    float: right;
+    font-size: 0.9em;
+}
+
+.news-head {
+    padding-bottom: 20px;
+}

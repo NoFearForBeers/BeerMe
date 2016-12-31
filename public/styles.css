@@ -16,3 +16,23 @@ body {
     font-size: 16px;
     height: 100%;
 }
+
+a,
+a:hover,
+a:visited,
+a:active,
+a:focus {
+    outline: none;
+    text-decoration: none;
+    color: #373a3b;
+}
+
+ul {
+    list-style: none;
+}
+
+.main-container {
+    width: 100%;
+    height: auto;
+    min-height: 100%;
+}

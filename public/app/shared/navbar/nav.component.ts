@@ -3,7 +3,7 @@ import { AuthService } from '../../authentication/services/auth.service';
 
 @Component({
   moduleId: module.id,
-  selector: 'st-nav',
+  selector: 'beerme-nav',
   templateUrl: 'nav.component.html',
   styleUrls: ['nav.component.css']
 })

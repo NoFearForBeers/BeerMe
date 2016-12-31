@@ -1,14 +1,19 @@
 <div>
-    <h1>Welcome to home page</h1>
+
 </div>
 
-<h1 class="news-head">Новини</h1>
-<ul class="top-beers">
-    <li *ngFor="let news of newsList | sortNews : 'postDate'">
-        <a routerLink="/news/{{news._id}}">
-            <h3>{{news.title}}</h3>
-        </a>
-        <div>{{news.postDate | date}}</div>
-        <img src="{{news.imageUrl}}">
-    </li>
-</ul>
+<div class="text-center news-section">
+    <h1 class="news-head">Най-нови новини</h1>
+
+    <ul>
+        <li *ngFor="let news of newsList | sortNews : 'postDate'" class="col-md-4">
+            <a routerLink="/news/{{news._id}}">
+                <p>{{news.title}}</p>
+                <p class="post-date">Пудликувано на: {{news.postDate | date:"MM/dd/yy"}}</p>
+                <img src="{{news.imageUrl}}" class="img-thumbnail img-responsive home-img-container">
+            </a>
+        </li>
+    </ul>
+
+    <a routerLink="/news">Всички новини</a>
+</div>
