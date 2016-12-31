@@ -10,12 +10,9 @@ import { AuthenticationModule } from './authentication/authentication.module';
 import { TopBeersModule } from './top-beers/top-beers.module';
 import { BeerFactsModule } from './beer-facts/beer-facts.module';
 import { NewsModule } from './news/news.module';
-<<<<<<< HEAD
 import { RecipesModule } from './recipes/recipes.module';
-=======
 import { ToastrModule } from 'toastr-ng2';
 import { CarouselModule } from 'ng2-bootstrap';
->>>>>>> 8ab33d26625831a026f3a249b7ba15bb63d871e4
 
 // Components
 import { AppComponent } from './app.component';
