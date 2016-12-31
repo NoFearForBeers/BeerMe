@@ -1,12 +1,52 @@
 /* globals module */
 let dataUtils = require('./utils/data-utils');
 
-module.exports = function(models) {
+module.exports = function(models, validator) {
     let { User } = models;
 
     return {
         createUser(user) {
             return new Promise((resolve, reject) => {
+                    if (!validator.validateStringLength(username, 3, 50)) {
+                        return reject("Error: Username must be between 3 and 50 symbols");
+                    }
+
+                    if (!validator.validateIsStringValid(username)) {
+                        return reject("Username fail");
+                    }
+
+                    if (!validator.validateStringLength(firstName, 3, 50)) {
+                        return reject("Error: First name must be between 3 and 50 symbols");
+                    }
+
+                    if (!validator.validateIsStringValid(firstName)) {
+                        return reject("First name fail");
+                    }
+
+                    if (!validator.validateStringLength(lastName, 3, 50)) {
+                        return reject("Error: Last name must be between 3 and 50 symbols");
+                    }
+
+                    if (!validator.validateIsStringValid(lastName)) {
+                        return reject("Last name fail");
+                    }
+
+                    if (profileImgURL && !validator.validateImageUrl(profileImgURL)) {
+                        return reject("Invalid image url");
+                    }
+
+                    if (!validator.validateEmail(email)) {
+                        return reject("Email fail");
+                    }
+
+                    if (!salt) {
+                        return reject("Salt must exists");
+                    }
+
+                    if (!hashPass) {
+                        return reject("Hash pass must exists");
+                    }
+
                     let newUser = new User({
                         username: user.username,
                         firstname: user.firtsName,

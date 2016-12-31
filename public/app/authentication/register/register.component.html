@@ -1,9 +1,7 @@
-<!--<div [hidden]="registerForm.form.submitted" class="allert-message alert alert-success">
-    <strong>{{newUser.username}} Successfully registered!</strong>
-</div>-->
-
 <form class="form-horizontal" #registerForm="ngForm" (ngSubmit)="onSubmit()">
     <fieldset>
+
+
         <legend>Регистрационна форма</legend>
 
         <div class="form-group">
@@ -12,34 +10,69 @@
                 <input type="text" class="form-control" id="username" name="username" placeholder="Потребителско име" required [(ngModel)]="newUser.username" #username="ngModel">
             </div>
         </div>
+        <div class="form-group" [hidden]="username.valid || username.pristine">
+            <label for="text" class="col-sm-2 control-label"></label>
+            <div class="col-sm-10 alert alert-danger">
+                <strong>Потребителско име е задължително поле!</strong>
+            </div>
+        </div>
+
         <div class="form-group">
             <label for="text" class="col-lg-2 control-label">Име:*</label>
             <div class="col-lg-10">
                 <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Име" required [(ngModel)]="newUser.firstName" #firstName="ngModel">
             </div>
         </div>
+        <div class="form-group" [hidden]="firstName.valid || firstName.pristine">
+            <label for="text" class="col-sm-2 control-label"></label>
+            <div class="col-sm-10 alert alert-danger">
+                <strong>Име е задължително поле!</strong>
+            </div>
+        </div>
+
         <div class="form-group">
             <label for="text" class="col-lg-2 control-label">Фамилия:*</label>
             <div class="col-lg-10">
                 <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Фамилия" required [(ngModel)]="newUser.lastName" #lastName="ngModel">
             </div>
         </div>
+        <div class="form-group" [hidden]="lastName.valid || lastName.pristine">
+            <label for="text" class="col-sm-2 control-label"></label>
+            <div class="col-sm-10 alert alert-danger">
+                <strong>Фамилия е задължително поле!</strong>
+            </div>
+        </div>
+
         <div class="form-group">
             <label for="text" class="col-lg-2 control-label">Профилна снимка:</label>
             <div class="col-lg-10">
                 <input type="text" class="form-control" id="profileImgURL" name="profileImgURL" placeholder="Профилна снимка" [(ngModel)]="newUser.profileImgURL" #profileImgURL="ngModel">
             </div>
         </div>
+
         <div class="form-group">
             <label for="inputEmail" class="col-lg-2 control-label">Email адрес:*</label>
             <div class="col-lg-10">
                 <input type="email" class="form-control" id="email" name="email" placeholder="Email адрес" required [(ngModel)]="newUser.email" #email="ngModel">
             </div>
         </div>
+        <div class="form-group" [hidden]="email.valid || email.pristine">
+            <label for="text" class="col-sm-2 control-label"></label>
+            <div class="col-sm-10 alert alert-danger">
+                <strong>Email адрес е задължително поле!</strong>
+            </div>
+        </div>
+
         <div class="form-group">
             <label for="inputPassword" class="col-lg-2 control-label">Парола:*</label>
             <div class="col-lg-10">
                 <input type="password" class="form-control" id="password" name="password" placeholder="Парола" required [(ngModel)]="newUser.password" #password="ngModel">
+            </div>
+        </div>
+        <div class="form-group" [hidden]="password.valid || password.pristine">
+            <label for="text" class="col-sm-2 control-label"></label>
+            <div class="col-sm-10 alert alert-danger">
+                <strong>Парола е задължително поле!</strong>
             </div>
         </div>
 
