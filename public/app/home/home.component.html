@@ -1,19 +1,29 @@
-<div>
-
+<div class="row">
+    <div>
+        <carousel [interval]="myInterval" [noWrap]="noWrapSlides" [(activeSlide)]="activeSlideIndex">
+            <slide *ngFor="let slidez of slides; let index=index">
+                <img [src]="slidez.image" style="height:400px ">
+            </slide>
+        </carousel>
+    </div>
 </div>
 
-<div class="text-center news-section">
-    <h1 class="news-head">Най-нови новини</h1>
+<div class="text-center news-section ">
+    <h1 class="news-head ">Най-нови новини</h1>
 
-    <ul>
-        <li *ngFor="let news of newsList | sortNews : 'postDate'" class="col-md-4">
-            <a routerLink="/news/{{news._id}}">
+    <ul class="list-newest-news ">
+        <li *ngFor="let news of newsList | sortNews : 'postDate' " class="col-md-4 ">
+            <a routerLink="/news/{{news._id}} ">
                 <p>{{news.title}}</p>
-                <p class="post-date">Пудликувано на: {{news.postDate | date:"MM/dd/yy"}}</p>
-                <img src="{{news.imageUrl}}" class="img-thumbnail img-responsive home-img-container">
+                <p class="post-date ">Пудликувано на: {{news.postDate | date:"MM/dd/yy "}}</p>
+                <img src="{{news.imageUrl}} " class="img-thumbnail img-responsive home-img-container ">
             </a>
         </li>
     </ul>
+</div>
 
-    <a routerLink="/news">Всички новини</a>
+<div class="text-center more-news clear ">
+    <div>
+        <a routerLink="/news ">Всички новини</a>
+    </div>
 </div>
