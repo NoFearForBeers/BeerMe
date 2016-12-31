@@ -10,6 +10,7 @@ import { AuthenticationModule } from './authentication/authentication.module';
 import { TopBeersModule } from './top-beers/top-beers.module';
 import { BeerFactsModule } from './beer-facts/beer-facts.module';
 import { NewsModule } from './news/news.module';
+import { RecipesModule } from './recipes/recipes.module';
 
 // Components
 import { AppComponent } from './app.component';
@@ -33,6 +34,7 @@ import { SortNewsPipe } from './shared/pipes/sortNews';
     TopBeersModule,
     BeerFactsModule,
     NewsModule,
+    RecipesModule,
     AppRoutingModule
   ],
   declarations: [

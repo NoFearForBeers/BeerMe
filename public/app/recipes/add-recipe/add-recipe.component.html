@@ -1,0 +1,59 @@
+<form class="form-horizontal" #addRecipeForm="ngForm" (ngSubmit)="onSubmit()">
+    <fieldset>
+        <legend>Добавете рецепта за домашна бира</legend>
+
+        <div class="form-group">
+            <label for="text" class="col-lg-2 control-label">Име:*</label>
+            <div class="col-lg-10">
+                <input type="text" class="form-control" id="name" name="name" placeholder="Име" required [(ngModel)]="newRecipe.name" #name="ngModel">
+            </div>
+        </div>
+        <div class="form-group" [hidden]="name.valid || name.pristine">
+            <label for="text" class="col-sm-2 control-label"></label>
+            <div class="col-sm-10 alert alert-danger">
+                <strong>Име на рецептата е задължително поле!</strong>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="text" class="col-lg-2 control-label">Необходими продукти:*</label>
+             (разделете ги със запетайки)
+            <div class="col-lg-10">
+                <input type="text" class="form-control" id="ingredientsCombined" name="ingredientsCombined" placeholder="Необходими продукти" required [(ngModel)]="newRecipe.ingredientsCombined" #ingredientsCombined="ngModel">
+            </div>
+        </div>
+        <div class="form-group" [hidden]="ingredientsCombined.valid || ingredientsCombined.pristine">
+            <label for="text" class="col-sm-2 control-label"></label>
+            <div class="col-sm-10 alert alert-danger">
+                <strong>Необходими продукти е задължително поле!</strong>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="text" class="col-lg-2 control-label">Начин на приготвяне:*</label>
+            <div class="col-lg-10">
+                <textarea cols="60" rols="13" type="text" class="form-control" id="methodOfPreperation" name="methodOfPreperation" placeholder="Начин на приготвяне" required [(ngModel)]="newRecipe.methodOfPreperation" #methodOfPreperation="ngModel"></textarea>
+            </div>
+        </div>
+        <div class="form-group" [hidden]="methodOfPreperation.valid || methodOfPreperation.pristine">
+            <label for="text" class="col-sm-2 control-label"></label>
+            <div class="col-sm-10 alert alert-danger">
+                <strong>Начин на приготвяне е задължително поле!</strong>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="text" class="col-lg-2 control-label">Снимка:</label>
+            <div class="col-lg-10">
+                <input type="text" class="form-control" id="imgURL" name="imgURL" placeholder="Снимка" [(ngModel)]="newRecipe.imgURL" #imgURL="ngModel">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-2">
+                <button type="reset" class="btn btn-default">Изход</button>
+                <button type="submit" class="btn btn-primary" [disabled]="!addRecipeForm.form.valid">Добави</button>
+            </div>
+        </div>
+    </fieldset>
+</form>

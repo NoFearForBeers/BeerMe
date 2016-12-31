@@ -10,6 +10,7 @@ import { BeerTypesComponent } from '../beer-facts/beer-types/beer-types.componen
 import { BeerBrandsComponent } from '../beer-facts/beer-brands/beer-brands.component';
 import { NewsComponent } from '../news/news-list/news.component';
 import { NewsDetailsComponent } from '../news/news-details/news-details.component';
+import { AddRecipeComponent } from '../recipes/add-recipe/add-recipe.component';
 
 export const pages = {
     login: LoginComponent,
@@ -24,4 +25,5 @@ export const pages = {
     beerBrands: BeerBrandsComponent,
     news: NewsComponent,
     newsDetails: NewsDetailsComponent,
+    addRecipe: AddRecipeComponent
 };

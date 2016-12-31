@@ -10,14 +10,15 @@ const appRoutes: Routes = [
     { path: 'home', component: pages.home },
     { path: 'user', component: pages.home, canActivate: [AuthGuard] },
     { path: 'top-beers/:id', component: pages.topBeersDetails },
-    { path: 'top-beers', component: pages.topBeers},
-    { path: 'beer-history', component: pages.beerHistory},
-    { path: 'beer-ingredients', component: pages.beerIngredients},
-    { path: 'beer-tasting', component: pages.beerTasting},
-    { path: 'beer-types', component: pages.beerTypes},
-    { path: 'beer-brands', component: pages.beerBrands},
-    { path: 'news', component: pages.news},
-    { path: 'news/:id', component: pages.newsDetails},
+    { path: 'top-beers', component: pages.topBeers },
+    { path: 'beer-history', component: pages.beerHistory },
+    { path: 'beer-ingredients', component: pages.beerIngredients },
+    { path: 'beer-tasting', component: pages.beerTasting },
+    { path: 'beer-types', component: pages.beerTypes },
+    { path: 'beer-brands', component: pages.beerBrands },
+    { path: 'news', component: pages.news },
+    { path: 'news/:id', component: pages.newsDetails },
+    { path: 'add-recipe', component: pages.addRecipe }
 ];
 
 @NgModule({
