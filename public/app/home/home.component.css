@@ -1,5 +1,5 @@
 .news-section {
-    padding-bottom: 20px;
+    padding: 20px;
 }
 
 .home-img-container {
@@ -15,4 +15,16 @@
 
 .news-head {
     padding-bottom: 20px;
+}
+
+.clear {
+    clear: both;
+}
+
+.more-news {
+    padding-top: 50px;
+}
+
+.more-news :hover {
+    font-size: 1.1em;
 }

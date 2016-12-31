@@ -1,4 +1,4 @@
-{
+﻿{
 	{
 	  "company" : "„БОЛЯРКА ВТ” АД",
 		"imgUrl" : "http://www.boliarka.com/site/images/logo.png",
@@ -42,7 +42,7 @@
 	}
 
 	{
-	  "company" : "„Тримекс - Сервиз" АД”,
+	  "company" : "„Тримекс - Сервиз” АД",
 		"imgUrl" : "http://prikmeta.blog.bg/photos/109289/kmetsko.jpg",
 	  "brands" : ["Кметско пиво"],
 		"webpage" : "http://prikmeta.blog.bg/" 
@@ -56,14 +56,14 @@
 	}
 
 	{
-	  "company" : "„Пивоварна 359" ЕООД",
+	  "company" : "„Пивоварна 359” ЕООД",
 		"imgUrl" : "http://4.bp.blogspot.com/-LjHlW27bqJs/VMtGnxz0T4I/AAAAAAAAA7M/vrrXJ7S5WcM/s1600/555282_1410513619161772_220341620_n.png",
 	  "brands" : ["Диво пиво"],
 		"webpage" : "https://www.facebook.com/divopivocraftbeer/" 
 	}
 
 	{
-	  "company" : "Гларус Крафт Брюинг"",
+	  "company" : "Гларус Крафт Брюинг",
 		"imgUrl" : "http://www.glarus.bg/uploads/logo/d8a1d349b90ccbc0284fc244b9b2b925dc1b3095.png",
 	  "brands" : ["Гларус"],
 		"webpage" : "http://www.glarus.bg/" 
