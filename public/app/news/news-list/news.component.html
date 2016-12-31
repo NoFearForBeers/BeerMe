@@ -4,6 +4,6 @@
         <a routerLink="/news/{{news._id}}">
             <h3>{{news.title}}</h3>
         </a>
-        <div>{{news.postDate}}</div>
+        <div>{{news.postDate | date}}</div>
     </li>
 </ul>

@@ -4,7 +4,7 @@
         <img src="{{news.imageUrl}}" alt="{{news.title}}" style="width: 100px">
     </div>
     <div>
-        <p>Публикувано на: {{news.postDate}}</p>
+        <p>Публикувано на: {{news.postDate | date}}</p>
     </div>
     <div>
         {{news.content}}

@@ -10,8 +10,7 @@ module.exports = modelRegistrator.register('News', {
         type: String
     },
     postDate: {
-        type: Date,
-        default: Date.now
+        type: Date
     },
     content: {
         type: String

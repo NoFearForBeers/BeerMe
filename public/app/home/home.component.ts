@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { News } from '../news/news.model';
+import { NewsService } from '../news/services/news-services';
 
 @Component({
     moduleId: module.id,
@@ -6,4 +8,13 @@ import { Component } from '@angular/core';
 })
 
 export class HomeComponent {
+    newsList: News[] = [];
+
+  constructor(private newsService: NewsService) {
+  }
+
+  ngOnInit() {
+    this.newsService.getAllNews()
+                       .subscribe(news => this.newsList = news);
+  }
 }

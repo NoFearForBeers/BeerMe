@@ -1,3 +1,14 @@
 <div>
     <h1>Welcome to home page</h1>
 </div>
+
+<h1 class="news-head">Новини</h1>
+<ul class="top-beers">
+    <li *ngFor="let news of newsList | sortNews : 'postDate'">
+        <a routerLink="/news/{{news._id}}">
+            <h3>{{news.title}}</h3>
+        </a>
+        <div>{{news.postDate | date}}</div>
+        <img src="{{news.imageUrl}}">
+    </li>
+</ul>

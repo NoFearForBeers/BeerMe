@@ -21,6 +21,8 @@ import { RequesterService } from './shared/services/requester.service';
 import { ExceptionService } from './shared/services/exception.service';
 import { ToastrModule } from 'toastr-ng2';
 
+// Pipes
+import { SortNewsPipe } from './shared/pipes/sortNews';
 
 @NgModule({
   imports: [
@@ -37,6 +39,7 @@ import { ToastrModule } from 'toastr-ng2';
   declarations: [
     AppComponent,
     HomeComponent,
+    SortNewsPipe
   ],
   bootstrap: [AppComponent],
   providers: [
