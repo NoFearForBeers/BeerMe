@@ -4,7 +4,8 @@ import { NewsService } from '../news/services/news-services';
 
 @Component({
     moduleId: module.id,
-    templateUrl: './home.component.html'
+    templateUrl: './home.component.html',
+    styleUrls: ['home.component.css']
 })
 
 export class HomeComponent {
