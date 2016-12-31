@@ -16,7 +16,6 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 
 // Services
-import { UserService } from './users/services/user.service';
 import { RequesterService } from './shared/services/requester.service';
 import { ExceptionService } from './shared/services/exception.service';
 import { ToastrModule } from 'toastr-ng2';
@@ -43,7 +42,6 @@ import { SortNewsPipe } from './shared/pipes/sortNews';
   ],
   bootstrap: [AppComponent],
   providers: [
-    UserService,
     RequesterService,
     ExceptionService
   ]
