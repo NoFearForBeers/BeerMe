@@ -59,4 +59,11 @@ export class AuthService {
     isAdminLogged() {
         return this.isLoggedIn() && window.localStorage.getItem('isAdmin');
     }
+
+    getUsername() : Promise<string> {
+        return new Promise((resolve, reject) => {
+                let username = window.localStorage.getItem('username')
+                resolve(username);
+        });
+    }
 }

@@ -16,8 +16,9 @@ module.exports = function(connectionString) {
     let News = require("../models/news-model");
     let BeerTypes = require("../models/beer-types-model");
     let BeerBrands = require("../models/beer-brands-model");
+    let Recipe = require("../models/recipe-model");
 
-    let models = { User, BulgarianBeer, News, BeerTypes, BeerBrands };
+    let models = { User, BulgarianBeer, News, BeerTypes, BeerBrands, Recipe };
 
     let data = {};
     fs.readdirSync(__dirname)
