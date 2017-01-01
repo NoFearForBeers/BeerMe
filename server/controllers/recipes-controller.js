@@ -38,6 +38,15 @@ module.exports = function({ data, validator }) {
                 .catch(err => {
                     return res.status(400).send({ success: false, msg: 'Recipe was not created' });
                 });
+        },
+        getAllUnapprovedRecipes(req, res) {
+             data.getAllUnapprovedRecipes()
+                .then(allRecipes => {
+                    res.json({ data: allRecipes})
+                })
+                .catch(err => {
+                    res.json(err);
+                });
         }
     };
 };

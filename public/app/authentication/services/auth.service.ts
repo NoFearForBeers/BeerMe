@@ -53,7 +53,9 @@ export class AuthService {
     }
 
     isAdminLogged() {
-        return this.isLoggedIn() && window.localStorage.getItem('isAdmin');
+        let isLogged = this.isLoggedIn();
+        let isAdmin = window.localStorage.getItem('isAdmin');
+        return isLogged && (isAdmin === 'true');
     }
 
     getUsername() : Promise<string> {
