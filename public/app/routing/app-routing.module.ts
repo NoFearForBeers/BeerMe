@@ -19,8 +19,12 @@ const appRoutes: Routes = [
     { path: 'news', component: pages.news },
     { path: 'news/:id', component: pages.newsDetails },
     { path: 'add-recipe', component: pages.addRecipe },
+<<<<<<< HEAD
     { path: 'events', component: pages.events },
     { path: 'events/:id', component: pages.eventsDetails }
+=======
+    { path: 'unapproved-recipes', component: pages.unapprovedRecipes }
+>>>>>>> origin/master
 ];
 
 @NgModule({

@@ -13,6 +13,40 @@
     padding-bottom: 15px;
 }
 
+div#mainMenu.collapse.in {
+    background: #332C1E;
+}
+
+#mainMenu li a {
+    color: #fff!important;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #fff;
+}
+
+.navbar-default .navbar-toggle:focus,
+.navbar-default .navbar-toggle:hover {
+    background-color: #332C1E;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: #332C1E;
+}
+
+.menu>li>a.dropdown-toggle {
+    color: white;
+    position: relative;
+    display: block;
+    padding: 18px;
+    text-decoration: none;
+}
+
+.navbar-default .navbar-toggle.collapsed {
+    border-color: #fff;
+    background-color: transparent;
+}
+
 #main-header .navbar-default .navbar-nav>li>a {
     color: white
 }
@@ -27,6 +61,13 @@
 #main-header .navbar-default .navbar-nav>li>a:hover,
 #main-header .navbar-default .navbar-nav>li>a:focus {
     background-color: #FDC82F;
+}
+
+.navbar-default .navbar-nav>.open>a,
+.navbar-default .navbar-nav>.open>a:focus,
+.navbar-default .navbar-nav>.open>a:hover {
+    color: #fff;
+    background-color: rgba(253, 200, 47, 0.9);
 }
 
 .nav-dropdown-menu {
