@@ -30,12 +30,22 @@
 }
 
 .home-img-slide {
-    height: 450px;
+    height: 500px;
     width: 100%;
 }
 
 .slider {
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 auto;
+    width: 133.2%;
+    margin-top: -21px;
+    margin-left: -16.55%;
+    padding: 0;
+}
+
+@media (max-width: 767px) {
+    .slider-mobile {
+        width: 114.5%;
+        margin-top: -21px;
+        margin-left: -10%;
+        padding: 0;
+    }
 }

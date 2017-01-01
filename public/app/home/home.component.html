@@ -1,6 +1,6 @@
-<div class="clear slider ">
+<div class="slider slider-mobile">
     <carousel [interval]="myInterval" [(activeSlide)]="activeSlideIndex">
-        <slide *ngFor="let slidez of slides; let index=index">
+        <slide *ngFor="let slidez of slides; let index=index" class="ll">
             <img src="{{slidez.image}}" class="home-img-slide">
         </slide>
     </carousel>
