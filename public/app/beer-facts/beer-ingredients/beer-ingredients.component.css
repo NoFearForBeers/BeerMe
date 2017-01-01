@@ -1,0 +1,32 @@
+.main-page-heading {
+    color: #b83901;
+    font-size: 2.5em;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+}
+
+.ingredients-heading {
+    color: #b83901;
+    font-size: 2em;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+    padding-left: 10%;
+}
+
+.ingredient-image {
+    float: left;
+    margin-right: 50px;
+    margin-bottom: 50px;
+    width: 400px;
+    height: 400px;
+}
+
+.ingredients-content {
+    text-align: justify;
+}
+
+.clear {
+    clear: both;
+}

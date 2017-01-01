@@ -10,8 +10,6 @@ import 'rxjs/add/observable/throw';
 
 @Injectable()
 export class AuthService {
-    //isLoggedIn: boolean = false;
-
     constructor(private http: Http, private _requester: RequesterService, private router: Router) {
     }
 
@@ -26,13 +24,11 @@ export class AuthService {
             .map((data: any) => {
                 console.log(data);
                 window.localStorage.setItem('auth_key', data.body.token);
-                //this.isLoggedIn = true;
                 return data;
             });
     }
 
     logout() {
-        //this.isLoggedIn = false;
         window.localStorage.removeItem('auth_key');
         window.localStorage.removeItem('username');
         this.router.navigateByUrl('/home');

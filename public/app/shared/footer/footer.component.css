@@ -1,4 +1,22 @@
-footer {
+.spacing-left {
+    margin-right: 10px;
+}
+
+.footer-info {
+    float: left;
+    padding-left: 10%;
+}
+
+.footer-icons {
+    padding-right: 5%;
+}
+
+.panel-footer {
     margin-top: 20px;
-    height: 100%;
+    border-color: transparent;
+    color: #ffffff;
+    background-color: #332C1E;
+    border-radius: 4px;
+    height: 80px;
+    border-radius: 0;
 }

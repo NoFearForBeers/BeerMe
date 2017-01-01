@@ -6,22 +6,26 @@
     </carousel>
 </div>
 
-<div class="text-center news-section ">
-    <h1 class="news-head ">Най-нови новини</h1>
+<div class="separator">
+    <p class="news-head"><i class="fa fa-newspaper-o spacing-rigt" aria-hidden="true"></i>Последни новини</p>
+</div>
 
-    <ul class="list-newest-news ">
-        <li *ngFor="let news of newsList | sortNews : 'postDate'" class="col-md-4 ">
-            <a routerLink="/news/{{news._id}} ">
-                <p>{{news.title}}</p>
-                <p class="post-date ">Пудликувано на: {{news.postDate | date:"MM/dd/yy "}}</p>
-                <img src="{{news.imageUrl}} " class="img-thumbnail img-responsive home-img-container ">
-            </a>
+<div class="text-center news-section ">
+    <ul class="list-newest-news">
+        <li *ngFor="let news of newsList | sortNews : 'postDate'" class="col-md-4">
+
+            <div class="news-item img-thumbnail img-responsive" myBackground>
+                <p><strong>{{news.title}}</strong></p>
+                <p>
+                    <a routerLink="/news/{{news._id}} " class="btn read-more">Прочети повече <i class=" fa fa-arrow-circle-o-right"></i></a>
+                </p>
+            </div>
         </li>
     </ul>
 </div>
 
-<div class="text-center more-news clear ">
-    <div>
-        <a routerLink="/news ">Всички новини</a>
+<div class="text-center clear link-news">
+    <div class="more-news clear">
+        <a routerLink="/news">Всички новини</a>
     </div>
 </div>
