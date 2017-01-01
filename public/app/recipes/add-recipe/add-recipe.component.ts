@@ -59,7 +59,7 @@ export class AddRecipeComponent implements PageComponent {
             .subscribe(
                 data => {
                     this.router.navigate(['home']);
-                    this.showSuccess(`Recipe ${data.name} successfuly added!`);
+                    this.showSuccess(`Рецепта за ${data.name} бе изпратена за одобрение!`);
             },
             error => {
                     this.showError(error);
