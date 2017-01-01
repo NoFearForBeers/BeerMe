@@ -10,6 +10,7 @@ import { AuthenticationModule } from './authentication/authentication.module';
 import { TopBeersModule } from './top-beers/top-beers.module';
 import { BeerFactsModule } from './beer-facts/beer-facts.module';
 import { NewsModule } from './news/news.module';
+import { EventsModule } from './events/events.module';
 import { RecipesModule } from './recipes/recipes.module';
 import { ToastrModule } from 'toastr-ng2';
 import { CarouselModule } from 'ng2-bootstrap';
@@ -37,6 +38,7 @@ import { SortNewsPipe } from './shared/pipes/sortNews';
     TopBeersModule,
     BeerFactsModule,
     NewsModule,
+    EventsModule,
     RecipesModule,
     AppRoutingModule
   ],

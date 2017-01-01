@@ -1,0 +1,15 @@
+<h1 class="events-head">Състезания</h1>
+<p>Може бирата ни да е занаятчийска, но състезанията са ни професионалани. Ако сте горд със своята продукция и исакте да видите къде се намира тя, съгласно стандартите на BJCP 2015,заповядайте на организираните бирени дегустации и състезания</p>
+
+<h2>Календар на събитията: </h2>
+<ul class="events-calendar">
+    <li *ngFor="let events of eventsList">
+        <!--<a routerLink="/events/{{events._id}}">
+            <h3>{{events.title}}</h3>
+        </a>-->
+        <div class="events-terms">
+            <p>Дата: {{events.time}}</p>
+            <p>Място: {{events.place}}</p>
+        </div>
+    </li>
+</ul>

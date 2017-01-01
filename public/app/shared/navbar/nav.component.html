@@ -36,7 +36,7 @@
 
                     <li><a routerLink="/news" class="uppercasing">Новини</a></li>
 
-                    <li><a routerLink="#" class="uppercasing" *ngIf="_authService.isLoggedIn()">Събития</a></li>
+                    <li><a routerLink="/events" class="uppercasing" *ngIf="_authService.isLoggedIn()">Събития</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><a routerLink="/login" class="uppercasing" *ngIf=!_authService.isLoggedIn()>Вход</a></li>
