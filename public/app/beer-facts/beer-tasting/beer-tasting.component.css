@@ -1,0 +1,20 @@
+.page-heading {
+    color: #b83901;
+    font-size: 2.5em;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+}
+
+.tasting-pic {
+    width: 500px;
+    height: 500px;
+    float: left;
+    margin-right: 50px;
+    margin-bottom: 10px;
+}
+
+.tasting-text {
+    text-align: justify;
+    padding: 20px;
+}
