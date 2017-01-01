@@ -12,6 +12,7 @@ import { NewsComponent } from '../news/news-list/news.component';
 import { NewsDetailsComponent } from '../news/news-details/news-details.component';
 import { AddRecipeComponent } from '../recipes/add-recipe/add-recipe.component';
 import { UnapprovedRecipesComponent } from '../recipes/unapproved-recipes/unapproved-recipes.component';
+import { UnapprovedRecipesDetailsComponent } from '../recipes/unapproved-recipes-details/unapproved-recipes-details.component';
 
 export const pages = {
     login: LoginComponent,
@@ -27,5 +28,6 @@ export const pages = {
     news: NewsComponent,
     newsDetails: NewsDetailsComponent,
     addRecipe: AddRecipeComponent,
-    unapprovedRecipes: UnapprovedRecipesComponent
+    unapprovedRecipes: UnapprovedRecipesComponent,
+    unapprovedRecipesDetails: UnapprovedRecipesDetailsComponent
 };

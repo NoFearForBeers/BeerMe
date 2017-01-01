@@ -25,9 +25,9 @@ module.exports = function(models) {
         },
         getAllUnapprovedRecipes() {
             return dataUtils.getAllByStatus(Recipe, waitingForApprovalStatus);
+        },
+        getRecipeById(id) {
+            return dataUtils.getOneById(Recipe, id)
         }
-        // getBeerById(id) {
-        //     return dataUtils.getOneById(BulgarianBeer, id)
-        // }
     };
 };

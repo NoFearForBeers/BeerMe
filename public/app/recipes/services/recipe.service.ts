@@ -28,10 +28,10 @@ export class RecipeService {
                         .map((r: Response) => r.json().data as Recipe[]);
     }
 
-    // getBeerById(id: string): Observable<TopBeer> {
-    //     let url = `${this.topBeersUrl}/${id}`;
+    getRecipeById(id: string): Observable<Recipe> {
+        let url = `/api/unapproved-recipes/${id}`;
 
-    //     return this.http.get(url)
-    //                     .map((r: Response) => r.json().data as TopBeer);
-    // }
+        return this.http.get(url)
+                        .map((r: Response) => r.json().data as Recipe);
+    }
 }

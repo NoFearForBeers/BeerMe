@@ -47,6 +47,16 @@ module.exports = function({ data, validator }) {
                 .catch(err => {
                     res.json(err);
                 });
+        },
+        getRecipeById(req, res) {
+            data.getRecipeById(req.params.id)
+                .then((recipe) => {
+                    //console.log(beer);
+                    res.json({ data: recipe });
+                })
+                .catch(err => {
+                    res.json(err);
+                });
         }
     };
 };
