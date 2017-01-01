@@ -29,7 +29,7 @@ export class HomeComponent {
     });
 
      this.slides.push({
-      image: `http://static.framar.bg/filestore/hmel-prokaza.jpg`
+      image: `http://www.dwordroblin.pl/wp-content/uploads/2016/08/Hop-and-beer-in-glass.jpg`
     });
 
      this.slides.push({

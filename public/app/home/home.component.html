@@ -6,13 +6,15 @@
     </carousel>
 </div>
 
-<div class="text-center news-section ">
-    <h1 class="news-head ">Последни новини</h1>
+<div class="separator">
+    <p class="news-head"><i class="fa fa-newspaper-o spacing-rigt" aria-hidden="true"></i>Последни новини</p>
+</div>
 
+<div class="text-center news-section ">
     <ul class="list-newest-news">
         <li *ngFor="let news of newsList | sortNews : 'postDate'" class="col-md-4">
 
-            <div class="news-item img-thumbnail img-responsive">
+            <div class="news-item img-thumbnail img-responsive" myBackground>
                 <p><strong>{{news.title}}</strong></p>
                 <p>
                     <a routerLink="/news/{{news._id}} " class="btn read-more">Прочети повече <i class=" fa fa-arrow-circle-o-right"></i></a>

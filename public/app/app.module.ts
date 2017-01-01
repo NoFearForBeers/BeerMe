@@ -26,6 +26,9 @@ import { ExceptionService } from './shared/services/exception.service';
 // Pipes
 import { SortNewsPipe } from './shared/pipes/sortNews';
 
+// Directives
+import { BackgroundDirective } from './shared/directives/background.directive';
+
 @NgModule({
   imports: [
     ToastrModule.forRoot(),
@@ -43,7 +46,8 @@ import { SortNewsPipe } from './shared/pipes/sortNews';
   declarations: [
     AppComponent,
     HomeComponent,
-    SortNewsPipe
+    SortNewsPipe,
+    BackgroundDirective
   ],
   bootstrap: [AppComponent],
   providers: [
