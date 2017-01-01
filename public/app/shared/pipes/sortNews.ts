@@ -14,6 +14,7 @@ export class SortNewsPipe implements PipeTransform {
                         return b - a;
                     }
         );
+
         return items.slice(0, 3);
     }
 }

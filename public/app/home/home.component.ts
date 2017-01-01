@@ -10,15 +10,12 @@ import { NewsService } from '../news/services/news-services';
 
 export class HomeComponent {
     newsList: News[] = [];
-    myInterval: number = 3000;
+    myInterval: number = 5000;
     noWrapSlides: boolean = false;
     slides: any[] = [];
-    activeSlideIndex: number;
 
   constructor(private newsService: NewsService) {
-    for (let i = 0; i < 4; i++) {
-      this.addSlide();
-    }
+    this.addSlide();
   }
 
   ngOnInit() {
@@ -27,27 +24,16 @@ export class HomeComponent {
   }
 
   addSlide(): void {
-    let newWidth = 600 + this.slides.length + 1;
-
     this.slides.push({
-      image: `http://www.tastings.com/images/beer-freshness.jpg`
+      image: `https://flggcanyonaletrail.files.wordpress.com/2014/04/savdist-com.jpg`
     });
 
      this.slides.push({
-      image: `https://www.breakside.com/wp-content/uploads/2016/01/ERB_Brewery7.jpg`
+      image: `http://static.framar.bg/filestore/hmel-prokaza.jpg`
     });
 
      this.slides.push({
-      image: `http://d14dsi4x2zx6ql.cloudfront.net/sites/default/files/styles/welcome_image/public/VCW_SI_T8_RussianRiverBrewery_george%20ruiz_Flickr_1280x642.jpg`
+      image: `http://epicureandculture.com/wp-content/uploads/2015/06/Eco-friendly-breweries-cover-photo-e1435500655842.jpg`
     });
-  }
-
-  selectSlide(index: number): void {
-    this.activeSlideIndex = index;
-  }
-
-  removeSlide(index?: number):void {
-    const toRemove = index ? index : this.activeSlideIndex;
-    this.slides.splice(toRemove, 1);
   }
 }

@@ -28,3 +28,14 @@
 .more-news :hover {
     font-size: 1.1em;
 }
+
+.home-img-slide {
+    height: 450px;
+    width: 100%;
+}
+
+.slider {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 auto;
+}
