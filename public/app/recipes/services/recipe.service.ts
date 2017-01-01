@@ -21,4 +21,17 @@ export class RecipeService {
         return this.http.post(url, body, headers)
             .map((r: Response) => r.json().data as Recipe);
     }
+
+    getAllUnapprovedRecipes(): Observable<Recipe[]> {
+        let url = '/api/unapproved-recipes';
+        return this.http.get(url)
+                        .map((r: Response) => r.json().data as Recipe[]);
+    }
+
+    // getBeerById(id: string): Observable<TopBeer> {
+    //     let url = `${this.topBeersUrl}/${id}`;
+
+    //     return this.http.get(url)
+    //                     .map((r: Response) => r.json().data as TopBeer);
+    // }
 }

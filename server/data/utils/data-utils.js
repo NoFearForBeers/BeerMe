@@ -35,6 +35,17 @@ module.exports = {
                 });
             });
     },
+    getAllByStatus(model, status) {
+        return new Promise((resolve, reject) => {
+                model.find({ status: status }, (err, records) => {
+                    if (err) {
+                        return reject(err);
+                    }
+
+                    return resolve(records);
+                });
+            });
+    },
     getOneById(model, id) {
         return new Promise((resolve, reject) => {
                 model.findOne({ _id: id }, (err, singleRecord) => {
@@ -46,4 +57,5 @@ module.exports = {
                 });
             });
     }
+
 };
