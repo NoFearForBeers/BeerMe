@@ -1,19 +1,44 @@
-/*.icons-spacing {
+.icons-spacing {
     margin-right: 10px;
-}
-
-.brand-header {
-    font-size: 1.5em;
 }
 
 .uppercasing {
     text-transform: uppercase;
 }
 
-.main-nav {
+#main-header .navbar-default {
     background-color: #332C1E;
+    border-radius: 0;
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
-.main-header {
+#main-header .navbar-default .navbar-nav>li>a {
+    color: white
+}
+
+#main-header .brand-header>a {
     color: white;
-}*/
+    font-size: 1.5em;
+    font-style: italic;
+    font-weight: bolder;
+}
+
+#main-header .navbar-default .navbar-nav>li>a:hover,
+#main-header .navbar-default .navbar-nav>li>a:focus {
+    background-color: #FDC82F;
+}
+
+.nav-dropdown-menu {
+    background-color: rgba(253, 200, 47, 0.9);
+}
+
+.nav-dropdown-menu li a {
+    color: white
+}
+
+.nav-dropdown-menu li a:hover {
+    text-decoration: underline;
+    background-color: rgba(253, 200, 47, 0.6);
+    color: white
+}
