@@ -8,7 +8,11 @@
                     #comment="ngModel">
             </div>
         </div>
-    
+    <ul>
+        <li *ngFor="let category of categories">
+           {{category}} 
+        </li>
+    </ul>
 
         <div class="form-group">
             <div class="col-lg-10 col-lg-offset-2">
