@@ -28,7 +28,7 @@ module.exports = function({ data, validator }) {
                             }
                         });
                     }
-                    return res.status(400).json({ success: false, msg: 'Authenticaton failed, wrong password.' });
+                    return res.status(400).json({ success: false, msg: 'Грешно потребителско име или парола!' });
                 })
                 .catch(error => {
                     return res.send(error);
@@ -64,12 +64,18 @@ module.exports = function({ data, validator }) {
             newUser.profileImgURL = avatar || DEFAULT_IMAGE;
             // console.log(newUser);
 
+            data.getUserByUsername(newUser.username).then((user) => {
+                        if (user) {
+                            return res.status(400).send({ success: false, msg: 'Потребител с това потребителско име вече съществува!' });
+                        }
+                    });
+
             data.createUser(newUser)
                 .then((data) => {
                     res.status(200).send({ success: true, data })
                 })
                 .catch(err => {
-                    return res.status(400).send({ success: false, msg: 'User was not created' });
+                    return res.status(400).send({ success: false, msg: 'Не е създаден потребител!' });
                 });
         },
         getLoggedUser(req, res) {

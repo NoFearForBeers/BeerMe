@@ -33,18 +33,20 @@ export class RegisterComponent {
             .subscribe(
             data => {
                 this.router.navigate(['login']);
-                this.showSuccess(`${data.username} successfuly registered!`);
+                this.showSuccess(`Потребител ${data.username} е регистриран успешно!`);
             },
             error => {
-                this.showError(error);
+                let responseBody = error._body;
+                let responseObj = JSON.parse(responseBody);
+                this.showError(responseObj.msg);
             });
     }
 
     showSuccess(message: string) {
-        this._toastrService.success(message, 'Successs!');
+        this._toastrService.success(message, 'Успех!');
     }
 
     showError(message: string) {
-        this._toastrService.error(message, 'Error!');
+        this._toastrService.error(message, 'Грешка!');
     }
 }
