@@ -17,10 +17,16 @@
     <div class="preparation-container">
         {{recipe.methodOfPreparation}}
     </div>
-    <div class="button-group">
-            <div class="col-lg-10 col-lg-offset-2">
-                <button>Отхвърли</button>
-                <button>Одобри</button>
-            </div>
+    <aside id="video-add-note" class="transparent-holder">
+        <h4>Причини за отхвърляне</h4>
+        <textarea id="note" cols="25" rows="10" [(ngModel)]="rejectMessage"></textarea>
+        <button class="secondary-btn" (click)="cencel()">Отказ</button>
+        <button class="primary-btn" (click)="rejectRecipe()">Потвърди</button>
+    </aside>
+    <div id="button-group">
+        <div class="col-lg-10 col-lg-offset-2">
+            <button (click)="inputMessage()">Отхвърли</button>
+            <button>Одобри</button>
+        </div>
     </div>
 </div>

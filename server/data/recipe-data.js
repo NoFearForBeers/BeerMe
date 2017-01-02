@@ -14,7 +14,8 @@ module.exports = function(models) {
                         methodOfPreparation: recipe.methodOfPreparation,
                         imgUrl: recipe.imgUrl,
                         author: recipe.author,
-                        status: recipe.status
+                        status: recipe.status,
+                        rejectMessage: recipe.rejectMessage
                     });
 
                     resolve(newRecipe);
@@ -28,6 +29,18 @@ module.exports = function(models) {
         },
         getRecipeById(id) {
             return dataUtils.getOneById(Recipe, id)
+        },
+        rejectRecipe(recipeInfo) {
+            return new Promise((resolve, reject) => {
+                this.getRecipeById(recipeInfo._id)
+                    .then(recipeForUpdate => {
+                            recipeForUpdate.status = recipeInfo.status;
+                            recipeForUpdate.rejectMessage = recipeInfo.rejectMessage;
+                        
+                        dataUtils.update(recipeForUpdate);
+                        resolve(recipeForUpdate);
+                        })
+                    });
         }
     };
 };

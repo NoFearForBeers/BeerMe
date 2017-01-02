@@ -10,7 +10,7 @@ module.exports = function({ data, validator }) {
     return {
         addRecipe(req, res) {
             let newRecipe = {};
-            let propoerties = ['name', 'ingredients', 'methodOfPreparation', 'author'];
+            let propoerties = ['name', 'ingredients', 'methodOfPreparation', 'author', 'rejectMessage'];
 
             let postData = req.body['body'];
             let postDataObj = JSON.parse(postData);
@@ -56,6 +56,33 @@ module.exports = function({ data, validator }) {
                 })
                 .catch(err => {
                     res.json(err);
+                });
+        },
+        rejectRecipe(req, res) {
+            let recipe = {};
+            let propoerties = ['_id', 'rejectMessage'];
+
+            let postData = req.body['body'];
+            let postDataObj = JSON.parse(postData);
+
+            propoerties.forEach(property => {
+                if (!property || property.length < 0) {
+                    res.status(411).json(`Missing ${property}`);
+                }
+
+                recipe[property] = postDataObj[property];
+            });
+
+            //for safety
+            let rejectedStatus = 'rejected';
+            recipe.status = rejectedStatus;
+
+            data.rejectRecipe(recipe)
+                .then((data) => {
+                    res.status(200).send({ success: true, data })
+                })
+                .catch(err => {
+                    return res.status(400).send({ success: false, msg: 'Recipe was not created' });
                 });
         }
     };

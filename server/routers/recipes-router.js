@@ -10,6 +10,7 @@ module.exports = function({ app, controllers }) {
         // .get("/recipes/:id", controllers.getRecipeById)
         // .get("/recipes", controllers.getAllRecipes)
         .get("/unapproved-recipes/:id", controllers.getRecipeById)
+        .put("/unapproved-recipes/:id", controllers.rejectRecipe)
         .get("/unapproved-recipes", controllers.getAllUnapprovedRecipes)
         .post("/add-recipe", controllers.addRecipe);
 

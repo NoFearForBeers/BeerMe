@@ -1,0 +1,17 @@
+.transparent-holder {
+    padding: 10px 20px;
+    background: rgba(0, 0, 0, 0.85);
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: -40%;
+    transition: all 0.8s ease-in-out;
+}
+
+.visible {
+    right: 0!important;
+}
+
+.hidden {
+    display: none;
+}

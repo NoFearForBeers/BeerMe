@@ -15,12 +15,14 @@ import { AuthService } from '../../authentication/services/auth.service';
 })
 export class AddRecipeComponent implements PageComponent {
     newRecipe: Recipe = {
+        _id: '',
         name: '',
         ingredients: [],
         methodOfPreparation: '',
         imgUrl: '',
         author: '',
-        status: ''
+        status: '',
+        rejectMessage: ''
     };
 
     ingredientsCombined: string = '';
