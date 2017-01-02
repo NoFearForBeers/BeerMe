@@ -1,4 +1,4 @@
-<div *ngIf="recipe">
+<div *ngIf="recipe && authService.isAdminLogged()">
     <h1>{{recipe.name}}</h1>
     <small>Автор: {{recipe.author}}</small>
     <div class="image-container">
@@ -15,6 +15,7 @@
         </ul>
     </div>
     <div class="preparation-container">
+        <p>Начин на приготвяне:</p>
         {{recipe.methodOfPreparation}}
     </div>
     <aside id="video-add-note" class="transparent-holder">

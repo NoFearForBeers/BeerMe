@@ -39,10 +39,19 @@ module.exports = function({ data, validator }) {
                     return res.status(400).send({ success: false, msg: 'Recipe was not created' });
                 });
         },
+        getAllPublicRecipes(req, res) {
+            data.getAllPublicRecipes()
+                .then(recipes => {
+                    res.json({ data: recipes })
+                })
+                .catch(err => {
+                    res.json(err);
+                });
+        },
         getAllUnapprovedRecipes(req, res) {
              data.getAllUnapprovedRecipes()
-                .then(allRecipes => {
-                    res.json({ data: allRecipes})
+                .then(unapprovedRecipes => {
+                    res.json({ data: unapprovedRecipes })
                 })
                 .catch(err => {
                     res.json(err);

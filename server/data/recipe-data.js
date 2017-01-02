@@ -3,7 +3,8 @@ let dataUtils = require('./utils/data-utils');
 
 module.exports = function(models) {
     let { Recipe } = models;
-    const waitingForApprovalStatus = "waiting-for-approval";
+    const approvedStatus = 'approved';
+    const waitingForApprovalStatus = 'waiting-for-approval';
 
     return {
         createRecipe(recipe) {
@@ -23,6 +24,9 @@ module.exports = function(models) {
                 .then((newRecipe) => {
                     return dataUtils.save(newRecipe);
                 })
+        },
+        getAllPublicRecipes() {
+            return dataUtils.getAllByStatus(Recipe, approvedStatus);
         },
         getAllUnapprovedRecipes() {
             return dataUtils.getAllByStatus(Recipe, waitingForApprovalStatus);

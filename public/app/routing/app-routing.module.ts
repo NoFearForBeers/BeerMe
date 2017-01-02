@@ -19,12 +19,14 @@ const appRoutes: Routes = [
     { path: 'news', component: pages.news },
     { path: 'news/:id', component: pages.newsDetails },
     { path: 'add-recipe', component: pages.addRecipe },
+    { path: 'recipes', component: pages.publicRecipes },
+    { path: 'recipes/:id', component: pages.publicRecipesDetails },
     { path: 'unapproved-recipes/:id', component: pages.unapprovedRecipesDetails },
+    { path: 'unapproved-recipes', component: pages.unapprovedRecipes },
     { path: 'events', component: pages.events },
     { path: 'events/:id', component: pages.eventsDetails },
-    { path: 'unapproved-recipes', component: pages.unapprovedRecipes },
     { path: 'participations', component: pages.participations },
-    //{ path: 'participations/new', component: pages.participationsNew },
+    { path: 'participations/new', component: pages.participationsNew },
     
 ];
 

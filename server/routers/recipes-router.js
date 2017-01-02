@@ -7,9 +7,8 @@ module.exports = function({ app, controllers }) {
     let router = new Router();
 
     router
-        // .get("/recipes/:id", controllers.getRecipeById)
-        // .get("/recipes", controllers.getAllRecipes)
-        .get("/unapproved-recipes/:id", controllers.getRecipeById)
+        .get("/recipes/:id", controllers.getRecipeById)
+        .get("/recipes", controllers.getAllPublicRecipes)
         .put("/unapproved-recipes/:id", controllers.changeRecipeStatus)
         .get("/unapproved-recipes", controllers.getAllUnapprovedRecipes)
         .post("/add-recipe", controllers.addRecipe);

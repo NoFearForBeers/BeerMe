@@ -1,0 +1,21 @@
+<div *ngIf="recipe">
+    <h1>{{recipe.name}}</h1>
+    <small>Автор: {{recipe.author}}</small>
+    <div class="image-container">
+        <img src="{{recipe.imgUrl}}" alt="{{recipe.name}}" style="width: 100px">
+    </div>
+    <div class="ingredients-details-container">
+        <p>Продукти:</p>
+        <ul>
+            <li *ngFor="let ingredient of recipe.ingredients">
+                <div class="single-ingredient">
+                    <p>{{ingredient}}</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="preparation-container">
+        <p>Начин на приготвяне:</p>
+        {{recipe.methodOfPreparation}}
+    </div>
+</div>

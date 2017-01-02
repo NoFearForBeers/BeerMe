@@ -11,12 +11,14 @@ import { BeerBrandsComponent } from '../beer-facts/beer-brands/beer-brands.compo
 import { NewsComponent } from '../news/news-list/news.component';
 import { NewsDetailsComponent } from '../news/news-details/news-details.component';
 import { AddRecipeComponent } from '../recipes/add-recipe/add-recipe.component';
+import { PublicRecipesComponent } from '../recipes/public-recipes/public-recipes.component';
+import { PublicRecipesDetailsComponent } from '../recipes/public-recipes-details/public-recipes-details.component';
+import { UnapprovedRecipesComponent } from '../recipes/unapproved-recipes/unapproved-recipes.component';
+import { UnapprovedRecipesDetailsComponent } from '../recipes/unapproved-recipes-details/unapproved-recipes-details.component';
 import { EventsComponent } from '../events/events-main/events.component';
 import { EventsDetailComponent } from '../events/events-detail/events-detail.component';
 import { ParticipationsComponent } from '../participations/participations.component';
-//import { ParticipationFormComponent } from '../participations/participation-form/participation-form.component';
-import { UnapprovedRecipesComponent } from '../recipes/unapproved-recipes/unapproved-recipes.component';
-import { UnapprovedRecipesDetailsComponent } from '../recipes/unapproved-recipes-details/unapproved-recipes-details.component';
+import { ParticipationFormComponent } from '../participations/participation-form/participation-form.component';
 
 export const pages = {
     login: LoginComponent,
@@ -32,10 +34,12 @@ export const pages = {
     news: NewsComponent,
     newsDetails: NewsDetailsComponent,
     addRecipe: AddRecipeComponent,
+    publicRecipes: PublicRecipesComponent,
+    publicRecipesDetails: PublicRecipesDetailsComponent,
     unapprovedRecipes: UnapprovedRecipesComponent,
     unapprovedRecipesDetails: UnapprovedRecipesDetailsComponent,
     events: EventsComponent,
     eventsDetails: EventsDetailComponent,
     participations: ParticipationsComponent,
-    //participationsNew: ParticipationFormComponent
+participationsNew: ParticipationFormComponent
 };

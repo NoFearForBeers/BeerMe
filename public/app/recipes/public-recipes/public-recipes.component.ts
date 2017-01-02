@@ -4,23 +4,22 @@ import { Observable } from 'rxjs/Observable';
 import { PageComponent } from '../../shared/page.component';
 import { Recipe } from '../recipe.model';
 import { RecipeService } from '../services/recipe.service';
-import { AuthService } from '../../authentication/services/auth.service';
 
 @Component({
   moduleId: module.id,
-  selector: 'unapproved-recipes',
-  templateUrl: './unapproved-recipes.component.html'
+  selector: 'public-recipes',
+  templateUrl: './public-recipes.component.html'
 //   styleUrls: ['./app.component.css']
 })
 
-export class UnapprovedRecipesComponent implements PageComponent {
+export class PublicRecipesComponent implements PageComponent {
   recipeList: Recipe[] = [];
 
-  constructor(private recipeService: RecipeService, private authService: AuthService) {
+  constructor(private recipeService: RecipeService) {
   }
 
   ngOnInit() {
-    this.recipeService.getAllUnapprovedRecipes()
+    this.recipeService.getAllPublicRecipes()
                        .subscribe(recipes => this.recipeList = recipes);
   }
 }
