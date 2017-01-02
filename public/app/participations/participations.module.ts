@@ -6,11 +6,12 @@ import { RouterModule } from '@angular/router';
 
 import { ParticipationsComponent } from '../participations/participations.component';
 import { ParticipationsService } from '../participations/participations.service';
+import { ParticipationFormComponent } from '../participations/participation-form/participation-form.component';
 
 @NgModule({
     imports: [ CommonModule, FormsModule, RouterModule ],
-    exports: [ ParticipationsComponent ],
-    declarations: [ ParticipationsComponent ],
+    exports: [ ParticipationsComponent, ParticipationFormComponent ],
+    declarations: [ ParticipationsComponent, ParticipationFormComponent ],
     providers: [ ParticipationsService ]
 })
 export class ParticipationsModule {

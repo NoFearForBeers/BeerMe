@@ -7,7 +7,8 @@ module.exports = function({ app, controllers }) {
     let router = new Router();
 
     router
-        .get("/participations", controllers.getAllParticipations);
+        .get("/participations", controllers.getAllParticipations)
+        .post("/participations", controllers.createParticipation);
 
     app.use("/api", router);
 

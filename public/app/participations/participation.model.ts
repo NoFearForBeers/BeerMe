@@ -1,7 +1,7 @@
 export interface Participation {
     _id: string;
-    userId: string;
+    username: string;
     eventId: string;
     categories: any[];
-    comments: string;
+    comment: string;
 }
