@@ -9,4 +9,7 @@
     <div>
         {{events.info}}
     </div>
+    <a [routerLink]="['/participations/new']" [queryParams]="{eventId: events._id}">
+            <h3>участвай</h3>
+    </a>
 </div>

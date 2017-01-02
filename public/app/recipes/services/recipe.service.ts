@@ -35,7 +35,7 @@ export class RecipeService {
                         .map((r: Response) => r.json().data as Recipe);
     }
 
-    rejectRecipe(recipe: Recipe): Observable<Recipe> {
+    changeRecipeStatus(recipe: Recipe): Observable<Recipe> {
         let url = `/api/unapproved-recipes/${recipe._id}`;
         let headers = new Headers({ 'Content-Type': 'application/json' });
         let body = { body: JSON.stringify(recipe) };

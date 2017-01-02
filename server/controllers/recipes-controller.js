@@ -58,9 +58,9 @@ module.exports = function({ data, validator }) {
                     res.json(err);
                 });
         },
-        rejectRecipe(req, res) {
+        changeRecipeStatus(req, res) {
             let recipe = {};
-            let propoerties = ['_id', 'rejectMessage'];
+            let propoerties = ['_id', 'status', 'rejectMessage'];
 
             let postData = req.body['body'];
             let postDataObj = JSON.parse(postData);
@@ -73,16 +73,12 @@ module.exports = function({ data, validator }) {
                 recipe[property] = postDataObj[property];
             });
 
-            //for safety
-            let rejectedStatus = 'rejected';
-            recipe.status = rejectedStatus;
-
-            data.rejectRecipe(recipe)
+            data.changeRecipeStatus(recipe)
                 .then((data) => {
                     res.status(200).send({ success: true, data })
                 })
                 .catch(err => {
-                    return res.status(400).send({ success: false, msg: 'Recipe was not created' });
+                    return res.status(400).send({ success: false, msg: 'Recipe was now updated!' });
                 });
         }
     };

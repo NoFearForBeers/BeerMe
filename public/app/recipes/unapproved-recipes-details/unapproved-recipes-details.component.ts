@@ -44,11 +44,26 @@ export class UnapprovedRecipesDetailsComponent implements PageComponent {
         this.recipe.status = rejectedStatus;
         this.recipe.rejectMessage = this.rejectMessage;
 
-        this.recipeService.rejectRecipe(this.recipe)
+        this.recipeService.changeRecipeStatus(this.recipe)
             .subscribe(
                 data => {
                     this.router.navigate(['unapproved-recipes']);
                     this.showSuccess(`Рецепта за ${data.name} бе отвърлена!`);
+            },
+            error => {
+                    this.showError(error);
+            });
+    }
+
+    approveRecipe() {
+        let approvedStatus = 'approved';
+        this.recipe.status = approvedStatus;
+
+        this.recipeService.changeRecipeStatus(this.recipe)
+            .subscribe(
+                data => {
+                    this.router.navigate(['unapproved-recipes']);
+                    this.showSuccess(`Рецепта за ${data.name} бе одобрена!`);
             },
             error => {
                     this.showError(error);
