@@ -1,0 +1,32 @@
+<div *ngIf="recipe">
+    <h1>{{recipe.name}}</h1>
+    <small>Автор: {{recipe.author}}</small>
+    <div class="image-container">
+        <img src="{{recipe.imgUrl}}" alt="{{recipe.name}}" style="width: 100px">
+    </div>
+    <div class="ingredients-details-container">
+        <p>Продукти:</p>
+        <ul>
+            <li *ngFor="let ingredient of recipe.ingredients">
+                <div class="single-ingredient">
+                    <p>{{ingredient}}</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="preparation-container">
+        {{recipe.methodOfPreparation}}
+    </div>
+    <aside id="video-add-note" class="transparent-holder">
+        <h4>Причини за отхвърляне</h4>
+        <textarea id="note" cols="25" rows="10" [(ngModel)]="rejectMessage"></textarea>
+        <button class="secondary-btn" (click)="cencel()">Отказ</button>
+        <button class="primary-btn" (click)="rejectRecipe()">Потвърди</button>
+    </aside>
+    <div id="button-group">
+        <div class="col-lg-10 col-lg-offset-2">
+            <button (click)="inputMessage()">Отхвърли</button>
+            <button>Одобри</button>
+        </div>
+    </div>
+</div>

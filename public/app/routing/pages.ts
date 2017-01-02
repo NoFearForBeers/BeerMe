@@ -11,7 +11,10 @@ import { BeerBrandsComponent } from '../beer-facts/beer-brands/beer-brands.compo
 import { NewsComponent } from '../news/news-list/news.component';
 import { NewsDetailsComponent } from '../news/news-details/news-details.component';
 import { AddRecipeComponent } from '../recipes/add-recipe/add-recipe.component';
+import { EventsComponent } from '../events/events-main/events.component';
+import { EventsDetailComponent } from '../events/events-detail/events-detail.component';
 import { UnapprovedRecipesComponent } from '../recipes/unapproved-recipes/unapproved-recipes.component';
+import { UnapprovedRecipesDetailsComponent } from '../recipes/unapproved-recipes-details/unapproved-recipes-details.component';
 
 export const pages = {
     login: LoginComponent,
@@ -27,5 +30,8 @@ export const pages = {
     news: NewsComponent,
     newsDetails: NewsDetailsComponent,
     addRecipe: AddRecipeComponent,
-    unapprovedRecipes: UnapprovedRecipesComponent
+    unapprovedRecipes: UnapprovedRecipesComponent,
+    unapprovedRecipesDetails: UnapprovedRecipesDetailsComponent,
+    events: EventsComponent,
+    eventsDetails: EventsDetailComponent
 };

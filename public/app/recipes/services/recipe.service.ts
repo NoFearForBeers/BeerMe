@@ -28,10 +28,19 @@ export class RecipeService {
                         .map((r: Response) => r.json().data as Recipe[]);
     }
 
-    // getBeerById(id: string): Observable<TopBeer> {
-    //     let url = `${this.topBeersUrl}/${id}`;
+    getRecipeById(id: string): Observable<Recipe> {
+        let url = `/api/unapproved-recipes/${id}`;
 
-    //     return this.http.get(url)
-    //                     .map((r: Response) => r.json().data as TopBeer);
-    // }
+        return this.http.get(url)
+                        .map((r: Response) => r.json().data as Recipe);
+    }
+
+    rejectRecipe(recipe: Recipe): Observable<Recipe> {
+        let url = `/api/unapproved-recipes/${recipe._id}`;
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+        let body = { body: JSON.stringify(recipe) };
+
+        return this.http.put(url, body, headers)
+            .map((r: Response) => r.json().data as Recipe);
+    }
 }

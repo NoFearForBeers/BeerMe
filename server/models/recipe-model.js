@@ -19,5 +19,8 @@ module.exports = modelRegistrator.register('Recipe', {
     },
     status: {
         type: String
+    },
+    rejectMessage: {
+        type: String
     }
 })
