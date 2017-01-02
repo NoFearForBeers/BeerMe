@@ -22,6 +22,12 @@ export class RecipeService {
             .map((r: Response) => r.json().data as Recipe);
     }
 
+    getAllPublicRecipes(): Observable<Recipe[]> {
+        let url = '/api/recipes';
+        return this.http.get(url)
+                        .map((r: Response) => r.json().data as Recipe[]);
+    }
+
     getAllUnapprovedRecipes(): Observable<Recipe[]> {
         let url = '/api/unapproved-recipes';
         return this.http.get(url)
@@ -29,7 +35,7 @@ export class RecipeService {
     }
 
     getRecipeById(id: string): Observable<Recipe> {
-        let url = `/api/unapproved-recipes/${id}`;
+        let url = `/api/recipes/${id}`;
 
         return this.http.get(url)
                         .map((r: Response) => r.json().data as Recipe);

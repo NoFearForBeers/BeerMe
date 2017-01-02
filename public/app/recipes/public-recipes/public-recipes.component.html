@@ -1,0 +1,15 @@
+<h1>Рецепти</h1>
+<div *ngIf="recipeList">
+    <ul class="Recipes">
+        <li *ngFor="let recipe of recipeList">
+            <a routerLink="/recipes/{{recipe._id}}">
+                <h3>{{recipe.name}}</h3>
+            </a>
+            <img src="{{recipe.imgUrl}}" alt="recipe.name" style="width: 100px">
+            <p>Автор: {{recipe.author}}</p>
+        </li>
+    </ul>
+</div>
+<div *ngIf="!recipeList.length">
+    <h3>Няма публикувани рецепти!</h3>
+</div>
