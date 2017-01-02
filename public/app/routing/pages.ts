@@ -14,7 +14,7 @@ import { AddRecipeComponent } from '../recipes/add-recipe/add-recipe.component';
 import { EventsComponent } from '../events/events-main/events.component';
 import { EventsDetailComponent } from '../events/events-detail/events-detail.component';
 import { ParticipationsComponent } from '../participations/participations.component';
-import { ParticipationFormComponent } from '../participations/participation-form/participation-form.component';
+//import { ParticipationFormComponent } from '../participations/participation-form/participation-form.component';
 import { UnapprovedRecipesComponent } from '../recipes/unapproved-recipes/unapproved-recipes.component';
 import { UnapprovedRecipesDetailsComponent } from '../recipes/unapproved-recipes-details/unapproved-recipes-details.component';
 
@@ -37,5 +37,5 @@ export const pages = {
     events: EventsComponent,
     eventsDetails: EventsDetailComponent,
     participations: ParticipationsComponent,
-    participationsNew: ParticipationFormComponent
+    //participationsNew: ParticipationFormComponent
 };

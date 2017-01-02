@@ -1,10 +1,12 @@
 <h1 class="news-head">Новини</h1>
-<ul class="top-beers">
-    <!--| sortNewsByDate: 'postDate' -->
+<ul>
     <li *ngFor="let news of newsList | sortNewsByDate">
-        <a routerLink="/news/{{news._id}}">
-            <h3>{{news.title}}</h3>
-        </a>
-        <div>{{news.postDate | date}}</div>
+        <h3 class="news-heading">
+            <a routerLink="/news/{{news._id}}" class="read-all-link">{{news.title}}</a>
+        </h3>
+        <div><strong>{{news.postDate | date}}</strong></div>
+        <p class="news-content">{{news.content | cutText}}...
+            <a routerLink="/news/{{news._id}}" class="read-all-link">Покажи цялата новина</a>
+        </p>
     </li>
 </ul>

@@ -16,3 +16,4 @@ import { ParticipationFormComponent } from '../participations/participation-form
 })
 export class ParticipationsModule {
 }
+

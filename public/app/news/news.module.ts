@@ -8,11 +8,12 @@ import { NewsService } from './services/news-services';
 import { NewsDetailsComponent } from './news-details/news-details.component';
 
 import { SortNewsByDatePipe } from '../shared/pipes/sortNewsByDate';
+import { CutTextPipe } from '../shared/pipes/cutText';
 
 @NgModule({
     imports: [ CommonModule, FormsModule, RouterModule ],
     exports: [ NewsComponent, NewsDetailsComponent ],
-    declarations: [ NewsComponent, NewsDetailsComponent, SortNewsByDatePipe ],
+    declarations: [ NewsComponent, NewsDetailsComponent, SortNewsByDatePipe, CutTextPipe ],
     providers: [ NewsService ]
 })
 

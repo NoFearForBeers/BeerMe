@@ -15,13 +15,13 @@ import { EventsService } from '../../events/events.service';
 })
 
 export class ParticipationFormComponent implements PageComponent {
-  newParticipation: Participation = {
-        username: window.localStorage.username,
-        eventId: '',
-        categories: [],
-        comment: ''
-    };
-    categories: [];
+//   newParticipation: Participation = {
+//         // username: window.localStorage.username,
+//         // eventId: '',
+//         // categories: [],
+//         // comment: ''
+//     };
+//     categories: [];
 
   constructor(private participationsService: ParticipationsService, 
               private router: Router,
@@ -31,33 +31,33 @@ export class ParticipationFormComponent implements PageComponent {
 
   ngOnInit() {
    // subscribe to router event
-    this.subscription = this.activatedRoute.queryParams.subscribe(
-      (param: any) => {
-        let eventId = param['eventId'];
-        console.log(eventId);
-        this.newParticipation.eventId = eventId;
-        let eventinfo = this.eventService.getEventsById(eventId)
-                  .subscribe(event => this.categories = event.category);
-      });
+    // this.subscription = this.activatedRoute.queryParams.subscribe(
+    //   (param: any) => {
+    //     let eventId = param['eventId'];
+    //     console.log(eventId);
+    //     this.newParticipation.eventId = eventId;
+    //     let eventinfo = this.eventService.getEventsById(eventId)
+    //               .subscribe(event => this.categories = event.category);
+    //   });
   }
 
   ngOnDestroy() {
     // prevent memory leak by unsubscribing
-    this.subscription.unsubscribe();
+    // this.subscription.unsubscribe();
   }
 
   onSubmit() {
-        this.participationsService.register(this.newParticipation)
-            .subscribe(
-                data => {
-                  console.log(data);
-                    this.router.navigate(['participations']);
+        // this.participationsService.register(this.newParticipation)
+        //     .subscribe(
+        //         data => {
+        //           console.log(data);
+        //             this.router.navigate(['participations']);
                     
-                    //this.showSuccess(`${data.username} successfuly registered!`);
-            },
-            error => {
-                    // this.showError(error);
-                    console.log(error)
-            });
+        //             //this.showSuccess(`${data.username} successfuly registered!`);
+        //     },
+        //     error => {
+        //             // this.showError(error);
+        //             console.log(error)
+        //     });
     }
-}
+ }

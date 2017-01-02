@@ -17,15 +17,15 @@ export class ParticipationsService {
                         .map((r: Response) => r.json().data as Participation[]);
     }
 
-    register(participationInfo: any): Observable<Participation> {
-        let url = '/api/participations';
-        let headers = new Headers({ 'Content-Type': 'application/json' });
-        let body = { body: JSON.stringify(participationInfo) };
+    // register(participationInfo: any): Observable<Participation> {
+    //     let url = '/api/participations';
+    //     let headers = new Headers({ 'Content-Type': 'application/json' });
+    //     let body = { body: JSON.stringify(participationInfo) };
       
 
-        return this.http.post(url, body, headers)
-            .map((r: Response) => r.json().data as Participation);
-        // .do(data => console.log(data));
-    }
+    //     return this.http.post(url, body, headers)
+    //         .map((r: Response) => r.json().data as Participation);
+    //     // .do(data => console.log(data));
+    // }
 
 }

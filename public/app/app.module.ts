@@ -27,11 +27,9 @@ import { ExceptionService } from './shared/services/exception.service';
 
 // Pipes
 import { TakeRecentNewsPipe } from './shared/pipes/takeRecentNews';
-//import { SortNewsByDatePipe } from './shared/pipes/sortNewsByDate';
 
 // Directives
 import { BackgroundDirective } from './shared/directives/background.directive';
-import { UppercaseDirective } from './shared/directives/uppercase.directive';
 
 @NgModule({
   imports: [
@@ -53,9 +51,7 @@ import { UppercaseDirective } from './shared/directives/uppercase.directive';
     AppComponent,
     HomeComponent,
     TakeRecentNewsPipe,
-    //SortNewsByDatePipe,
-    BackgroundDirective,
-    UppercaseDirective
+    BackgroundDirective
   ],
   bootstrap: [AppComponent],
   providers: [
