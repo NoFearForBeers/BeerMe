@@ -1,4 +1,4 @@
-<div *ngIf="recipe">
+<div *ngIf="recipe && authService.isAdminLogged()">
     <h1>{{recipe.name}}</h1>
     <small>Автор: {{recipe.author}}</small>
     <div class="image-container">

@@ -32,12 +32,12 @@
                         <ul class="dropdown-menu  nav-dropdown-menu" role="menu">
                             <li><a routerLink="/add-recipe" class="uppercasing">Добави рецепта</a></li>
                             <li><a routerLink="/recipes" class="uppercasing">Рецепти</a></li>
+                            <li *ngIf="_authService.isAdminLogged()"><a routerLink="/unapproved-recipes" class="uppercasing">Рецепти за одобрение</a></li>
                         </ul>
                     </li>
 
                     <li><a routerLink="/news" class="uppercasing">Новини</a></li>
                     <li *ngIf="_authService.isLoggedIn()"><a routerLink="/events" class="uppercasing">Събития</a></li>
-                    <li *ngIf="_authService.isAdminLogged()"><a routerLink="/unapproved-recipes" class="uppercasing">Неодобрени рецепти</a></li>
                     <li *ngIf="_authService.isAdminLogged()"><a routerLink="/participations" class="uppercasing">Участници</a></li>
                     <li *ngIf="_authService.isLoggedIn()"><a routerLink="/participations/new" class="uppercasing">участжай</a></li>
                 </ul>
