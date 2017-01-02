@@ -22,7 +22,8 @@ const appRoutes: Routes = [
     { path: 'unapproved-recipes/:id', component: pages.unapprovedRecipesDetails },
     { path: 'events', component: pages.events },
     { path: 'events/:id', component: pages.eventsDetails },
-    { path: 'unapproved-recipes', component: pages.unapprovedRecipes }
+    { path: 'unapproved-recipes', component: pages.unapprovedRecipes },
+    { path: 'participations', component: pages.participations }
 ];
 
 @NgModule({

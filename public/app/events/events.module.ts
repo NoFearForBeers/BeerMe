@@ -1,18 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+
 
 import { EventsComponent } from '../events/events-main/events.component';
 import { EventsDetailComponent } from '../events/events-detail/events-detail.component';
 import { EventsService } from './events.service';
 
-import { ToastrService } from 'toastr-ng2';
-
 @NgModule({
-    imports: [ CommonModule, FormsModule ],
+    imports: [ CommonModule, FormsModule, RouterModule ],
     exports: [ EventsComponent, EventsDetailComponent ],
     declarations: [ EventsComponent, EventsDetailComponent ],
-    providers: [ ToastrService, EventsService ]
+    providers: [ EventsService ]
 })
 export class EventsModule {
 }
