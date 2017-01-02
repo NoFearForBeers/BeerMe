@@ -4,9 +4,9 @@
 <h2>Календар на събитията: </h2>
 <ul class="events-calendar">
     <li *ngFor="let events of eventsList">
-        <!--<a routerLink="/events/{{events._id}}">
+        <a routerLink="/events/{{events._id}}">
             <h3>{{events.title}}</h3>
-        </a>-->
+        </a>
         <div class="events-terms">
             <p>Дата: {{events.time}}</p>
             <p>Място: {{events.place}}</p>

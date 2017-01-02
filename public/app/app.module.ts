@@ -11,6 +11,7 @@ import { TopBeersModule } from './top-beers/top-beers.module';
 import { BeerFactsModule } from './beer-facts/beer-facts.module';
 import { NewsModule } from './news/news.module';
 import { EventsModule } from './events/events.module';
+import { ParticipationsModule } from './participations/participations.module';
 import { RecipesModule } from './recipes/recipes.module';
 import { ToastrModule } from 'toastr-ng2';
 import { CarouselModule } from 'ng2-bootstrap';
@@ -44,6 +45,7 @@ import { UppercaseDirective } from './shared/directives/uppercase.directive';
     BeerFactsModule,
     NewsModule,
     EventsModule,
+    ParticipationsModule,
     RecipesModule,
     AppRoutingModule
   ],

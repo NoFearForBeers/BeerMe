@@ -13,6 +13,7 @@ import { NewsDetailsComponent } from '../news/news-details/news-details.componen
 import { AddRecipeComponent } from '../recipes/add-recipe/add-recipe.component';
 import { EventsComponent } from '../events/events-main/events.component';
 import { EventsDetailComponent } from '../events/events-detail/events-detail.component';
+import { ParticipationsComponent } from '../participations/participations.component';
 import { UnapprovedRecipesComponent } from '../recipes/unapproved-recipes/unapproved-recipes.component';
 import { UnapprovedRecipesDetailsComponent } from '../recipes/unapproved-recipes-details/unapproved-recipes-details.component';
 
@@ -33,5 +34,6 @@ export const pages = {
     unapprovedRecipes: UnapprovedRecipesComponent,
     unapprovedRecipesDetails: UnapprovedRecipesDetailsComponent,
     events: EventsComponent,
-    eventsDetails: EventsDetailComponent
+    eventsDetails: EventsDetailComponent,
+    participations: ParticipationsComponent
 };
