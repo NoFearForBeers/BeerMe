@@ -39,7 +39,7 @@
 .news-item {
     width: 300px;
     height: 200px;
-    color: #FDC82F;
+    color: #B83901;
     padding-top: 10%;
     font-size: 1.2em;
     text-transform: uppercase;
@@ -48,6 +48,11 @@
 .read-more {
     font-size: 1em;
     color: #5F462B;
+    position: absolute;
+    bottom: 0;
+    margin-left: -100px;
+    background-color: rgba(253, 200, 48, 0.8);
+    border-radius: 0;
 }
 
 .read-more :hover {

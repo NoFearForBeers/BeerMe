@@ -25,16 +25,15 @@ export class HomeComponent {
 
   addSlide(): void {
     this.slides.push({
-      image: `http://killingthebreeze.com/wp-content/uploads/2015/03/170315-beer-competition.jpg`
+      image: `http://www.dwordroblin.pl/wp-content/uploads/2016/08/Hop-and-beer-in-glass.jpg`
     });
 
     this.slides.push({
       image: `http://epicureandculture.com/wp-content/uploads/2015/06/Eco-friendly-breweries-cover-photo-e1435500655842.jpg`
     });
 
-
-     this.slides.push({
-      image: `http://www.dwordroblin.pl/wp-content/uploads/2016/08/Hop-and-beer-in-glass.jpg`
+    this.slides.push({
+      image: `http://killingthebreeze.com/wp-content/uploads/2015/03/170315-beer-competition.jpg`
     });
 
     this.slides.push({
