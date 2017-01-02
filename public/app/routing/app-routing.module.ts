@@ -27,7 +27,6 @@ const appRoutes: Routes = [
     { path: 'events/:id', component: pages.eventsDetails },
     { path: 'participations', component: pages.participations },
     { path: 'participations/new', component: pages.participationsNew },
-    
 ];
 
 @NgModule({
