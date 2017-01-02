@@ -1,0 +1,15 @@
+.recipes-title {
+    color: #b83901;
+    font-size: 2.5em;
+    font-weight: bold;
+    padding-bottom: 10px;
+}
+
+.recipe-image-container {
+    width: 200px;
+    height: 200px;
+}
+
+.recipe-link {
+    color: #b83901;
+}

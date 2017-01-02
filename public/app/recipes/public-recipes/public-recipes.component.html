@@ -1,12 +1,12 @@
-<h1>Рецепти</h1>
-<div *ngIf="recipeList">
+<h1 class="recipes-title">Рецепти</h1>
+<div *ngIf="recipeList" class="text-center">
     <ul class="Recipes">
-        <li *ngFor="let recipe of recipeList">
-            <a routerLink="/recipes/{{recipe._id}}">
+        <li *ngFor="let recipe of recipeList" class="col-md-4">
+            <a routerLink="/recipes/{{recipe._id}}" class="recipe-link">
                 <h3>{{recipe.name}}</h3>
             </a>
-            <img src="{{recipe.imgUrl}}" alt="recipe.name" style="width: 100px">
-            <p>Автор: {{recipe.author}}</p>
+            <img src="{{recipe.imgUrl}}" alt="recipe.name" class="img-thumbnail img-responsive recipe-image-container">
+            <p><strong>Автор: {{recipe.author}}</strong></p>
         </li>
     </ul>
 </div>

@@ -9,8 +9,8 @@ import { AuthService } from '../../authentication/services/auth.service';
 @Component({
   moduleId: module.id,
   selector: 'unapproved-recipes',
-  templateUrl: './unapproved-recipes.component.html'
-//   styleUrls: ['./app.component.css']
+  templateUrl: './unapproved-recipes.component.html',
+  styleUrls: ['./unapproved-recipes.component.css']
 })
 
 export class UnapprovedRecipesComponent implements PageComponent {
