@@ -1,0 +1,21 @@
+.beer-brands-title {
+    color: #b83901;
+    font-size: 2.5em;
+    font-weight: bold;
+    padding-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.brands-image-container {
+    width: 200px;
+    height: 150px;
+}
+
+.spacing {
+    padding-left: 5%;
+    padding-bottom: 5%;
+}
+
+.ext-link {
+    color: #b83901;
+}

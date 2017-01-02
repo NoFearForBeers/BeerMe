@@ -1,16 +1,27 @@
-<h1>Марки и асортименти пиво на пивоварните в България</h1>
+<h2 class="beer-brands-title">Марки и асортименти пиво на пивоварните в България</h2>
+
 <ul class="beer-brands">
-    <li *ngFor="let beer of beerBrandsList">
-        <h2>{{beer.company}}</h2>
-            <div class="brands-image-container">
-                <img src="{{beer.imgUrl}}">
-            </div>
-            <div class="beer-brands-container">
-                <p>Марки произвеждано пиво:</p>
-                <ul>
-                    <li>{{beer.brands}}</li>
-                </ul>
-                <p>За повече информация: {{beer.webpage}}</p>
-           </div>
-    </li>
+    <table class="table table-responsive">
+        <tr>
+            <li *ngFor="let beer of beerBrandsList">
+                <td class="spacing">
+                    <div class="text-center brand-container img-responsive">
+                        <h2>{{beer.company}}</h2>
+                        <p><a href="{{beer.webpage}}" target="blank" class="btn ext-link">{{beer.webpage}} <i class="btn fa fa-external-link"></i></a></p>
+                        <img class="brands-image-container img-thumbnail img-responsive" src="{{beer.imgUrl}}">
+                    </div>
+                </td>
+                <td class="spacing">
+                    <div class="beer-brands-container">
+                        <h4>Марки произвеждано пиво:</h4>
+                        <ul>
+                            <li *ngFor="let brand of beer.brands">
+                                <p>{{brand}}</p>
+                            </li>
+                        </ul>
+                    </div>
+                </td>
+            </li>
+        </tr>
+    </table>
 </ul>

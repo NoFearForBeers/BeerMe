@@ -32,16 +32,39 @@ BeerMe is an application for beer addicted people and home made beer comunity.
 ###Private(accessible without authentication) pages - must have 7:###
 - **/add-recipev**
 - **/events**
+- **/events/:id**
 
+
+###Components list:###
+- login.component
+- register.component
+- login.component
+- beer.brands
+- beer-hestory.component
+- beer-ingredients.component
+- beer-tasting.component
+- beer-types.component
+- events.component
+- events-details.component
+- home.component
+- news.component
+- news-details.component
+- participation.component
+- add-recipe.component
+- unapproved-recipe.component
+- unapproved-recipes.detailes.component
+- navbar.component
+- footer.component
 
 ###Pipes - must have 3:###
 
-- sortNews.pipe
-
+- sortNewsByDate
+- takeRecentNews
 
 
 ###Directives - must have 3:###
--
+- background directive
+- uppercase directive
 
 
 ###Animation - must have 1:###
