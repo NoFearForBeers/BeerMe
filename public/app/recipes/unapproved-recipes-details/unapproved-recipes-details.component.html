@@ -20,7 +20,7 @@
         <p>{{recipe.methodOfPreparation}}</p>
     </div>
 
-    <aside id="video-add-note" class="transparent-holder">
+    <aside id="video-add-note" [@flyInOut]="state" class="transparent-holder">
         <h4>Причини за отхвърляне</h4>
         <textarea id="note" cols="25" rows="10" [(ngModel)]="rejectMessage"></textarea>
         <button class="secondary-btn" (click)="cencel()">Отказ</button>

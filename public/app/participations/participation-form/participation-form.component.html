@@ -3,11 +3,25 @@
         <legend>Регистрационна форма</legend>
         <ul>
             <div class="form-group">
+                <label>Категория</label>
                 <li *ngFor="let category of categories">
                     {{category}}
                 </li>
             </div>
         </ul>
+
+<!--<div>
+        <label>Colour</label>
+        <div>
+            <select [(ngModel)]="car.colour"">
+                <option *ngFor="let x of colours" [value]="x.id" [selected]="car.color.id == x.id">{{x.name}}</option>
+            </select>
+        </div>
+</div>-->
+
+
+
+
 
         <div class="form-group">
             <label for="text" class="col-lg-2 control-label">Коментар</label>
