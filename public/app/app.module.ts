@@ -24,7 +24,8 @@ import { ExceptionService } from './shared/services/exception.service';
 
 
 // Pipes
-import { SortNewsPipe } from './shared/pipes/sortNews';
+import { TakeRecentNewsPipe } from './shared/pipes/takeRecentNews';
+import { SortNewsByDatePipe } from './shared/pipes/sortNewsByDate';
 
 // Directives
 import { BackgroundDirective } from './shared/directives/background.directive';
@@ -46,7 +47,8 @@ import { BackgroundDirective } from './shared/directives/background.directive';
   declarations: [
     AppComponent,
     HomeComponent,
-    SortNewsPipe,
+    TakeRecentNewsPipe,
+    SortNewsByDatePipe,
     BackgroundDirective
   ],
   bootstrap: [AppComponent],

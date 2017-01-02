@@ -12,7 +12,7 @@
 
 <div class="text-center news-section ">
     <ul class="list-newest-news">
-        <li *ngFor="let news of newsList | sortNews : 'postDate'" class="col-md-4">
+        <li *ngFor="let news of newsList | takeRecentNews : 'postDate'" class="col-md-4">
 
             <div class="news-item img-thumbnail img-responsive" myBackground>
                 <p><strong>{{news.title}}</strong></p>

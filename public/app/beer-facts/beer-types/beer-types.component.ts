@@ -8,8 +8,8 @@ import { BeerTypesService } from './beer-types.service';
 @Component({
   moduleId: module.id,
   selector: 'beer-types',
-  templateUrl: './beer-types.component.html'
-
+  templateUrl: './beer-types.component.html',
+  styleUrls: ['./beer-types.component.css']
 })
 
 export class BeerTypesComponent implements PageComponent {
