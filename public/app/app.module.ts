@@ -30,6 +30,7 @@ import { SortNewsByDatePipe } from './shared/pipes/sortNewsByDate';
 
 // Directives
 import { BackgroundDirective } from './shared/directives/background.directive';
+import { UppercaseDirective } from './shared/directives/uppercase.directive';
 
 @NgModule({
   imports: [
@@ -51,7 +52,8 @@ import { BackgroundDirective } from './shared/directives/background.directive';
     HomeComponent,
     TakeRecentNewsPipe,
     SortNewsByDatePipe,
-    BackgroundDirective
+    BackgroundDirective,
+    UppercaseDirective
   ],
   bootstrap: [AppComponent],
   providers: [

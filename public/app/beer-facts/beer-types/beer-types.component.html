@@ -1,7 +1,7 @@
-<h1 class="beer-types-title">Видове бира</h1>
+<h1 class="beer-types-title" myUppercase>Видове бира</h1>
 <ul class="beer-types">
     <li *ngFor="let beer of beerTypesList">
-        <h2 class="beer-types-name">{{beer.name}}</h2>
+        <h2 class="beer-types-name" myUppercase>{{beer.name}}</h2>
         <p class="beer-types-description">{{beer.description}}</p>
     </li>
 </ul>

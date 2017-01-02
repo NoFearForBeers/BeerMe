@@ -37,10 +37,11 @@
                     <li><a routerLink="/news" class="uppercasing">Новини</a></li>
                     <li *ngIf="_authService.isLoggedIn()"><a routerLink="/events" class="uppercasing">Събития</a></li>
                     <li *ngIf="_authService.isAdminLogged()"><a routerLink="/unapproved-recipes" class="uppercasing">Неодобрени рецепти</a></li>
+                    <li *ngIf="_authService.isAdminLogged()"><a routerLink="/participations" class="uppercasing">Участници</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
-                    <li *ngIf="!_authService.isLoggedIn()"><a routerLink="/login" class="uppercasing" >Вход</a></li>
-                    <li *ngIf="!_authService.isLoggedIn()"><a routerLink="/register" class="uppercasing" >Регистрация</a></li>
+                    <li *ngIf="!_authService.isLoggedIn()"><a routerLink="/login" class="uppercasing">Вход</a></li>
+                    <li *ngIf="!_authService.isLoggedIn()"><a routerLink="/register" class="uppercasing">Регистрация</a></li>
                     <li *ngIf="_authService.isLoggedIn()"><a id="navbar-name">{{username}}</a></li>
                     <li *ngIf="_authService.isLoggedIn()"><a (click)="_authService.logout() " class="uppercasing">Изход</a></li>
                 </ul>
