@@ -3,7 +3,7 @@
 const modelRegistrator = require('./utils/model-registrator');
 
 module.exports = modelRegistrator.register('Participation', {
-    userId: {
+    username: {
         type: String,
     },
     eventId:{
@@ -12,7 +12,7 @@ module.exports = modelRegistrator.register('Participation', {
     categories: {
         type: []
     },
-    comments: {
+    comment: {
         type: String
     }   
 })
