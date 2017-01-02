@@ -1,17 +1,21 @@
 <form class="form-horizontal" #registerForm="ngForm" (ngSubmit)="onSubmit()">
     <fieldset>
         <legend>Регистрационна форма</legend>
+        <ul>
+            <div class="form-group">
+                <li *ngFor="let category of categories">
+                    {{category}}
+                </li>
+            </div>
+        </ul>
+
         <div class="form-group">
             <label for="text" class="col-lg-2 control-label">Коментар</label>
             <div class="col-lg-10">
                 <input type="text" class="form-control" id="comment" name="comment" placeholder="Коментар" required [(ngModel)]="newParticipation.comment" #comment="ngModel">
             </div>
         </div>
-        <ul>
-            <li *ngFor="let category of categories">
-                {{category}}
-            </li>
-        </ul>
+
 
         <div class="form-group">
             <div class="col-lg-10 col-lg-offset-2">
