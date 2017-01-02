@@ -58,13 +58,15 @@ BeerMe is an application for beer addicted people and home made beer comunity.
 
 ###Pipes - must have 3:###
 
-- sortNewsByDate
-- takeRecentNews
+- sortNewsByDate pipe
+- takeRecentNews pipe
+- cutText pipe
 
 
 ###Directives - must have 3:###
 - background directive
 - uppercase directive
+- myColor directive
 
 
 ###Animation - must have 1:###
