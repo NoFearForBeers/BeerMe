@@ -7,10 +7,12 @@ import { NewsComponent } from './news-list/news.component';
 import { NewsService } from './services/news-services';
 import { NewsDetailsComponent } from './news-details/news-details.component';
 
+import { SortNewsByDatePipe } from '../shared/pipes/sortNewsByDate';
+
 @NgModule({
     imports: [ CommonModule, FormsModule, RouterModule ],
     exports: [ NewsComponent, NewsDetailsComponent ],
-    declarations: [ NewsComponent, NewsDetailsComponent ],
+    declarations: [ NewsComponent, NewsDetailsComponent, SortNewsByDatePipe ],
     providers: [ NewsService ]
 })
 

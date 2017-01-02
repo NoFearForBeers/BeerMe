@@ -1,12 +1,16 @@
-<div class="container" *ngIf="news">
-    <h1>{{news.title}}</h1>
-    <div class="image-container">
-        <img src="{{news.imageUrl}}" alt="{{news.title}}" style="width: 100px">
+<div class="container text-center" *ngIf="news">
+    <h1 class="news-title">{{news.title}}</h1>
+
+    <div>
+        <img src="{{news.imageUrl}}" alt="{{news.title}}" class="img-thumbnail img-responsive image-container">
     </div>
     <div>
         <p>Публикувано на: {{news.postDate | date}}</p>
     </div>
-    <div>
+    <div class="history-text">
         {{news.content}}
+    </div>
+    <div class="clear">
+        <a routerLink="/news" class="btn back-link">Обратно към новини</a>
     </div>
 </div>
