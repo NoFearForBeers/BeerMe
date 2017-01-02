@@ -1,0 +1,36 @@
+{
+  "name" : "Ailyak Mosaic ’мел IPA",
+  "imageUrl" : "http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_379630.jpg",
+  "brand" : "Ailyak,
+  "brewedAt" : "Siris MicroBrewery",
+  "style" : "India Pale Ale (IPA)",
+  "ratings" : 2,
+  "averageRating" : 3.71,
+  "comments" : []
+}
+
+{
+  "name" : "White Stork India Pale Ale",
+  "imageUrl" : "http://res.cloudinary.com/ratebeer/image/upload/w_250,c_limit/beer_416119.jpg",
+  "brand" : "White Stork Beer Company",
+  "brewedAt" : "Brouwerij Anders!",
+  "style" : "India Pale Ale (IPA)",
+  "ratings" : 3,
+  "averageRating" : 3.66,
+  "comments" : {
+    "username" : "User1",
+    "date" : ISODate("2016-02-12T10:50:42.389Z"),
+    "text" : "Great beer!"
+  }
+}
+
+{
+  "name" : "Lucs Trevnensko",
+  "imageUrl" : "https://untappd.akamaized.net/photo/2015_10_18/e7692b53d7a32ebfa4ee3b4847ddbc6d_320x320.jpg",
+  "brand" : "Birariya Tryavna",
+  "brewedAt" : "Birariya Tryavna",
+  "style" : "India Pale Ale (IPA)",
+  "ratings" : 2,
+  "averageRating" : 3.40,
+  "comments" : []
+}
