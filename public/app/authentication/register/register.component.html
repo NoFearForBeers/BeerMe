@@ -7,84 +7,75 @@
         <div class="form-group">
             <label for="text" class="col-lg-2 control-label">Потребителско име:*</label>
             <div class="col-lg-10">
-                <input type="text" class="form-control" id="username" name="username" placeholder="Потребителско име" required [(ngModel)]="newUser.username" #username="ngModel">
+                <input type="text" class="form-control" id="username" name="username" placeholder="Потребителско име" required minlength="6"
+                    maxlength="24" [(ngModel)]="newUser.username" #username="ngModel">
             </div>
         </div>
-        <div class="form-group" [hidden]="username.valid || username.pristine">
-            <label for="text" class="col-sm-2 control-label"></label>
-            <div class="col-sm-10 alert alert-danger">
-                <strong>Потребителско име е задължително поле!</strong>
-            </div>
-        </div>
+        <small class="alert-danger" [hidden]="username.valid || (username.pristine && !registerForm.submitted)">
+            Потребителско име е задължително поле (между 6 и 24 символа).
+        </small>
 
         <div class="form-group">
             <label for="text" class="col-lg-2 control-label">Име:*</label>
             <div class="col-lg-10">
-                <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Име" required [(ngModel)]="newUser.firstName" #firstName="ngModel">
+                <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Име" required pattern="^[a-zA-Zа-яА-Я]+$"
+                    [(ngModel)]="newUser.firstName" #firstName="ngModel">
             </div>
         </div>
-        <div class="form-group" [hidden]="firstName.valid || firstName.pristine">
-            <label for="text" class="col-sm-2 control-label"></label>
-            <div class="col-sm-10 alert alert-danger">
-                <strong>Име е задължително поле!</strong>
-            </div>
-        </div>
+        <small class="alert-danger" [hidden]="firstName.valid || (firstName.pristine && !registerForm.submitted)">
+            Име е задължително поле и трябва да съдържа само букви.
+        </small>
 
         <div class="form-group">
             <label for="text" class="col-lg-2 control-label">Фамилия:*</label>
             <div class="col-lg-10">
-                <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Фамилия" required [(ngModel)]="newUser.lastName" #lastName="ngModel">
+                <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Фамилия" required pattern="^[a-zA-Zа-яА-Я]+$"
+                    [(ngModel)]="newUser.lastName" #lastName="ngModel">
             </div>
         </div>
-        <div class="form-group" [hidden]="lastName.valid || lastName.pristine">
-            <label for="text" class="col-sm-2 control-label"></label>
-            <div class="col-sm-10 alert alert-danger">
-                <strong>Фамилия е задължително поле!</strong>
-            </div>
-        </div>
+        <small class="alert-danger" [hidden]="lastName.valid || (lastName.pristine && !registerForm.submitted)">
+            Фамилия е задължително поле и трябва да съдържа само букви.
+        </small>
 
         <div class="form-group">
             <label for="text" class="col-lg-2 control-label">Профилна снимка:</label>
             <div class="col-lg-10">
-                <input type="text" class="form-control" id="profileImgURL" name="profileImgURL" placeholder="Профилна снимка" [(ngModel)]="newUser.profileImgURL" #profileImgURL="ngModel">
+                <input type="text" class="form-control" id="profileImgURL" name="profileImgURL" placeholder="Профилна снимка" [(ngModel)]="newUser.profileImgURL"
+                    #profileImgURL="ngModel">
             </div>
         </div>
 
         <div class="form-group">
             <label for="inputEmail" class="col-lg-2 control-label">Email адрес:*</label>
             <div class="col-lg-10">
-                <input type="email" class="form-control" id="email" name="email" placeholder="Email адрес" required [(ngModel)]="newUser.email" #email="ngModel">
+                <input type="email" class="form-control" id="email" name="email" placeholder="Email адрес" required [(ngModel)]="newUser.email"
+                    #email="ngModel">
             </div>
         </div>
-        <div class="form-group" [hidden]="email.valid || email.pristine">
-            <label for="text" class="col-sm-2 control-label"></label>
-            <div class="col-sm-10 alert alert-danger">
-                <strong>Email адрес е задължително поле!</strong>
-            </div>
-        </div>
+        <small class="alert-danger" [hidden]="email.valid || (email.pristine && !registerForm.submitted)">
+            Имейл е задължително поле.
+        </small>
 
         <div class="form-group">
             <label for="inputPassword" class="col-lg-2 control-label">Парола:*</label>
             <div class="col-lg-10">
-                <input type="password" class="form-control" id="password" name="password" placeholder="Парола" required [(ngModel)]="newUser.password" #password="ngModel">
+                <input type="password" class="form-control" id="password" name="password" placeholder="Парола" required minlength="6" maxlength="24"
+                    validateEqual="confirmPassword" reverse="true" [(ngModel)]="newUser.password" #password="ngModel">
             </div>
         </div>
-        <div class="form-group" [hidden]="password.valid || password.pristine">
-            <label for="text" class="col-sm-2 control-label"></label>
-            <div class="col-sm-10 alert alert-danger">
-                <strong>Парола е задължително поле!</strong>
-            </div>
-        </div>
-
-        <!--<div class="form-group">
-            <label for="inputPassword" class="col-lg-2 control-label">Потвърди парола:*</label>
-            <strong [hidden]="passwordRepeat.valid" class="alert alert-danger">
-                    Password should be equal!
-            </strong>
+        <small class="alert-danger" [hidden]="password.valid || (password.pristine && !registerForm.submitted)">
+            Парола е задължително поле (между 6 и 24 символа).
+        </small>
+        <div class="form-group">
+            <label for="inputPassword" class="col-lg-2 control-label">Повтори парола:*</label>
             <div class="col-lg-10">
-                <input type="password" class="form-control" id="repeatPpassword" name="repeatPassword" placeholder="Промени парола" required #passwordRepeat *ngIf="">
+                <input type="password" class="form-control" id="confirmPassword" name="confirmPassword" placeholder="Парола" required [(ngModel)]="confirmPassword"
+                    validateEqual="password" #cpassword="ngModel">
             </div>
-        </div>-->
+        </div>
+        <small class="alert-danger" [hidden]="cpassword.valid || (cpassword.pristine && !registerForm.submitted)">
+            Паролите не съвпадат.
+        </small>
 
         <div class="form-group">
             <div class="col-lg-10 col-lg-offset-2">

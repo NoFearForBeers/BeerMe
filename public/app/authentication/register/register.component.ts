@@ -22,7 +22,7 @@ export class RegisterComponent {
         isAdmin: false
     };
 
-    highlightInput: boolean;
+    confirmPassword: string = '';
 
     constructor(private authService: AuthService,
         private router: Router,
@@ -31,12 +31,12 @@ export class RegisterComponent {
     onSubmit() {
         this.authService.register(this.newUser)
             .subscribe(
-                data => {
-                    this.router.navigate(['login']);
-                    this.showSuccess(`${data.username} successfuly registered!`);
+            data => {
+                this.router.navigate(['login']);
+                this.showSuccess(`${data.username} successfuly registered!`);
             },
             error => {
-                    this.showError(error);
+                this.showError(error);
             });
     }
 
