@@ -1,10 +1,9 @@
 <ul class="events-calendar">
     <li *ngFor="let participation of participationsList">
-
-        <p>username: {{participation.username}}</p>
-        <p>eventId: {{participation.eventId}}</p>
-        <p>categories: {{participation.categories}}</p>
-        <p>comment: {{participation.comment}}</p>
+        <p myColor><strong>Username:</strong> {{participation.username}}</p>
+        <p><strong>EventId:</strong> {{participation.eventId}}</p>
+        <p><strong>Categories:</strong> {{participation.categories}}</p>
+        <p><strong>Comment:</strong> {{participation.comment}}</p>
         <hr>
     </li>
 </ul>

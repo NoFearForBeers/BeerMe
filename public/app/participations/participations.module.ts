@@ -8,10 +8,12 @@ import { ParticipationsComponent } from '../participations/participations.compon
 import { ParticipationsService } from '../participations/participations.service';
 import { ParticipationFormComponent } from '../participations/participation-form/participation-form.component';
 
+import { ColorDirective } from '../shared/directives/color.directive';
+
 @NgModule({
     imports: [ CommonModule, FormsModule, RouterModule ],
     exports: [ ParticipationsComponent, ParticipationFormComponent ],
-    declarations: [ ParticipationsComponent, ParticipationFormComponent ],
+    declarations: [ ParticipationsComponent, ParticipationFormComponent, ColorDirective ],
     providers: [ ParticipationsService ]
 })
 export class ParticipationsModule {
