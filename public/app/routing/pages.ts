@@ -31,8 +31,7 @@ export const pages = {
     newsDetails: NewsDetailsComponent,
     addRecipe: AddRecipeComponent,
     unapprovedRecipes: UnapprovedRecipesComponent,
-    unapprovedRecipesDetails: UnapprovedRecipesDetailsComponent
+    unapprovedRecipesDetails: UnapprovedRecipesDetailsComponent,
     events: EventsComponent,
     eventsDetails: EventsDetailComponent
-    unapprovedRecipes: UnapprovedRecipesComponent
 };

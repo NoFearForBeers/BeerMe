@@ -35,13 +35,8 @@
                     </li>
 
                     <li><a routerLink="/news" class="uppercasing">Новини</a></li>
-
-<<<<<<< HEAD
-                    <li><a routerLink="/events" class="uppercasing" *ngIf="_authService.isLoggedIn()">Събития</a></li>
-=======
-                    <li *ngIf="_authService.isLoggedIn()"><a routerLink="#" class="uppercasing">Събития</a></li>
+                    <li *ngIf="_authService.isLoggedIn()"><a routerLink="/events" class="uppercasing">Събития</a></li>
                     <li *ngIf="_authService.isAdminLogged()"><a routerLink="/unapproved-recipes" class="uppercasing">Неодобрени рецепти</a></li>
->>>>>>> origin/master
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li *ngIf="!_authService.isLoggedIn()"><a routerLink="/login" class="uppercasing" >Вход</a></li>

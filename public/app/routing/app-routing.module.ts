@@ -21,7 +21,7 @@ const appRoutes: Routes = [
     { path: 'add-recipe', component: pages.addRecipe },
     { path: 'unapproved-recipes/:id', component: pages.unapprovedRecipesDetails },
     { path: 'events', component: pages.events },
-    { path: 'events/:id', component: pages.eventsDetails }
+    { path: 'events/:id', component: pages.eventsDetails },
     { path: 'unapproved-recipes', component: pages.unapprovedRecipes }
 ];
 
