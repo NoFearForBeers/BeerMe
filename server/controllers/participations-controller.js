@@ -22,7 +22,7 @@ module.exports = function(params) {
                     res.status(200).send({ success: true, data })
                 })
                 .catch(err => {
-                    return res.status(400).send({ success: false, msg: 'Recipe was not created' });
+                    return res.status(400).send({ success: false, msg: 'Registration was not created' });
                 });
         },
     };

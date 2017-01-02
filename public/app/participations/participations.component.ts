@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { PageComponent } from '../shared/page.component';
 import { Participation } from '../participations/participation.model';
 import { ParticipationsService } from '../participations/participations.service';
+import { ParticipationFormComponent } from '../participations/participation-form/participation-form.component';
 
 @Component({
   moduleId: module.id,

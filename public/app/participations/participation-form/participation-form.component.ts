@@ -1,3 +1,4 @@
+import { Subscription } from 'rxjs';
 import { Component } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
@@ -16,12 +17,14 @@ import { EventsService } from '../../events/events.service';
 
 export class ParticipationFormComponent implements PageComponent {
   newParticipation: Participation = {
-        username: window.localStorage.username,
+        username: window.localStorage.getItem('username'),
         eventId: '',
         categories: [],
         comment: ''
     };
-    categories: [];
+    categories: any[];
+  
+  private subscription: Subscription;
 
   constructor(private participationsService: ParticipationsService, 
               private router: Router,
