@@ -20,3 +20,7 @@
     height: 80px;
     border-radius: 0;
 }
+
+#footer {
+    position: relative;
+}

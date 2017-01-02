@@ -1,7 +1,7 @@
 <h1 class="news-head">Новини</h1>
 <ul class="top-beers">
     <!--| sortNewsByDate: 'postDate' -->
-    <li *ngFor="let news of newsList">
+    <li *ngFor="let news of newsList | sortNewsByDate">
         <a routerLink="/news/{{news._id}}">
             <h3>{{news.title}}</h3>
         </a>

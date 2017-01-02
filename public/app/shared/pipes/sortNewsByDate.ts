@@ -6,8 +6,8 @@ import { News } from '../../news/news.model';
 })
 
 export class SortNewsByDatePipe implements PipeTransform {
-    transform(items: News[], sortBy?: Date) {
-        return items.sort(
+    transform(items: News[]): News[] {
+         return items.sort(
                     (x, y) => {
                         let a = +new Date(x.postDate);
                         let b = +new Date(y.postDate);

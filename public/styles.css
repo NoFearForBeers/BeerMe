@@ -31,12 +31,6 @@ ul {
     list-style: none;
 }
 
-.main-container {
-    width: 100%;
-    height: auto;
-    min-height: 100%;
-}
-
 button .btn-default {
     background-color: #FDC82F;
 }

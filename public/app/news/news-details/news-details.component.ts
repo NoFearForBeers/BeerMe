@@ -10,7 +10,8 @@ import { NewsService } from '../services/news-services.js';
 @Component({
     moduleId: module.id,
     selector: 'news-details',
-    templateUrl: './news-details.component.html'
+    templateUrl: './news-details.component.html',
+    styleUrls: ['./news-details.component.css']
 })
 export class NewsDetailsComponent implements PageComponent {
     news: News;
