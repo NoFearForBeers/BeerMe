@@ -8,7 +8,7 @@ import { EventsService } from '../../events/events.service';
   moduleId: module.id,
   selector: 'events',
   templateUrl: './events.component.html',
-   styleUrls: ['./events.component.css']
+  styleUrls: ['./events.component.css']
 })
 
 export class EventsComponent implements PageComponent {
