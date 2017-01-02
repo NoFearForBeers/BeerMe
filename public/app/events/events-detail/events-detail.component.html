@@ -5,16 +5,15 @@
     </div>
 
     <div class="event-content">
-        <p><strong>Публикувано на:</strong> {{events.time}}</p>
-        <p><strong>Information:</strong> {{events.info}}</p>
-        <p><strong>Place:</strong> {{events.place}}</p>
-        <p><strong>Terms:</strong> {{events.terms}}</p>
-        <p><strong>Qualifications:</strong> {{events.qualifications}}</p>
-        <p><strong>Category:</strong> {{events.category}}</p>
-        <p><strong>Entry:</strong> {{events.entry}}</p>
-        <p><strong>Entry:</strong> {{events.entry}}</p>
-        <p><strong>Judging:</strong> {{events.judging}}</p>
-        <p><strong>Results:</strong> {{events.results}}</p>
+        <p><strong>Дата на провеждане:</strong> {{events.time}}</p>
+        <p><strong>Информация:</strong> {{events.info}}</p>
+        <p><strong>Място:</strong> {{events.place}}</p>
+        <p><strong>Срокове:</strong> {{events.terms}}</p>
+        <p><strong>Изисквания за участие:</strong> {{events.qualifications}}</p>
+        <p><strong>Категории:</strong> {{events.category}}</p>
+        <p><strong>Проби за оценяване:</strong> {{events.entry}}</p>
+        <p><strong>Съдийство:</strong> {{events.judging}}</p>
+        <p><strong>Резултати:</strong> {{events.results}}</p>
     </div>
     <a [routerLink]="['/participations/new']" [queryParams]="{eventId: events._id}" class="btn btn-primary">
         <h4>Участвай</h4>
