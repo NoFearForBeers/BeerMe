@@ -1,7 +1,7 @@
-<div *ngIf="beer">
-    <h1>{{beer.name}}</h1>
+<div *ngIf="beer" class="text-center">
+    <h1 class="top-beer-heading">{{beer.name}}</h1>
     <div class="image-container">
-        <img src="{{beer.imageUrl}}" alt="{{beer.name}}" style="width: 100px">
+        <img src="{{beer.imageUrl}}" alt="{{beer.name}}" class="top-beer-image img-responsive img-thumbnail">
     </div>
     <div class="beer-details-container">
         <p>Произведена в {{beer.brewedAt}}</p>

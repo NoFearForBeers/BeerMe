@@ -1,0 +1,19 @@
+.top-beer-heading {
+    color: #b83901;
+}
+
+.top-beer-image {
+    width: 110px;
+    height: 210px;
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+
+.clear {
+    clear: both;
+}
+
+.beer-link {
+    color: #b83901;
+}

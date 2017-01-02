@@ -10,8 +10,10 @@ import { TopBeersService } from '../services/top-beers.service';
 @Component({
     moduleId: module.id,
     selector: 'top-beers-details',
-    templateUrl: './top-beers-details.component.html'
+    templateUrl: './top-beers-details.component.html',
+    styleUrls: ['./top-beers-details.component.css']
 })
+
 export class TopBeersDetailsComponent implements PageComponent {
     beer: TopBeer;
 
