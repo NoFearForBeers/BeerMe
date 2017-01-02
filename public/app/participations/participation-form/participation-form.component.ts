@@ -6,6 +6,7 @@ import { PageComponent } from '../../shared/page.component';
 import { Participation } from '../../participations/participation.model';
 import { ParticipationsService } from '../../participations/participations.service';
 import { EventsService } from '../../events/events.service';
+import { AuthService } from '../../authentication/services/auth.service';
 
 
 @Component({
@@ -17,7 +18,7 @@ import { EventsService } from '../../events/events.service';
 
 export class ParticipationFormComponent implements PageComponent {
   newParticipation: Participation = {
-        username: window.localStorage.getItem('username'),
+        username: '',
         eventId: '',
         categories: [],
         comment: ''
@@ -29,7 +30,8 @@ export class ParticipationFormComponent implements PageComponent {
   constructor(private participationsService: ParticipationsService, 
               private router: Router,
               private activatedRoute: ActivatedRoute,
-              private eventService: EventsService ) {
+              private eventService: EventsService,
+              private authService: AuthService ) {
   }
 
   ngOnInit() {
@@ -41,6 +43,8 @@ export class ParticipationFormComponent implements PageComponent {
         this.newParticipation.eventId = eventId;
         let eventinfo = this.eventService.getEventsById(eventId)
                   .subscribe(event => this.categories = event.category);
+        this.authService.getUsername()
+                        .then(username => this.newParticipation.username = username);
       });
   }
 
