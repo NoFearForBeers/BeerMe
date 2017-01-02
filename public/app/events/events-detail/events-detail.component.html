@@ -1,15 +1,22 @@
-<div class="container" *ngIf="events">
-    <h1>{{events.title}}</h1>
+<div class="container text-center" *ngIf="events">
+    <h1 class="event-title">{{events.title}}</h1>
     <div class="image-container">
-        <img src="{{events.imageUrl}}" alt="{{events.title}}" style="width: 100px">
+        <img src="{{events.imageUrl}}" alt="{{events.title}}" class="event-image-container img-thumbnail img-responsive">
     </div>
-    <div>
-        <p>Публикувано на: {{events.time}}</p>
+
+    <div class="event-content">
+        <p><strong>Публикувано на:</strong> {{events.time}}</p>
+        <p><strong>Information:</strong> {{events.info}}</p>
+        <p><strong>Place:</strong> {{events.place}}</p>
+        <p><strong>Terms:</strong> {{events.terms}}</p>
+        <p><strong>Qualifications:</strong> {{events.qualifications}}</p>
+        <p><strong>Category:</strong> {{events.category}}</p>
+        <p><strong>Entry:</strong> {{events.entry}}</p>
+        <p><strong>Entry:</strong> {{events.entry}}</p>
+        <p><strong>Judging:</strong> {{events.judging}}</p>
+        <p><strong>Results:</strong> {{events.results}}</p>
     </div>
-    <div>
-        {{events.info}}
-    </div>
-    <a [routerLink]="['/participations/new']" [queryParams]="{eventId: events._id}">
-            <h3>участвай</h3>
+    <a [routerLink]="['/participations/new']" [queryParams]="{eventId: events._id}" class="btn btn-primary">
+        <h4>Участвай</h4>
     </a>
 </div>

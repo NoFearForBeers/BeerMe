@@ -11,8 +11,8 @@ import { RecipeService } from '../services/recipe.service';
 @Component({
     moduleId: module.id,
     selector: 'public-recipes-details',
-    templateUrl: './public-recipes-details.component.html'
-    //styleUrls: ['./unapproved-recipes-details.component.css']
+    templateUrl: './public-recipes-details.component.html',
+    styleUrls: ['./public-recipes-details.component.css']
 })
 export class PublicRecipesDetailsComponent implements PageComponent {
     recipe: Recipe;

@@ -1,21 +1,31 @@
 <form class="form-horizontal" #registerForm="ngForm" (ngSubmit)="onSubmit()">
     <fieldset>
         <legend>Регистрационна форма</legend>
+        <ul>
+            <div class="form-group">
+                <label>Категория</label>
+                <li *ngFor="let category of categories">
+                    <label>
+                        <input type="checkbox"
+                        name="categories"
+                        value="{{category}}"
+                        (change)="updateCategories(category, $event)"/>
+                  {{category}}
+                  </label>
+                </li>
+            </div>
+        </ul>
+
         <div class="form-group">
             <label for="text" class="col-lg-2 control-label">Коментар</label>
             <div class="col-lg-10">
                 <input type="text" class="form-control" id="comment" name="comment" placeholder="Коментар" required [(ngModel)]="newParticipation.comment" #comment="ngModel">
             </div>
         </div>
-        <ul>
-            <li *ngFor="let category of categories">
-                {{category}}
-            </li>
-        </ul>
+
 
         <div class="form-group">
             <div class="col-lg-10 col-lg-offset-2">
-                <button type="reset" class="btn btn-default">Изход</button>
                 <button type="submit " class="btn btn-primary " [disabled]="!registerForm.form.valid ">Регистрирай</button>
             </div>
         </div>

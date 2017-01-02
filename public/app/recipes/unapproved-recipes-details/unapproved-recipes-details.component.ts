@@ -1,4 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, OnInit,    
+    trigger,
+    state,
+    style,
+    transition,
+    animate,
+    keyframes } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
 import { ToastrService } from 'toastr-ng2';
@@ -13,11 +19,22 @@ import { AuthService } from '../../authentication/services/auth.service';
     moduleId: module.id,
     selector: 'unapproved-recipes-details',
     templateUrl: './unapproved-recipes-details.component.html',
-    styleUrls: ['./unapproved-recipes-details.component.css']
+    styleUrls: ['./unapproved-recipes-details.component.css'],
+
+    animations: [
+        trigger('flyInOut', [
+            state('in', style({opacity: 1, transform: 'scale(1.0)'})),
+            state('out', style({opacity: 0, transform: 'scale(0.0)'})),
+            transition('in => out', animate('300ms')),
+            transition('out => in', animate('600ms'))
+        ])
+    ]
 })
 export class UnapprovedRecipesDetailsComponent implements PageComponent {
     recipe: Recipe;
     rejectMessage: string = '';
+
+    state: string = 'out';
 
     constructor(
         private recipeService: RecipeService,
@@ -35,6 +52,9 @@ export class UnapprovedRecipesDetailsComponent implements PageComponent {
     }
 
     inputMessage() {
+        this.state = (this.state === 'out' ? 'in' : 'out');
+        //console.log(this.state);
+
         let buttons = document.getElementById('button-group');
         buttons.className += 'hidden';
         let messageContainer = document.getElementById('video-add-note');
@@ -42,6 +62,8 @@ export class UnapprovedRecipesDetailsComponent implements PageComponent {
     }
 
     rejectRecipe() {
+
+
         let rejectedStatus = 'rejected';
         this.recipe.status = rejectedStatus;
         this.recipe.rejectMessage = this.rejectMessage;
@@ -73,6 +95,7 @@ export class UnapprovedRecipesDetailsComponent implements PageComponent {
     }
 
     cencel() {
+        this.state = (this.state === 'out' ? 'in' : 'out');
         let messageContainer = document.getElementById('video-add-note');
         messageContainer.className = 'transparent-holder'; //remove visible class
         let buttons = document.getElementById('button-group');

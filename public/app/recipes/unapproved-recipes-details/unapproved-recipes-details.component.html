@@ -1,11 +1,13 @@
 <div *ngIf="recipe && authService.isAdminLogged()">
-    <h1>{{recipe.name}}</h1>
-    <small>Автор: {{recipe.author}}</small>
-    <div class="image-container">
-        <img src="{{recipe.imgUrl}}" alt="{{recipe.name}}" style="width: 100px">
+    <div class="cont">
+        <h1 class="recipes-title">{{recipe.name}}</h1>
+        <p>Автор: {{recipe.author}}</p>
+
+        <img src="{{recipe.imgUrl}}" alt="{{recipe.name}}" class="img-thumbnail img-responsive recipe-image-container">
     </div>
-    <div class="ingredients-details-container">
-        <p>Продукти:</p>
+
+    <div class="recipe-content">
+        <h4>Продукти:</h4>
         <ul>
             <li *ngFor="let ingredient of recipe.ingredients">
                 <div class="single-ingredient">
@@ -13,21 +15,24 @@
                 </div>
             </li>
         </ul>
-    </div>
-    <div class="preparation-container">
+
         <p>Начин на приготвяне:</p>
-        {{recipe.methodOfPreparation}}
+        <p>{{recipe.methodOfPreparation}}</p>
     </div>
-    <aside id="video-add-note" class="transparent-holder">
+
+    <div class="clear">
+    <aside id="video-add-note" [@flyInOut]="state" class="transparent-holder">
         <h4>Причини за отхвърляне</h4>
         <textarea id="note" cols="25" rows="10" [(ngModel)]="rejectMessage"></textarea>
-        <button class="secondary-btn" (click)="cencel()">Отказ</button>
-        <button class="primary-btn" (click)="rejectRecipe()">Потвърди</button>
+        <button class="secondary-btn btn btn-default" (click)="cencel()">Отказ</button>
+        <button class="primary-btn btn btn-primary" (click)="rejectRecipe()">Потвърди</button>
     </aside>
+    </div>
+
     <div id="button-group">
         <div class="col-lg-10 col-lg-offset-2">
-            <button (click)="inputMessage()">Отхвърли</button>
-            <button (click)="approveRecipe()">Одобри</button>
+            <button (click)="inputMessage()" class="btn btn-default">Отхвърли</button>
+            <button (click)="approveRecipe()" class="btn btn-primary">Одобри</button>
         </div>
     </div>
 </div>

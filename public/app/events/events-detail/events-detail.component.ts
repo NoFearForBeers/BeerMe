@@ -10,7 +10,8 @@ import { EventsService } from '../../events/events.service';
 @Component({
     moduleId: module.id,
     selector: 'events-detail',
-    templateUrl: './events-detail.component.html'
+    templateUrl: './events-detail.component.html',
+    styleUrls: ['./events-detail.component.css']
 })
 export class EventsDetailComponent implements PageComponent {
     events: Events;

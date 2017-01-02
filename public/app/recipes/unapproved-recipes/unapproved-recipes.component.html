@@ -1,12 +1,12 @@
 <div *ngIf="authService.isAdminLogged()">
-    <h1>Неодобрени рецепти</h1>
+    <h1 class="recipes-title">Неодобрени рецепти</h1>
     <div *ngIf="recipeList">
         <ul class="Recipes">
-            <li *ngFor="let recipe of recipeList">
-                <a routerLink="/unapproved-recipes/{{recipe._id}}">
+            <li *ngFor="let recipe of recipeList" class="col-md-4">
+                <a routerLink="/unapproved-recipes/{{recipe._id}}" class="recipe-link">
                     <h3>{{recipe.name}}</h3>
                 </a>
-                <img src="{{recipe.imgUrl}}" alt="recipe.name" style="width: 100px">
+                <img src="{{recipe.imgUrl}}" alt="recipe.name" class="recipe-image-container">
                 <p>Автор: {{recipe.author}}</p>
             </li>
         </ul>

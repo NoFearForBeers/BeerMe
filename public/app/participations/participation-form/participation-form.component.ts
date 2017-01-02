@@ -24,6 +24,7 @@ export class ParticipationFormComponent implements PageComponent {
         comment: ''
     };
     categories: any[];
+
   
   private subscription: Subscription;
 
@@ -67,4 +68,16 @@ export class ParticipationFormComponent implements PageComponent {
                     console.log(error)
             });
     }
+
+    updateCategories(category, event){
+      if (event.target.checked){
+        this.newParticipation.categories.push(category)
+      }
+      else {
+        let index = this.newParticipation.categories.indexOf(category)
+        if (index > -1) {
+            this.newParticipation.categories.splice(index, 1);
+        }    
+    }
  }
+}

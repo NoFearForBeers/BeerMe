@@ -1,11 +1,17 @@
-<h1>Top Beers</h1>
-<ul class="top-beers">
-  <li *ngFor="let beer of beerList">
-    <a routerLink="/top-beers/{{beer._id}}">
-        <h3>{{beer.name}}</h3>
-    </a>
-    <img src="{{beer.imageUrl}}" alt="beer.name" style="width: 100px">
-    <p>Произведена в {{beer.brewedAt}}</p>
-    <p>Средна оценка: <strong>{{beer.averageRating}}</strong></p>
-  </li>
-</ul>
+<div>
+    <h1 class="top-beer-heading">Top Beers</h1>
+    <ul class="top-beers">
+        <li *ngFor="let beer of beerList" class="clear">
+            <div>
+                <img src="{{beer.imageUrl}}" alt="beer.name" class="top-beer-image img-responsive img-thumbnail">
+                <a routerLink="/top-beers/{{beer._id}}" class="beer-link">
+                    <h3>{{beer.name}}</h3>
+                </a>
+
+                <p>Произведена в {{beer.brewedAt}}</p>
+                <p>Средна оценка: <strong>{{beer.averageRating}}</strong></p>
+            </div>
+
+        </li>
+    </ul>
+</div>

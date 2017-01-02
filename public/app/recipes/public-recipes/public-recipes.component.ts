@@ -8,8 +8,8 @@ import { RecipeService } from '../services/recipe.service';
 @Component({
   moduleId: module.id,
   selector: 'public-recipes',
-  templateUrl: './public-recipes.component.html'
-//   styleUrls: ['./app.component.css']
+  templateUrl: './public-recipes.component.html',
+  styleUrls: ['./public-recipes.component.css']
 })
 
 export class PublicRecipesComponent implements PageComponent {
