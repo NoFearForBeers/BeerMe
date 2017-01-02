@@ -38,3 +38,7 @@
     margin-right: 50px;
     margin-bottom: 50px;
 }
+
+.clear {
+    clear: both;
+}
