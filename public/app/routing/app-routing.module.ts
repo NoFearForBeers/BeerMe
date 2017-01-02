@@ -20,6 +20,8 @@ const appRoutes: Routes = [
     { path: 'news/:id', component: pages.newsDetails },
     { path: 'add-recipe', component: pages.addRecipe },
     { path: 'unapproved-recipes/:id', component: pages.unapprovedRecipesDetails },
+    { path: 'events', component: pages.events },
+    { path: 'events/:id', component: pages.eventsDetails }
     { path: 'unapproved-recipes', component: pages.unapprovedRecipes }
 ];
 

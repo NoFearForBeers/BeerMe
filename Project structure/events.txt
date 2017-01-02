@@ -1,0 +1,13 @@
+    {
+	  "title" : "Winter 2017 Homebrew Competition",
+      "time" : "14Feb2017",
+      "place" : "Бар Петък, ул."Ген. Йосиф В. Гурко 21 София, България",
+	  "imageUrl" : "http://cowtownchow.com/wp-content/uploads/2015/12/Winter-Beers-graphic.jpg",
+	  "info" : "We are proud to announce our February Team-Up Competition, presented by Bootlegger’s Brewery!  In our Team-Up Competition, we’ll be pairing up club members to see which team can brew the best beer – with the grand prize winner getting to brew a batch on Bootlegger’s 7-Barrel pilot system!",
+	  "terms" : "Register for the competition by filling out the Registration Form by November 17. Teams will be revealed at our club meeting on December 7th. Fill out the Team Entry Form by January 13th. Drop off your entries at Barley Forge or Bootlegger’s tasting room in Fullerton between January 23rd and January 27th. Competition results will be announced at our club meeting on February 6th",
+      "qualifications": "All beer entered must be developed by homebrewers, on a homebrew system. No individuals belonging to a professional brewing agency may enter.  Previous winning beer entries are not allowed. ",
+      "category": ["28. American Wild Ale", "28A. Brett Beer", "28B. Mixed-Fermentation Sour Beer", "28C. Wild Specialty Beer"];
+      "entry": "Submit two (2) 10-ounce to 14-ounce bottles per entry.  Bottles must be free of ink, paint, and labeling other than competition entry labels.",
+      "judging": "udges will be BJCP qualified and entries will be judged against the BJCP 2015 Style Guidelines.",
+      "results": "Results will be announced at the March 6th "
+	}
