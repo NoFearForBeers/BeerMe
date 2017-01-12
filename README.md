@@ -13,7 +13,7 @@ Team No feer for beer
 -   P.Boyanov
 
 ###Project desctiption:###
-BeerMe is an singlepage application with Angular2 for beer addicted people and homemade beer comunity. 
+BeerMe is a single page application with Angular2 for beer addicted people and homemade beer community. 
 
 BeerMe allows users to:
 
