@@ -13,6 +13,7 @@ module.exports = function(models) {
                     let newParticipation = new Participation({
                         username: participation.username,
                         eventId: participation.eventId,
+                        eventTitle: participation.eventTitle,
                         categories: participation.categories,
                         comment: participation.comment
                     });

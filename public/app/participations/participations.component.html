@@ -1,9 +1,9 @@
 <ul class="events-calendar">
     <li *ngFor="let participation of participationsList">
-        <p myColor><strong>Username:</strong> {{participation.username}}</p>
-        <p><strong>EventId:</strong> {{participation.eventId}}</p>
-        <p><strong>Categories:</strong> {{participation.categories}}</p>
-        <p><strong>Comment:</strong> {{participation.comment}}</p>
+        <p myColor><strong>Потребителско име:</strong> {{participation.username}}</p>
+        <p><strong>Име на състезание:</strong> {{participation.eventTitle}}</p>
+        <p><strong>Записани категори:</strong> {{participation.categories}}</p>
+        <p><strong>Коментар:</strong> {{participation.comment}}</p>
         <hr>
     </li>
 </ul>

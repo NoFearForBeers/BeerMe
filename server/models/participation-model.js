@@ -9,6 +9,9 @@ module.exports = modelRegistrator.register('Participation', {
     eventId:{
         type: String
     },
+    eventTitle:{
+        type: String
+    },
     categories: {
         type: []
     },

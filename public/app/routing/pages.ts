@@ -41,5 +41,5 @@ export const pages = {
     events: EventsComponent,
     eventsDetails: EventsDetailComponent,
     participations: ParticipationsComponent,
-participationsNew: ParticipationFormComponent
+    participationsNew: ParticipationFormComponent
 };

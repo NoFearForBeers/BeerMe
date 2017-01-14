@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 import { PageComponent } from '../../shared/page.component';
-import { Events } from '../../events/events.model';
+import { Event } from '../../events/event.model';
 import { EventsService } from '../../events/events.service';
 
 @Component({
@@ -12,7 +12,7 @@ import { EventsService } from '../../events/events.service';
 })
 
 export class EventsComponent implements PageComponent {
-  eventsList: Events[] = [];
+  eventsList: Event[] = [];
 
   constructor(private eventsService: EventsService) {
   }

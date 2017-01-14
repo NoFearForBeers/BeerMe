@@ -4,7 +4,7 @@ import { ActivatedRoute, Params } from '@angular/router';
 import 'rxjs/add/operator/switchMap';
 
 import { PageComponent } from '../../shared/page.component';
-import { Events } from '../events.model';
+import { Event } from '../event.model';
 import { EventsService } from '../../events/events.service';
 
 @Component({
@@ -14,7 +14,7 @@ import { EventsService } from '../../events/events.service';
     styleUrls: ['./events-detail.component.css']
 })
 export class EventsDetailComponent implements PageComponent {
-    events: Events;
+    events: Event;
 
     constructor(
         private eventsService: EventsService,
