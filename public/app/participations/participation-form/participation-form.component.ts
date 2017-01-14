@@ -6,7 +6,6 @@ import { ToastrService } from 'toastr-ng2';
 
 import { PageComponent } from '../../shared/page.component';
 import { Participation } from '../../participations/participation.model';
-import { Event } from '../../events/event.model';
 import { ParticipationsService } from '../../participations/participations.service';
 import { EventsService } from '../../events/events.service';
 import { AuthService } from '../../authentication/services/auth.service';
@@ -27,7 +26,6 @@ export class ParticipationFormComponent implements PageComponent {
     categories: [],
     comment: ''
   };
-  currentEvent: Event;
   categories: any[];
 
 

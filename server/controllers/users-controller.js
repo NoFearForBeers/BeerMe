@@ -67,8 +67,7 @@ module.exports = function ({ data, validator }) {
             let hashPass = encrypt.generateHashedPassword(salt, pass);
             newUser.hashPass = hashPass;
 
-            let avatar = postDataObj.profileImgURL;
-            newUser.profileImgURL = avatar || DEFAULT_IMAGE;
+            newUser.profileImgURL = DEFAULT_IMAGE;
             // console.log(newUser);
 
             data.getUserByUsername(newUser.username).then((user) => {

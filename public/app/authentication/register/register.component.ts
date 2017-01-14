@@ -15,7 +15,6 @@ export class RegisterComponent {
         password: '',
         firstName: '',
         lastName: '',
-        profileImgURL: '',
         email: '',
         recipes: [],
         forumPoints: 0,

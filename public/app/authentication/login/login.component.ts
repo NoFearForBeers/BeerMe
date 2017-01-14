@@ -30,7 +30,7 @@ export class LoginComponent {
                 localStorage.setItem('username', this.localUser.username);
                 localStorage.setItem('isAdmin', isAdmin);
 
-                this.showSuccess(`Добре дошъл отново, ${data.body.username}!`);
+                this.showSuccess(`Добре дошъл, ${data.body.username}!`);
                 this._router.navigate(['home']);
             },
             error => {

@@ -10,7 +10,7 @@ module.exports = function(models, validator) {
 
                     let newUser = new User({
                         username: user.username,
-                        firstname: user.firtsName,
+                        firstName: user.firstName,
                         lastName: user.lastName,
                         profileImgURL: user.profileImgURL,
                         email: user.email,
