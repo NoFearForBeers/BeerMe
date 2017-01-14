@@ -19,7 +19,8 @@
         <div class="form-group">
             <label for="text" class="col-lg-2 control-label">Коментар</label>
             <div class="col-lg-10">
-                <input type="text" class="form-control" id="comment" name="comment" placeholder="Коментар" [(ngModel)]="newParticipation.comment" #comment="ngModel">
+                <input type="text" class="form-control" id="comment" name="comment" placeholder="Коментар" [(ngModel)]="newParticipation.comment"
+                    #comment="ngModel">
             </div>
         </div>
 
@@ -31,3 +32,6 @@
         </div>
     </fieldset>
 </form>
+<div class="clear text-center">
+    <a routerLink="/events/{{newParticipation.eventId}}" class="btn back-link">Назад</a>
+</div>
