@@ -21,7 +21,6 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 
 // Services
-import { RequesterService } from './shared/services/requester.service';
 import { ExceptionService } from './shared/services/exception.service';
 
 
@@ -55,7 +54,6 @@ import { BackgroundDirective } from './shared/directives/background.directive';
   ],
   bootstrap: [AppComponent],
   providers: [
-    RequesterService,
     ExceptionService
   ]
 })

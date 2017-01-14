@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
 import { Http, Response, Headers } from '@angular/http';
-import { RequesterService } from '../../shared/services/requester.service';
 import { User } from '../user.model';
 
 import { Observable } from 'rxjs';
@@ -10,19 +9,24 @@ import 'rxjs/add/observable/throw';
 
 @Injectable()
 export class AuthService {
-    constructor(private http: Http, private _requester: RequesterService, private router: Router) {
+    constructor(private http: Http, private router: Router) {
     }
 
     login(userCreds: any): Observable<any> {
         let url = '/api/login';
         let headers = new Headers();
-        let creds = `username=${userCreds.username}&password=${userCreds.password}`;
+        let body = {
+            body: JSON.stringify({
+                username: userCreds.username,
+                password: userCreds.password
+            })
+        };
 
-        headers.append('Content-Type', 'application/X-www-form-urlencoded');
-        return this._requester
-            .post(url, creds, headers)
-            .map((data: any) => {
-                console.log(data);
+        headers.append('Content-Type', 'application/json');
+        return this.http
+            .post(url, body, headers)
+            .map((r: Response) => {
+                let data = r.json();
                 window.localStorage.setItem('auth_key', data.body.token);
                 return data;
             });
@@ -45,7 +49,7 @@ export class AuthService {
     }
 
     isLoggedIn() {
-        if(window.localStorage.getItem('auth_key')) {
+        if (window.localStorage.getItem('auth_key')) {
             return true;
         }
 
@@ -58,10 +62,10 @@ export class AuthService {
         return isLogged && (isAdmin === 'true');
     }
 
-    getUsername() : Promise<string> {
+    getUsername(): Promise<string> {
         return new Promise((resolve, reject) => {
-                let username = window.localStorage.getItem('username')
-                resolve(username);
+            let username = window.localStorage.getItem('username')
+            resolve(username);
         });
     }
 }

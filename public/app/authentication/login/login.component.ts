@@ -30,19 +30,21 @@ export class LoginComponent {
                 localStorage.setItem('username', this.localUser.username);
                 localStorage.setItem('isAdmin', isAdmin);
 
-                this.showSuccess(`Welcome back ${data.body.username}!`);
+                this.showSuccess(`Добре дошъл отново, ${data.body.username}!`);
                 this._router.navigate(['home']);
             },
             error => {
-                    this.showError(error);
+                let responseBody = error._body;
+                let responseObj = JSON.parse(responseBody);
+                this.showError(responseObj.msg);
             });
     }
 
     showSuccess(message: string) {
-        this._toastrService.success(message, 'Successs!');
+        this._toastrService.success(message, 'Успех!');
     }
 
     showError(message: string) {
-        this._toastrService.error(message, 'Error!');
+        this._toastrService.error(message, 'Грешка!');
     }
 }
