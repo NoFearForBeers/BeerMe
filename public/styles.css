@@ -142,3 +142,13 @@ fieldset[disabled] .btn-default.focus {
     background-color: #B83901;
     border-color: #B83901;
 }
+
+a.back-link,
+a.back-link:hover {
+    color: #b83901;
+    font-size: 23px;
+}
+
+.clear {
+    clear: both;
+}

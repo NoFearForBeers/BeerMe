@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 import { BeerHistoryComponent } from './beer-history/beer-history.component';
 import { BeerIngredientsComponent } from './beer-ingredients/beer-ingredients.component';
@@ -13,7 +14,7 @@ import { UppercaseDirective } from '../shared/directives/uppercase.directive';
 
 
 @NgModule({
-    imports: [ CommonModule, FormsModule ],
+    imports: [ CommonModule, FormsModule, RouterModule ],
     exports: [ BeerHistoryComponent, BeerIngredientsComponent, BeerTastingComponent, BeerTypesComponent, BeerBrandsComponent ],
     declarations: [
         BeerHistoryComponent,
