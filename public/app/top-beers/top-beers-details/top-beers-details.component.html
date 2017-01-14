@@ -7,14 +7,14 @@
         <p>Произведена в {{beer.brewedAt}}</p>
         <p>Тип: {{beer.style}}</p>
     </div>
-    <div class="ratings-container">
+    <!--<div class="ratings-container">
         <div class="ratings-count">
             Брой гласували: <strong>{{beer.ratings}}</strong>
         </div>
         <div class="average-rating">
             Средна оценка: <strong>{{beer.ratings}}</strong>
         </div>
-    </div>
+    </div>-->
     <div class="comments-container">
         <ul>
             <li *ngFor="let comment of beer.comments">
@@ -24,5 +24,8 @@
                 </div>
             </li>
         </ul>
+    </div>
+    <div class="clear">
+        <a routerLink="/top-beers" class="btn back-link">Обратно към списъка</a>
     </div>
 </div>
