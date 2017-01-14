@@ -49,4 +49,13 @@ export class RecipeService {
         return this.http.put(url, body, headers)
             .map((r: Response) => r.json().data as Recipe);
     }
+
+    addCommentToRecipe(recipe: Recipe): Observable<Recipe> {
+        let url = `/api/recipes/${recipe._id}`;
+        let headers = new Headers({ 'Content-Type': 'application/json' });
+        let body = { body: JSON.stringify(recipe) };
+
+        return this.http.put(url, body, headers)
+            .map((r: Response) => r.json().data as Recipe);
+    }
 }

@@ -17,6 +17,7 @@ module.exports = modelRegistrator.register('Recipe', {
     author: {
         type: String
     },
+    comments: [],
     status: {
         type: String
     },

@@ -87,7 +87,19 @@ module.exports = function({ data, validator }) {
                     res.status(200).send({ success: true, data })
                 })
                 .catch(err => {
-                    return res.status(400).send({ success: false, msg: 'Recipe was now updated!' });
+                    return res.status(400).send({ success: false, msg: 'Рецептата не беше променена!' });
+                });
+        },
+        addCommentToRecipe(req, res) {
+            let postData = req.body['body'];
+            let recipe = JSON.parse(postData);
+
+            data.addCommentToRecipe(recipe)
+                .then((data) => {
+                    res.status(200).send({ success: true, data })
+                })
+                .catch(err => {
+                    return res.status(400).send({ success: false, msg: 'Коментарът не беше добавен!' });
                 });
         }
     };

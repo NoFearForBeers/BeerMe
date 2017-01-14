@@ -5,6 +5,7 @@ export interface Recipe {
     methodOfPreparation: string;
     imgUrl: string;
     author: string;
+    comments: any[];
     status: string;
     rejectMessage: string;
 }

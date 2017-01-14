@@ -21,6 +21,7 @@ export class AddRecipeComponent implements PageComponent {
         methodOfPreparation: '',
         imgUrl: '',
         author: '',
+        comments: [],
         status: '',
         rejectMessage: ''
     };

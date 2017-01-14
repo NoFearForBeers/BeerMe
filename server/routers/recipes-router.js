@@ -8,6 +8,7 @@ module.exports = function({ app, controllers }) {
 
     router
         .get("/recipes/:id", controllers.getRecipeById)
+        .put("/recipes/:id", controllers.addCommentToRecipe)
         .get("/recipes", controllers.getAllPublicRecipes)
         .put("/unapproved-recipes/:id", controllers.changeRecipeStatus)
         .get("/unapproved-recipes", controllers.getAllUnapprovedRecipes)

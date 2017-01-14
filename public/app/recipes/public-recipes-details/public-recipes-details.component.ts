@@ -7,6 +7,7 @@ import 'rxjs/add/operator/switchMap';
 import { PageComponent } from '../../shared/page.component';
 import { Recipe } from '../recipe.model';
 import { RecipeService } from '../services/recipe.service';
+import { AuthService } from '../../authentication/services/auth.service';
 
 @Component({
     moduleId: module.id,
@@ -16,11 +17,18 @@ import { RecipeService } from '../services/recipe.service';
 })
 export class PublicRecipesDetailsComponent implements PageComponent {
     recipe: Recipe;
+    commentText: string;
+    newComment: any = {
+        username: '',
+        text: '',
+        date: ''
+    }
 
     constructor(
-        private recipeService: RecipeService,
         private router: Router,
         private route: ActivatedRoute,
+        private recipeService: RecipeService,
+        private authService: AuthService,
         private toastrService: ToastrService
     ) { }
 
@@ -28,13 +36,34 @@ export class PublicRecipesDetailsComponent implements PageComponent {
         this.route.params
             .switchMap((params: Params) => this.recipeService.getRecipeById(params['id']))
             .subscribe(recipe => this.recipe = recipe);
+
+        this.authService.getUsername()
+            .then(username => this.newComment.username = username);
+    }
+
+    addComment() {
+        this.newComment.date = new Date()
+
+        let recipeInfo = this.recipe;
+        recipeInfo.comments.push(this.newComment);
+
+        this.recipeService.addCommentToRecipe(recipeInfo)
+            .subscribe(
+            data => {
+                //this.newComment.text = '';
+            },
+            error => {
+                let responseBody = error._body;
+                let responseObj = JSON.parse(responseBody);
+                this.showError(responseObj.msg);
+            });
     }
 
     showSuccess(message: string) {
-        this.toastrService.success(message, 'Successs!');
+        this.toastrService.success(message, 'Успех!');
     }
 
     showError(message: string) {
-        this.toastrService.error(message, 'Error!');
+        this.toastrService.error(message, 'Грешка!');
     }
 }

@@ -45,6 +45,17 @@ module.exports = function(models) {
                         resolve(recipeForUpdate);
                         })
                     });
+        },
+        addCommentToRecipe(recipe) {
+            return new Promise((resolve, reject) => {
+                this.getRecipeById(recipe._id)
+                    .then(recipeForUpdate => {
+                            recipeForUpdate.comments = recipe.comments;
+                        
+                        dataUtils.update(recipeForUpdate);
+                        resolve(recipeForUpdate);
+                        })
+                    });
         }
     };
 };
