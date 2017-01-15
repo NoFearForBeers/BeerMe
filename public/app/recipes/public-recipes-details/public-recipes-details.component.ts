@@ -39,6 +39,7 @@ export class PublicRecipesDetailsComponent implements PageComponent {
 
         this.authService.getUsername()
             .then(username => this.newComment.username = username);
+        this.newComment.text = '';
     }
 
     addComment() {
@@ -50,7 +51,7 @@ export class PublicRecipesDetailsComponent implements PageComponent {
         this.recipeService.addCommentToRecipe(recipeInfo)
             .subscribe(
             data => {
-                //this.newComment.text = '';
+                this.ngOnInit();
             },
             error => {
                 let responseBody = error._body;

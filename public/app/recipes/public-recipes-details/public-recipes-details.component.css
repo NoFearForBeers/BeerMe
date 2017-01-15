@@ -24,3 +24,23 @@
 .btn {
     margin-top: 15px;
 }
+
+.single-comment {
+    border: 1px solid grey;
+    border-radius: 15px;
+    background-color: white;
+    margin: 21px 0px;
+}
+
+.user-wrote {
+    border-bottom: 1px solid grey;
+    border-top-right-radius: 15px;
+    border-top-left-radius: 15px;
+    background-color: #b83901;
+    color: white;
+    padding: 5px 10px;
+}
+
+.comment-text {
+    padding: 10px;
+}

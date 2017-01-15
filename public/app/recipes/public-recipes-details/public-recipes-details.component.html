@@ -22,20 +22,27 @@
             <p>{{recipe.methodOfPreparation}}</p>
         </div>
     </div>
-    <div class="comments-container">
-        <ul>
-            <li *ngFor="let comment of recipe.comments">
-                <div class="single-comment">
-                    <p><strong>{{comment.username}}</strong> написа в {{comment.date}}</p>
-                    <p>{{comment.text}}</p>
-                </div>
-            </li>
-        </ul>
+    <div *ngIf="recipe.comments.length" class="col-lg-10">
+        <div class="comments-container">
+            <h3>Коментари</h3>
+            <ul>
+                <li *ngFor="let comment of recipe.comments">
+                    <div class="single-comment">
+                        <div class="user-wrote">
+                            <p><strong>{{comment.username}}</strong> написа на {{comment.date | date:'d MMM y в H:m'}}</p>
+                        </div>
+                        <div class="comment-text">
+                            <p>{{comment.text}}</p>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
     </div>
     <div class="col-lg-10">
-        <h3>Напиши коментар:</h3>
+        <h4>Напиши коментар:</h4>
         <textarea rows="4" cols="140" type="text" class="form-control" [(ngModel)]="newComment.text" #commentText="ngModel"></textarea>
-        <button (click)="addComment()"class="btn btn-primary">Добави</button>
+        <button (click)="addComment()" class="btn btn-primary">Добави</button>
     </div>
 </div>
 <div class="clear text-center">
