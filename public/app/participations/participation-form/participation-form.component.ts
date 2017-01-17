@@ -62,17 +62,21 @@ export class ParticipationFormComponent implements PageComponent {
   }
 
   onSubmit() {
-    this.participationsService.register(this.newParticipation)
-      .subscribe(
-      data => {
-        //console.log(data);
-        this.showSuccess(`Успешно се регистрирахте за състезанието ${this.newParticipation.eventTitle}!`);
-        this.router.navigate(['events']);
-      },
-      error => {
-        this.showError(`Грешка при записването!`);
-        //console.log(error)
-      });
+    if(this.newParticipation.categories.length === 0) {
+      this.showError('Трябва да изберете поне една категория за участие!');
+    } else {
+      this.participationsService.register(this.newParticipation)
+        .subscribe(
+        data => {
+          //console.log(data);
+          this.showSuccess(`Успешно се регистрирахте за състезанието ${this.newParticipation.eventTitle}!`);
+          this.router.navigate(['events']);
+        },
+        error => {
+          this.showError(`Грешка при записването!`);
+          //console.log(error)
+        });
+    }
   }
 
   updateCategories(category, event) {
