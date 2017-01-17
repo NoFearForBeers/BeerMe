@@ -29,7 +29,7 @@
                 <li *ngFor="let comment of recipe.comments">
                     <div class="single-comment">
                         <div class="user-wrote">
-                            <p><strong>{{comment.username}}</strong> написа на {{comment.date | date:'d MMM y в H:m'}}</p>
+                            <p><strong>{{comment.username}}</strong> написа на {{comment.date | date:'d MMM y в H:mm'}}</p>
                         </div>
                         <div class="comment-text">
                             <p>{{comment.text}}</p>
